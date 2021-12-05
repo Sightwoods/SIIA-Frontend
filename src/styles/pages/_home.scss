@@ -1,31 +1,230 @@
+.home {
+    .main-container {
+        .left-container {
+            .welcome-message {
+                display: block;
+                margin-top: 20px;
+                margin-bottom: 15px;
+                font-size: 2.1rem;
+                font-weight: bold;
 
-.header{
-    background-color: $uas-blue2;
-    text-align: center;
-    
-    h2{
-        color: white;
-    }
-    .logo {
-        height: 80px;
-        margin-right: 70px;
-        margin-left: 70px;
-        &:last-child {
-            height: 75px;
-            width: 90px;
-        }
-    }
-    nav{
-        color: white;
-        display: flex;
-        .btn{
-            color: white;
-            :hover{
-                outline-style: none;
+                .buho {
+                    width: 60px;
+                    height: 50px;
+                }
             }
+    
+            .calendar-container {
+                background-color: rgba($color: $uas-gold, $alpha: 0.15);
+                border: none;
+                border-radius: 5px;
+                cursor: zoom-in;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 400px;
+                width: 100%;
+                img {
+                    height: 95%;
+                    width: 85%;
+                }
+            }
+    
+            .facebook {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                
+                iframe {
+                    transition: ease 300ms opacity;
+                }
+
+                iframe.hide{
+                    opacity: 0;
+                }
+                
+                .loading {
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+
+                    .spinner-border{
+                        height: 3.5rem;
+                        width: 3.5rem;
+                        border: 0.35em solid $blue-font;
+                        border-right: 0.35em solid transparent;
+                    }
+                }
+            }
+
         }
-        i{
-            display: block;
+    
+        .right-container {
+            padding: 1.5rem 1rem 0rem 1rem;
+
+            .user-section {
+                background-color: rgba($color: $uas-gold, $alpha: 0.15);
+                border-radius: 5px;
+                height: 100%;
+
+                .profile-info {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 15px;
+                    
+                    .picture {
+                        border-radius: 50%;
+                        border: none;
+                        position: relative;
+
+                        img {
+                            border-radius: inherit;
+                        }
+    
+                        .edit-picture {
+                            position: absolute;
+                            top: 0;
+    
+                            background-color: rgba($color: #000000, $alpha: 0.0);
+                            border-radius: inherit;
+    
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+    
+                            span {
+                                font-size: 10px;
+                                font-family: sans-serif;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                            }
+                            color: transparent;
+    
+                            width: 100%;
+                            height: 100%;
+    
+                            transition: 300ms ease background-color, 300ms ease color;
+                        }
+    
+                        &:hover .edit-picture{
+                            background-color: rgba($color: #000000, $alpha: 0.45);
+                            color: #FFFFFF;
+                        }
+                    }
+
+                    .picture-caption {
+
+                        .student-name,
+                        .student-account {
+                            text-align: center;
+                            display: block;
+                            font-family: sans-serif;
+                        }
+
+                        .student-name {
+                            margin-top: 20px;
+                            font-size: 18px;
+                            font-weight: 500;
+                            color: #000000;
+                        }
+
+                        .student-account {
+                            color: #5e5e5e;
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .school-info {
+                    .container-fluid {
+                        display: flex;
+                        padding: 0;
+                        width: 70%;
+
+                        .text {
+                            background-color: #FFFFFF;
+                            background-color: #FFFFFF;
+                            border: 2px solid $blue_brd;
+                            border-bottom-left-radius: 10px;
+                            border-top-left-radius: 10px;
+                            padding: 0px 10px;
+                            span {
+                                display: block;
+                                
+                                &:first-child {
+                                    color: $blue_font;
+                                    font-size: 16px;
+                                    font-weight: bold;
+                                }
+                            }
+                            
+                        }
+                        
+                        .grade {
+                            background-color: $blue_brd-light;
+                            border: 2px solid $blue_brd;
+                            border-bottom-right-radius: 10px;
+                            border-top-right-radius: 10px;
+                            
+                            align-items: center;
+                            display: flex;
+                            justify-content: center;
+
+                            span {
+                                color: $blue_font;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+
+                .options {
+                    padding: 20px;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    span {
+                        font-size: 1.1rem;
+                        font-weight: 400;
+                        margin-bottom: 10px;
+                    }
+
+                    button {
+                        border: none;
+                        border-radius: 4px;
+
+                        align-self: center;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        margin: 7px;
+                        height: 45px;
+                        width: 85%;
+
+                        font-size: 16px;
+                        font-weight: bold;
+
+                        background-color: $yellow_btn;
+
+                        &:last-child {
+                            background-color: $blue_brd;
+                        }
+
+                        i {
+                            font-size: 1.4rem;
+                        }
+                        
+                    }
+                }
+            }
         }
     }
 }

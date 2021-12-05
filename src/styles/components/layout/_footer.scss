@@ -1,0 +1,12 @@
+footer {
+    background-color: $uas-blue;
+    color: $uas-white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 1px;
+    margin-top: calc(5vh + 2px);
+}

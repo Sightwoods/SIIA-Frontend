@@ -5,17 +5,19 @@ import { PublicRoute } from './PublicRoute';
 
 import { LoginScreen } from '../pages/LoginScreen';
 import { HomeRouter } from './HomeRouter';
-
-const value = true;
+import { useContext } from 'react';
+import { AuthContext } from '../auth/AuthContext';
 
 export const AppRouter = () => {
+    const { user } = useContext(AuthContext);
+
     return (
         <BrowserRouter>
             <Routes>
                 <Route
-                    path="/"
+                    path="/*"
                     element={
-                        <PrivateRoute isAuthenticated={value}>
+                        <PrivateRoute isAuthenticated={user.logged}>
                             <HomeRouter />
                         </PrivateRoute>
                     }
@@ -23,7 +25,7 @@ export const AppRouter = () => {
                 <Route 
                     path="/login"
                     element={
-                        <PublicRoute isAuthenticated={value}>
+                        <PublicRoute isAuthenticated={user.logged}>
                             <LoginScreen />
                         </PublicRoute>
                     }

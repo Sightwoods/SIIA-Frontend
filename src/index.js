@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { AppRouter } from './routers/AppRouter';
+import { App } from './App';
 
 import './styles/styles.scss';
+import 'animate.css';
 
 ReactDOM.render(
     <React.StrictMode>
-        <AppRouter />
+        <App />
     </React.StrictMode>,
     document.getElementById('root')
 );

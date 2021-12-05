@@ -2,7 +2,7 @@ import React from 'react';
 
 export const ContainerWrapper = (props) => {
     return (
-        <div>
+        <div className="container-wrapper">
             { props.children }
         </div>
     )

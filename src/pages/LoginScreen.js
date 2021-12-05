@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Carousel, Row } from 'react-bootstrap';
+import { AuthContext } from '../auth/AuthContext';
 
 import { image } from "../helpers/image";
+import { types } from '../types/types';
 
 export const LoginScreen = () => {
+    const { dispatch } = useContext(AuthContext);
+
+    const handleSubmit = ( e ) => {
+        e.preventDefault();
+        
+        dispatch({
+            type: types.login
+        })
+    }
+
     return (
-        <section className="login | bg-uas">
+        <section className="login | bg-uas | animate__animated animate__fadeIn">
             <Row className="g-0">
-                <div className="col-lg-7 d-none d-lg-block">
+                <div className="col-lg-8 d-none d-lg-block">
                     <Carousel>
                         <Carousel.Item>
                             <img
@@ -48,14 +60,14 @@ export const LoginScreen = () => {
                         </Carousel.Item>
                     </Carousel>
                 </div>
-                <div className="col-lg-5 d-flex flex-column min-vh-100 | login__form">
+                <div className="col-lg-4 d-flex flex-column min-vh-100 | login__form">
                     <div className="d-flex | justify-content-between | align-items-center | px-lg-5 | p-4 | pb-4 | w-100 | logo">
                         <img src={ image('./UAS.png').default } className="img-fluid" alt="logo" />
                         <img src={ image('./VISION.png').default } className="img-fluid d-none d-lg-block" alt="logo" />
                     </div>
                     <div className="align-self-center w-100 px-lg-5 py-lg-4 p-4">
-                        <h1 className="fw-bold mb-4 | title">Inicio de Sesión</h1>
-                        <form className="mb-5">
+                        <h1 className="fw-bold mb-4 | title">Inicio de sesión</h1>
+                        <form className="mb-5" onSubmit={handleSubmit}>
                             <div className="mb-4 | numCuenta">
                                 <label htmlFor="numCuenta" className="form-label fw-bold">Número de Cuenta</label>
                                 <div className="numCuenta__input">

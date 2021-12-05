@@ -1,9 +1,28 @@
-// Configuración principal
+/* Configuración principal */
 @import './base/settings';
 @import './base/base';
 @import "~bootstrap/scss/bootstrap";
 
-// Components
+/* Components */
+@import './components/layout/header';
+@import './components/layout/footer';
+
+// UI
+@import './components/UI/navlink';
+@import './components/UI/navbutton';
+@import './components/UI/container-wrapper';
+@import './components/UI/dropdown-container';
+
+/* Pages */
 @import './pages/login';
 @import './pages/home';
 
+//Consultas
+@import './pages/consultas/academic-record';
+@import './pages/consultas/class-schedule';
+@import './pages/consultas/course-load';
+@import './pages/consultas/credential';
+@import './pages/consultas/grade-correction';
+@import './pages/consultas/kardex';
+@import './pages/consultas/student-info';
+@import './pages/consultas/test-request';

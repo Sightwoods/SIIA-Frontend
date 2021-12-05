@@ -38,13 +38,14 @@
     }
     
     .btn {
-        min-height: 3.125rem;
+        min-height: 3rem;
         font-weight: 600;
         background-color: $uas-gold;
         border-color: $uas-gold;
+        border-radius: 10px;
     
         &:hover {
-            outline: 5px solid $uas-blue;
+            background-color: darken($color: $uas-gold, $amount: 5);
         }
     }
 }

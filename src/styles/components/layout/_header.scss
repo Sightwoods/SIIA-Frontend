@@ -1,0 +1,14 @@
+.header{
+    background-color: $uas-blue;
+    
+    h2{
+        color: white;
+    }
+    .logo {
+        height: 90px;
+        &:last-child {
+            height: 70px;
+            width: 110px;
+        }
+    }
+}

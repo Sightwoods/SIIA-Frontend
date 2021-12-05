@@ -1,0 +1,25 @@
+.principal{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 50px 50px;
+    .fotoPerfil{
+        height: 50px;
+        width: 60px;
+    }
+    .tablas{
+        display: inline-block;
+        h5{
+            text-align: center;
+            border: 1px solid black;
+        }
+        
+        th{
+            border: 1px solid black;
+        }
+    }
+}
+.titulo{
+    text-align: center;
+}
+
