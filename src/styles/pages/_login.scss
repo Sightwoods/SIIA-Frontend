@@ -40,12 +40,12 @@
     .btn {
         min-height: 3rem;
         font-weight: 600;
-        background-color: $uas-gold;
+        background-color: $gold_base;
         border-color: $uas-gold;
         border-radius: 10px;
     
         &:hover {
-            background-color: darken($color: $uas-gold, $amount: 5);
+            background-color: $yellow_light-4;
         }
     }
 }

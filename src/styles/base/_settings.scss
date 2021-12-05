@@ -1,15 +1,56 @@
 //Configuraciones globales
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap');
+$base-font: 'Mukta', sans-serif;
 
 //Colors
 $uas-blue: #0C0057;
 $uas-gold: #FDD110;
 $uas-white:  #FFFFFF;
+$uas-white:  #FFFFFF;
+$yellow_btn: #FFEEA1;
+
+// Shadow
+$black_0:  #000000;
+$black_1:  #191919;
+$black_2:  #333333;
+$black_3:  #4c4c4c;
+$black_4:  #666666;
+$white_0:  #FFFFFF;
+$white_1:  #e6e6e6;
+$white_2:  #cccccc;
+$white_3:  #b3b3b3;
+$white_4:  #999999;
 
 // Blue
-$blue_font: #2317cc;
-$blue_brd:  #92a9f5;
-$blue_brd-light: #b0bff3;
+$blue_dark-1: #071248;
+$blue_dark-2: #061040;
+$blue_dark-3: #060e38;
+$blue_dark-4: #050c30;
+$blue_base: #081450;
+$blue_light-1: #212c62;
+$blue_light-2: #394373;
+$blue_light-3: #525b85;
+$blue_light-4: #6b7296;
+
 
 // Yellow
-$yellow_btn: #FFEEA1;
+$yellow_dark-1: #d2ae11;
+$yellow_dark-1: #ba9a0f;
+$yellow_dark-1: #a3870d;
+$yellow_dark-1: #8c740b;
+$yellow_base: #E9C113;
+$yellow_light-1: #ebc72b;
+$yellow_light-2: #edcd42;
+$yellow_light-3: #f0d45a;
+$yellow_light-4: #f2da71;
+
+// Gold
+$gold_dark-1: #ac8308;
+$gold_dark-2: #997507;
+$gold_dark-3: #866606;
+$gold_dark-4: #735805;
+$gold_base: #bf9209;
+$gold_light-1: #c59d22;
+$gold_light-2: #cca83a;
+$gold_light-3: #d2b353;
+$gold_light-4: #d9be6b;

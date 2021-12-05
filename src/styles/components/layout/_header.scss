@@ -1,5 +1,5 @@
 .header{
-    background-color: $uas-blue;
+    background-color: $blue_base;
     
     h2{
         color: white;
@@ -10,5 +10,13 @@
             height: 70px;
             width: 110px;
         }
+    }
+}
+
+.navbar {
+    background-color: $blue_base !important;
+
+    .title {
+        font-weight: 800;
     }
 }

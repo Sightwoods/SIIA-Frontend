@@ -53,7 +53,7 @@
                     .spinner-border{
                         height: 3.5rem;
                         width: 3.5rem;
-                        border: 0.35em solid $blue-font;
+                        border: 0.35em solid $blue_dark-1;
                         border-right: 0.35em solid transparent;
                     }
                 }
@@ -148,7 +148,7 @@
                         .text {
                             background-color: #FFFFFF;
                             background-color: #FFFFFF;
-                            border: 2px solid $blue_brd;
+                            border: 2px solid $blue_base;
                             border-bottom-left-radius: 10px;
                             border-top-left-radius: 10px;
                             padding: 0px 10px;
@@ -156,7 +156,7 @@
                                 display: block;
                                 
                                 &:first-child {
-                                    color: $blue_font;
+                                    color: $blue_dark-1;
                                     font-size: 16px;
                                     font-weight: bold;
                                 }
@@ -165,8 +165,8 @@
                         }
                         
                         .grade {
-                            background-color: $blue_brd-light;
-                            border: 2px solid $blue_brd;
+                            background-color: $blue_light-1;
+                            border: 2px solid $blue_base;
                             border-bottom-right-radius: 10px;
                             border-top-right-radius: 10px;
                             
@@ -175,7 +175,7 @@
                             justify-content: center;
 
                             span {
-                                color: $blue_font;
+                                color: $blue_dark-1;
                                 font-size: 16px;
                                 font-weight: bold;
                             }
@@ -215,7 +215,7 @@
                         background-color: $yellow_btn;
 
                         &:last-child {
-                            background-color: $blue_brd;
+                            background-color: $blue_base;
                         }
 
                         i {

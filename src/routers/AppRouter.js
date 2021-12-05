@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useContext } from 'react';
 
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
+import { DashboardRouter } from './DashboardRouter';
 import { LoginScreen } from '../pages/LoginScreen';
-import { HomeRouter } from './HomeRouter';
-import { useContext } from 'react';
+
 import { AuthContext } from '../auth/AuthContext';
 
 export const AppRouter = () => {
@@ -18,7 +19,7 @@ export const AppRouter = () => {
                     path="/*"
                     element={
                         <PrivateRoute isAuthenticated={user.logged}>
-                            <HomeRouter />
+                            <DashboardRouter />
                         </PrivateRoute>
                     }
                 />

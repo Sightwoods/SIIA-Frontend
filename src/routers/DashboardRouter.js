@@ -6,7 +6,7 @@ import { TestScreen } from '../pages/TestScreen';
 
 import { ConsultationRouter } from './ConsultationRouter';
 
-export const HomeRouter = () => {
+export const DashboardRouter = () => {
     return (
         <Routes>
             <Route path="/test" element={<TestScreen />} />
