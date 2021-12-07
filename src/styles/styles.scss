@@ -4,7 +4,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 /* Components */
-@import './components/layout/header';
+@import './components/layout/navbar';
 @import './components/layout/footer';
 
 // UI
@@ -12,6 +12,8 @@
 @import './components/UI/navbutton';
 @import './components/UI/container-wrapper';
 @import './components/UI/dropdown-container';
+@import './components/UI/profile';
+@import './components/UI/canvasMenu';
 
 /* Pages */
 @import './pages/login';

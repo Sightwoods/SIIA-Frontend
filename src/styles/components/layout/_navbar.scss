@@ -1,0 +1,133 @@
+.navbar-uas {
+    background-color: $blue_base;
+    
+    .title {
+        color: $white_0;
+        font-family: $base-font;
+        font-weight: bold;
+        padding-left: 5px;
+    }
+
+    .btn-toggle {
+        color: $white_0;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.canva-uas {
+  background-color: $blue_light-1;
+}
+
+.btn-nav-uas {
+    background-color: $blue_base;  
+    border: none;
+    color: $white_0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: auto;
+
+    i {
+        padding-right: 10px;
+    }
+
+    span {
+        font-size: 1rem;
+        font-family: $base-font;
+    }
+
+    &::after {
+        font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f054";
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $yellow_base;
+    }
+}
+
+.uas-divider {
+    color: $white_0;
+    opacity: 1;
+    margin: 10px 0;
+}
+
+/* Mobile */
+@media only screen and (max-width : 991px) {
+    .btn-nav-uas {
+        background-color: transparent;  
+        align-items: center;
+        display: flex;
+        
+        position: relative;
+        width: 90%;
+        
+        &:hover,
+        &:active,
+        &:focus {
+            color: $blue_light-1;
+        }
+
+        &::after {
+            position: absolute;
+            right: 10px;
+        }   
+
+        span {
+            font-weight: bold;
+        }
+    
+    }
+
+    .canva-uas {
+        background-color: $gold_base;
+        left: 0%;
+        right: 100%;
+        width: 80%;
+        transform: translateX(-100%);
+    }
+    
+    .canva-uas.open {
+        transform: translateX(0%);
+    }
+    
+    #backdrop {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: $black_0;
+        opacity: 0;
+    }
+    
+    .non-backdrop {
+        opacity: .4 !important;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width : 992px) {
+    .canva-uas {
+        background-color: $blue_base;  
+
+        ul {
+            .profile-item {
+                order: 7;
+            }
+
+            li {
+                padding-left: 15px;
+            }
+        }
+    }
+
+    .btn-nav-uas {
+        padding-top: 0;
+        padding-bottom: 0;
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            content: "";
+        }
+    }
+}

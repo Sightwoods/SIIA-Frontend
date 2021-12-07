@@ -1,0 +1,104 @@
+@media (max-width: 991.98px) {
+    .canvasMenu {
+        background-color: $gold_light-1;
+
+        position: fixed;
+        top: 0px;
+        bottom: 0;
+        left: 0%;
+        right: 100%;
+
+        height: 100%;
+        width: 100%;
+
+        padding-right: 1rem;
+        padding-left: 1rem;
+        
+        overflow-y: auto;
+        visibility: hidden;
+        z-index: 1;
+        
+        transform: translateX(-100%);
+        transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+
+        .canvasMenu__main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 7px 7px 7px 0px;
+
+            .canvasMenu__title {
+                color: $white_0;
+                font-family: $base-font;
+                font-size: 1.4em;
+                font-weight: bold;
+            }
+
+            .canvasMenu__back {
+                background-color: transparent;
+                border: none;
+                color: $white_0;
+                font-size: 1.4em;
+                padding: 5px;
+            }
+        }
+
+        .canvasMenu__section {
+            padding: 0;
+            .canvasMenu__content {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                
+                padding: 0;
+
+                li {
+                    width: 100%;
+                    border-bottom: 1px solid $blue_light-1;
+                }
+
+                .canvasMenu__end {
+                    padding-bottom: 30px;
+                }
+                
+                .canvasMenu__subtitle {
+                    color: $white_0;
+                    font-family: $base-font;
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    margin-top: 30px;
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+
+                
+                .menuCanvas__link {
+                    text-decoration: none;
+                    width: 100%;
+                    i {
+                        display: none;
+                    }
+                    .btn-nav-uas {
+                        width: 100%;
+                        span {
+                            color: $white_0;
+                            font-family: $base-font;
+                            font-size: 1em;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .canvasMenu.open {
+        visibility: visible;
+        transform: translateX(0%);
+    }
+
+
+  }

@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Button } from 'react-bootstrap';
+import React, { useEffect, useRef, useState } from 'react';
+
+import { NavButton } from '../Navbar/NavButton';
 import { DropdownContainer } from './DropdownContainer';
 
 
@@ -27,7 +28,7 @@ export const Dropdown = ({name, icon = "", children}) => {
     return (
         <div className="d-inline-block" ref={ref}>
             <div>
-                <Button className="navbutton" onMouseDown={toggle}><i className={`d-block ${icon}`}></i>{ name }</Button>
+                <NavButton icon={icon} onMouseDown={toggle}>{ name }</NavButton>
             </div>
             {
                 ( isOpen )
