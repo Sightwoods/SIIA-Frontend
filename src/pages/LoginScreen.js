@@ -66,7 +66,7 @@ export const LoginScreen = () => {
                         <img src={ image('./VISION.png').default } className="img-fluid d-none d-lg-block" alt="logo" />
                     </div>
                     <div className="align-self-center w-100 px-lg-5 py-lg-4 p-4">
-                        <h1 className="fw-bold mb-4 | title">Inicio de sesión</h1>
+                        <h1 className="fw-bold | mb-2 | title">Inicio de sesión</h1>
                         <form className="mb-5" onSubmit={handleSubmit}>
                             <div className="mb-4 | numCuenta">
                                 <label htmlFor="numCuenta" className="form-label fw-bold">Número de Cuenta</label>

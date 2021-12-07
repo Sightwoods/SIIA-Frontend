@@ -1,8 +1,7 @@
 import React, { useRef } from 'react'
-import { Link } from 'react-router-dom'
 import { NavButton } from '../NavButton'
 
-export const MenuCanvas = () => {
+export const MenuCanvas = ({name, icon, user, children }) => {
     const ref = useRef(null);
 
     const openMenu = () => {
@@ -16,78 +15,23 @@ export const MenuCanvas = () => {
     return (
         <div>
             <NavButton 
-                icon="fas fa-search"
+                icon={ icon }
                 onClick={openMenu}
             >
-                Consultas
+                { (user) ? user : name }
             </NavButton>
             <div className="canvasMenu | canva-uas" id="section" ref={ref}>
                 <div className="canvasMenu__main">
-                    <span className="canvasMenu__title">Consultas</span>
+                    <span className="canvasMenu__title">{ name }</span>
                     <button className="canvasMenu__back" onClick={closeMenu}><i className="fas fa-arrow-left"></i></button>
                 </div>
                 <hr className="uas-divider"/>
                 <ul className="navbar-nav | mb-lg-0">
                     <li className="canvasMenu__section">
                         <ul className="canvasMenu__content">
-                            <span className="canvasMenu__subtitle">Estudiante</span>
-                            <li className="nav-item">
-                                <Link 
-                                    className="menuCanvas__link"
-                                    to="/consultas/datos-generales"
-                                >
-                                    <NavButton>Datos generales</NavButton>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link 
-                                    className="menuCanvas__link"
-                                    to="/consultas/datos-generales"
-                                >
-                                    <NavButton>Carga académicas</NavButton>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link 
-                                    className="menuCanvas__link"
-                                    to="/consultas/datos-generales"
-                                >
-                                    <NavButton>Horario de clases</NavButton>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link 
-                                    className="menuCanvas__link"
-                                    to="/consultas/datos-generales"
-                                >
-                                    <NavButton>Historial academico</NavButton>
-                                </Link>
-                            </li>
-                            <span className="canvasMenu__subtitle">Movimientos</span>
-                            <li className="nav-item">
-                                <Link 
-                                    className="menuCanvas__link"
-                                    to="/consultas/datos-generales"
-                                >
-                                    <NavButton>Imprimir solicitud de examen</NavButton>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link 
-                                    className="menuCanvas__link"
-                                    to="/consultas/datos-generales"
-                                >
-                                    <NavButton>Correción de calificación</NavButton>
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link 
-                                    className="menuCanvas__link"
-                                    to="/consultas/datos-generales"
-                                >
-                                    <NavButton>Constancia de kardex</NavButton>
-                                </Link>
-                            </li>
+                            {
+                                children
+                            }
                             <div className="canvasMenu__end"></div>
                         </ul>
                     </li>

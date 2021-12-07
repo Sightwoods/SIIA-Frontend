@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import { Link } from 'react-router-dom';
 
-import { NavButton } from "../UI/Navbar/NavButton";
 import { image } from '../../helpers/image';
-import { Profile } from "../UI/Profile/Profile";
 import { NavMenu } from "../UI/Navbar/NavMenu";
-// import { AuthContext } from "../../auth/AuthContext";
+
+import { consultas, tramites, reinscripcion, examenes, idiomas, encuestas } from '../../routers/routes.json';
+import { NavProfile } from "../UI/Profile/NavProfile";
 
 export const NavigationBar = () => {
     const offcanvas = useRef(null);
@@ -38,26 +38,13 @@ export const NavigationBar = () => {
                 </button>
                 <div className="navbar-collapse | offcanvas-collapse | justify-content-end | canva-uas" id="navbarsExampleDefault" ref={offcanvas} data-bs-backdrop="true" >
                     <ul className="navbar-nav | mb-lg-0">
-                        <li className="nav-item | profile-item">
-                            <Profile />
-                            <hr className="d-lg-none | d-sm-block | uas-divider"/>
-                        </li>
-                        <NavMenu />
-                        <li className="nav-item">
-                            <NavButton icon="fas fa-user-graduate">Reinscripciones</NavButton>
-                        </li>
-                        <li className="nav-item">
-                            <NavButton icon="fas fa-file-invoice">Trámites</NavButton>
-                        </li>
-                        <li className="nav-item">
-                            <NavButton icon="far fa-edit">Exámenes</NavButton>
-                        </li>
-                        <li className="nav-item">
-                            <NavButton icon="fas fa-globe">Idiomas</NavButton>
-                        </li>
-                        <li className="nav-item">
-                            <NavButton icon="fas fa-poll">Encuestas</NavButton>
-                        </li>
+                        <NavProfile />
+                        <NavMenu route={ consultas }     icon="fas fa-search"/>
+                        <NavMenu route={ reinscripcion } icon="fas fa-user-graduate"/>
+                        <NavMenu route={ tramites }      icon="fas fa-file-invoice"/>
+                        <NavMenu route={ examenes }      icon="far fa-edit"/>
+                        <NavMenu route={ idiomas }       icon="fas fa-globe">Idiomas</NavMenu>
+                        <NavMenu route={ encuestas }     icon="fas fa-poll">Encuestas</NavMenu>
                     </ul>
                 </div>
             </div>

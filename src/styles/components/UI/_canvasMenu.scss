@@ -89,6 +89,110 @@
                             font-family: $base-font;
                             font-size: 1em;
                             font-weight: 400;
+                            text-overflow: ellipsis;
+                            text-align: flex-start;
+                        }
+                    }
+                }
+
+                .menuCanvas__profile {
+                    background-color: $white_0;
+                    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                    border-radius: 1px;
+
+                    display: flex;
+                    flex-direction: column;
+                    
+                    width: 100%;
+                    
+                    .logout {
+                        align-self: end;
+                        justify-self: end;
+
+                        background-color: transparent;
+                        border: none;
+                        color: #0000FF;
+
+                        font-family: $base-font;
+                        font-size: 1.1em;
+                        font-weight: 300;
+                        text-decoration: underline;
+
+                        padding: 15px 10px 10px 0px;
+                    }
+
+                    .profile__picture {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 1rem;
+                        
+                        .pic__container {
+                            border-radius: 50%;
+                            outline: 3px ridge $yellow_base;
+
+                            img {
+                                height: 100px;
+                                width: 100px;
+                            }
+                        }
+                    }
+
+                    .profile__info {
+                        display: flex;
+                        flex-direction: column;
+                
+                        .data {
+                            display: flex;
+                            flex-direction: column;
+                            padding: 10px;
+                
+                            span {
+                                font-family: $base-font;
+                                text-align: center;
+                            }
+                
+                            span:nth-child(1){
+                                color: $black_0;
+                                font-size: 1.3em;
+                                font-weight: 500;
+                                margin-bottom: 10px;
+                            }
+                            span:nth-child(2){
+                                color: #0000FF;
+                                font-size: 1em;
+                                font-weight: 300;
+                                margin-bottom: 15px;
+                                text-decoration: underline;
+                            }
+                            span:nth-child(3){
+                                background-color: $blue_light-1;
+                                border-radius: 10px;
+                                color: $white_0;
+                                font-size: 1em;
+                                font-weight: 500;
+                                margin-bottom: 10px;
+                            }
+                        }
+                
+                        .options {
+                            padding: 15spx 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+                            flex-direction: column;
+                            gap: 15px;
+                            
+                            button {
+                                font-family: $base-font;
+                                align-self: flex-start;
+                                background: transparent;
+                                border: none;
+                                color: #0000FF;          
+                                text-decoration: underline;
+                            }
+
+                            padding-bottom: 20px;
                         }
                     }
                 }

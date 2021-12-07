@@ -1,7 +1,13 @@
 .navlink {
-    color: #4e4e4e;
+    color: $black_4;
     display: block;
-    font-size: 15px;
+
+    span {
+        font-family: $base_font;
+        font-weight: 400;
+        font-size: 15px;
+    }
+    
     padding: 6px 0px;
     text-decoration: none;
 
@@ -13,7 +19,7 @@
     }
     
     &__bar { 
-        background-color: $uas-gold;
+        background-color: $gold_base;
         height: 2px;
         width: 0%;
         transition: width 200ms ease;

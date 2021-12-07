@@ -26,14 +26,14 @@ export const Dropdown = ({name, icon = "", children}) => {
     }
 
     return (
-        <div className="d-inline-block" ref={ref}>
+        <div className="d-inline-block SO_MAIN" ref={ref}>
             <div>
                 <NavButton icon={icon} onMouseDown={toggle}>{ name }</NavButton>
             </div>
             {
                 ( isOpen )
                 &&
-                <div className={`${ (!isOpen) ? 'd-none' : 'm-3 SO' }`}>
+                <div className={`${ (!isOpen) ? 'd-none' : 'SO' }`}>
                     <DropdownContainer>
                         {children}
                     </DropdownContainer>

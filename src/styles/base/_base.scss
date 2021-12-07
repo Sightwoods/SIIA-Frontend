@@ -23,6 +23,10 @@ body {
     //   padding-top: 56px;
 }
 
+span {
+    font-family: $base-font
+}
+
 @media (max-width: 991.98px) {
   .offcanvas-collapse {
     position: fixed;

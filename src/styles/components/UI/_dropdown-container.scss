@@ -1,11 +1,18 @@
+.SO_MAIN {
+    position: relative;
+}
+
 .SO {
     position: absolute;
     z-index: 999;
+    top: 50px;
+    width: 600%;
 }
 
 .DropdownContainer {
     display: flex;
-    background-color: $uas-white;
+    justify-content: flex-start;
+    background-color: $white_0;
     &__row {
         box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
         display: flex;
@@ -13,5 +20,23 @@
         flex-wrap: wrap;
         padding: 10px 15px;
         gap: 40px;
+
+        .child {
+            .subtitle {
+                font-family: $base_font;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.nav-item:nth-child(2), 
+.nav-item:nth-child(4), 
+.nav-item:nth-child(6) {
+    .SO {
+        left: -180%;
+        .DropdownContainer {
+            justify-content: stretch;
+        }
     }
 }

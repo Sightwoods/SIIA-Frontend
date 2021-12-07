@@ -14,7 +14,7 @@ export const LinkGroup = ({title, children}) => {
     
     return (
         <Container>
-            <h4 className="text-uppercase d-inline-block fs-6 fw-bold pt-3">{title}</h4>
+            <h4 className="text-uppercase d-inline-block fs-6 pt-3 subtitle">{title}</h4>
             <Dropdown.Divider />
             <div className="linkgroup">
                 { children }

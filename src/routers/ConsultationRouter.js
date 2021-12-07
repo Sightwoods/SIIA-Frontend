@@ -13,14 +13,14 @@ import { KardexScreen } from '../pages/consultas/KardexScreen'
 export const ConsultationRouter = () => {
     return (
         <Routes>
-            <Route path="/datos-generales" element={<StudentInfoScreen />} />
-            <Route path="/credencial-digital" element={<CredentialScreen />} />
-            <Route path="/carga-academica" element={<CourseLoadScreen />} />
-            <Route path="/horario-clases" element={<ClassScheduleScreen />} />
-            <Route path="/historial-academico" element={<AcademicRecordScreen />} />
-            <Route path="/impresion-solicitud-examen" element={<TestRequestScreen />} />
-            <Route path="/correccion-calificacion" element={<GradeCorrectionScreen />} />
-            <Route path="/kardex" element={<KardexScreen />} />
+            <Route path="/estudiante/datos-generales" element={<StudentInfoScreen />} />
+            <Route path="/estudiante/credencial-digital" element={<CredentialScreen />} />
+            <Route path="/estudiante/carga-academica" element={<CourseLoadScreen />} />
+            <Route path="/estudiante/horario-clases" element={<ClassScheduleScreen />} />
+            <Route path="/estudiante/historial-academico" element={<AcademicRecordScreen />} />
+            <Route path="/movimientos/impresion-solicitud-examen" element={<TestRequestScreen />} />
+            <Route path="/movimientos/correccion-calificacion" element={<GradeCorrectionScreen />} />
+            <Route path="/movimientos/kardex" element={<KardexScreen />} />
         </Routes>
     )
 }
