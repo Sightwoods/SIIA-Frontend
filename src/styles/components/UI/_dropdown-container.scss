@@ -19,7 +19,7 @@
         justify-content: space-between;
         flex-wrap: wrap;
         padding: 10px 15px;
-        gap: 40px;
+        gap: 20px;
 
         .child {
             .subtitle {
@@ -34,7 +34,7 @@
 .nav-item:nth-child(4), 
 .nav-item:nth-child(6) {
     .SO {
-        left: -180%;
+        left: -160%;
         .DropdownContainer {
             justify-content: stretch;
         }

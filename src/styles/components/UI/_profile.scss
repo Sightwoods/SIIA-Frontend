@@ -3,6 +3,7 @@
     box-shadow: 0 24px 54px rgba(0,0,0,.15),0 4.5px 13.5px rgba(0,0,0,.08);
     display: inline-flex;
     padding: 10px 20px;
+    z-index: 999;
 
     &__picture {
         display: flex;

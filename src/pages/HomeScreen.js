@@ -20,7 +20,7 @@ export const HomeScreen = () => {
                                             </header>
                                             <main className ="card-body d-flex justify-content-center" style={{backgroundColor: "rgb(207, 207, 207)"}}>
                                                 <div className ="cdb-iframe">
-                                                    <iframe title="Facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fuas-oficial&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=3121842831238166" width="500" height="500" style={{border:"none",overflow:"hidden"}} scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                                    <iframe title="Facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fuas-oficial&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=3121842831238166" width="500" height="500" style={{border:"none",overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                                                 </div>
                                             </main>
                                         </div>

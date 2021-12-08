@@ -14,7 +14,7 @@ export const ConsultationRouter = () => {
     return (
         <Routes>
             <Route path="/estudiante/datos-generales" element={<StudentInfoScreen />} />
-            <Route path="/estudiante/credencial-digital" element={<CredentialScreen />} />
+            <Route path="/estudiante/credencial" element={<CredentialScreen />} />
             <Route path="/estudiante/carga-academica" element={<CourseLoadScreen />} />
             <Route path="/estudiante/horario-clases" element={<ClassScheduleScreen />} />
             <Route path="/estudiante/historial-academico" element={<AcademicRecordScreen />} />
