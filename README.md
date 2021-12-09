@@ -22,7 +22,3 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ## Notas ##
 
 Vayan actualizando la información en este README para un mejor seguimiento.
-
-### Implementar ###
-
-- Un hook para el control del responsive del navbar

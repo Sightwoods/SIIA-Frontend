@@ -1,18 +1,24 @@
-import { useRef } from "react";
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import { image } from '../../helpers/image';
-import { NavMenu } from "../UI/Navbar/NavMenu";
+import { AuthContext } from '../../../auth/AuthContext';
 
-import { consultas, tramites, reinscripcion, examenes, idiomas, encuestas } from '../../routers/routes.json';
-import { NavProfile } from "../UI/Profile/NavProfile";
+import { image } from '../../../helpers/image';
+import { BarsCross } from '../BarsCross';
+import { NavItem } from "./NavItem";
+import { NavProfile } from "../Profile/NavProfile";
+
+import { consultas,
+         tramites,
+         reinscripcion,
+         examenes,
+         idiomas,
+         encuestas
+} from '../../../routers/routes.json';
 
 export const NavigationBar = () => {
-    const offcanvas = useRef(null);
-    const handleClick = () => {
-        offcanvas.current.classList.toggle('open');
-        document.getElementById('backdrop').classList.toggle('non-backdrop');
-    }
+    const { isNavOpen, toggle } = useContext(AuthContext);
+    const handleClick = () => toggle();
 
     return (
         <nav className="navbar | navbar-expand-lg | fixed-top | navbar-uas" aria-label="Main navigation">
@@ -34,17 +40,20 @@ export const NavigationBar = () => {
                     caria-label="Toggle navigation"
                     onClick={handleClick} 
                 >
-                    <i className="fas fa-bars"></i>
+                    <BarsCross />
                 </button>
-                <div className="navbar-collapse | offcanvas-collapse | justify-content-end | canva-uas" id="navbarsExampleDefault" ref={offcanvas} data-bs-backdrop="true" >
+                <div
+                    className={`navbar-collapse | offcanvas-collapse | justify-content-end | canva-uas | ${ (isNavOpen) ? 'open' : ''}`}
+                    id="navbar"
+                >
                     <ul className="navbar-nav | mb-lg-0">
                         <NavProfile />
-                        <NavMenu route={ consultas }     icon="fas fa-search"/>
-                        <NavMenu route={ reinscripcion } icon="fas fa-user-graduate"/>
-                        <NavMenu route={ tramites }      icon="fas fa-file-invoice"/>
-                        <NavMenu route={ examenes }      icon="far fa-edit"/>
-                        <NavMenu route={ idiomas }       icon="fas fa-globe">Idiomas</NavMenu>
-                        <NavMenu route={ encuestas }     icon="fas fa-poll">Encuestas</NavMenu>
+                        <NavItem route={ consultas }     icon="fas fa-search"/>
+                        <NavItem route={ reinscripcion } icon="fas fa-user-graduate"/>
+                        <NavItem route={ tramites }      icon="fas fa-file-invoice"/>
+                        <NavItem route={ examenes }      icon="far fa-edit"/>
+                        <NavItem route={ idiomas }       icon="fas fa-globe">Idiomas</NavItem>
+                        <NavItem route={ encuestas }     icon="fas fa-poll">Encuestas</NavItem>
                     </ul>
                 </div>
             </div>

@@ -1,9 +1,8 @@
-import React from "react";
-
-export const NavButton = React.forwardRef(( props, ref ) => {
+export const NavButton = ( props ) => {
+    const { icon, ...others } = props;
     return (
-        <button className="nav-link | btn-nav-uas" ref={ref} onClick={props.onClick} onMouseDown={props.onMouseDown}>
-            <i className={(props.icon) ? props.icon : ""}></i>
+        <button className="nav-link | btn-nav-uas" { ...others }>
+            <i className={(icon) ? props.icon : ""}></i>
             <span>{ props.children }</span>
             {
                 ( props.profile )
@@ -12,4 +11,4 @@ export const NavButton = React.forwardRef(( props, ref ) => {
             }
         </button>
     )
-})
+}
