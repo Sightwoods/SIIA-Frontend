@@ -51,8 +51,8 @@ export const NavigationBar = () => {
                         <NavItem route={ reinscripcion } icon="fas fa-user-graduate"/>
                         <NavItem route={ tramites }      icon="fas fa-file-invoice"/>
                         <NavItem route={ examenes }      icon="far fa-edit"/>
-                        <NavItem route={ idiomas }       icon="fas fa-globe">Idiomas</NavItem>
-                        <NavItem route={ encuestas }     icon="fas fa-poll">Encuestas</NavItem>
+                        <NavItem route={ idiomas }       icon="fas fa-globe"/>
+                        <NavItem route={ encuestas }     icon="fas fa-poll"/>
                     </ul>
                 </div>
             </div>
