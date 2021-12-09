@@ -8,7 +8,7 @@ import { MenuCanvas } from './Offcanva-Mobile/MenuCanvas';
 import { MenuCanvasOption } from './Offcanva-Mobile/MenuCanvasOption';
 import { MenuCanvasSection } from './Offcanva-Mobile/MenuCanvasSection';
 
-export const NavMenu = ({route, icon}) => {
+export const NavItem = ({route, icon}) => {
 
     const { name, routes, path } = route;
     const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 992px)' })
@@ -16,25 +16,24 @@ export const NavMenu = ({route, icon}) => {
 
     return (
         <li className="nav-item">
-            
             {
                 ( isDesktopOrLaptop )
                 &&
-                    <Dropdown name={name} icon={icon}>
-                        {
-                            routes.map(({id, name, sub_path, paths})=> (
-                                <LinkGroup title={(name) && name} key={id}>
-                                    {
-                                        paths.map(({id, name, path: to}) => (
-                                            <Navlink to={`${path}${(sub_path) ? sub_path : ""}${to}`} key={id}>
-                                                {name}
-                                            </Navlink>
-                                        ))
-                                    }
-                                </LinkGroup>
-                            ))
-                        }
-                    </Dropdown>
+                <Dropdown name={name} icon={icon}>
+                    {
+                        routes.map(({id, name, sub_path, paths})=> (
+                            <LinkGroup title={(name) && name} key={id}>
+                                {
+                                    paths.map(({id, name, path: to}) => (
+                                        <Navlink to={`${path}${(sub_path) ? sub_path : ""}${to}`} key={id}>
+                                            {name}
+                                        </Navlink>
+                                    ))
+                                }
+                            </LinkGroup>
+                        ))
+                    }
+                </Dropdown>
             }
             {
                 ( isMobile )

@@ -1,10 +1,7 @@
-.profile {
-    background-color: $white_0;
-    box-shadow: 0 24px 54px rgba(0,0,0,.15),0 4.5px 13.5px rgba(0,0,0,.08);
+.nav-profile {
     display: inline-flex;
-    padding: 10px 20px;
-    z-index: 999;
-
+    padding: 10px 0px;
+    
     &__picture {
         display: flex;
         align-items: center;
@@ -13,7 +10,7 @@
         
         .pic__container {
             border-radius: 50%;
-            outline: 3px ridge $yellow_base;
+            outline: 3px ridge $gold-400;
 
             img {
                 height: 120px;
@@ -38,7 +35,7 @@
         
         .logout {
             padding: 2px 5px;  
-            color: $black_4;
+            color: $light;
             text-decoration: none;
         }
 
@@ -63,7 +60,7 @@
                 text-decoration: underline;
             }
             span:nth-child(3){
-                color: $black_4;
+                color: $light;
                 font-size: 1em;
                 font-weight: 400;
             }
@@ -100,5 +97,13 @@
         position: absolute;
         right: 0px;
         top: 50px; /* Cambiar valor para mover tarjeta*/
+    }
+}
+
+.nav-item .nav-profile{
+    .dropdown {
+        &__menu {
+            left: 0px;
+        }
     }
 }

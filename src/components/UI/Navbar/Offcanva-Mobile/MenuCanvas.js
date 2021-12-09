@@ -21,10 +21,10 @@ export const MenuCanvas = ({name, icon, user, children }) => {
                 { (user) ? user : name }
             </NavButton>
             <div className="canvasMenu | canva-uas" id="section" ref={ref}>
-                <div className="canvasMenu__main">
+                <button className="canvasMenu__main" onClick={closeMenu}>
                     <span className="canvasMenu__title">{ name }</span>
-                    <button className="canvasMenu__back" onClick={closeMenu}><i className="fas fa-arrow-left"></i></button>
-                </div>
+                    <i className="fas fa-arrow-left"></i>
+                </button>
                 <hr className="uas-divider"/>
                 <ul className="navbar-nav | mb-lg-0">
                     <li className="canvasMenu__section">

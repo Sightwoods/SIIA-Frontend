@@ -1,6 +1,7 @@
 .navlink {
-    color: $black_4;
+    color: $normal;
     display: block;
+    width: 100%;
 
     span {
         font-family: $base_font;
@@ -19,13 +20,20 @@
     }
     
     &__bar { 
-        background-color: $gold_base;
-        height: 2px;
+        background-color: $gold-400;
+        height: 2.5px;
         width: 0%;
-        transition: width 200ms ease;
+        transition: width 200ms cubic-bezier(0.4, 0, 1, 1);
     }
 }
 
 .linkgroup {
-    width: 200px;
+    width: 100%;
+    .group {
+        width: 100%;
+    }
+    
+    .group__section {
+        min-width: 200px;
+    }
 }

@@ -6,25 +6,17 @@
     box-sizing: border-box;
 }
 
-.bg-yellow {
-    background-color: $uas-gold;
-}
-
-.bg-blue {
-    background-color: $uas-blue;
-}
-
 html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
 }
 
-body {
-    //   padding-top: 56px;
-}
-
 span {
     font-family: $base-font
+}
+
+.non-scroll {
+    overflow-y: hidden;
 }
 
 @media (max-width: 991.98px) {
@@ -81,4 +73,18 @@ span {
 .nav-underline .active {
   font-weight: 500;
   color: #343a40;
+}
+
+.test__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    .test {
+        border: 2px solid green;
+        margin: 5px;
+        height: 200px;
+        width: 200px;
+        background-color: red;
+    }
 }

@@ -1,44 +1,43 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
+import { DropdownMenu } from './DropdownMenu';
 import { NavButton } from '../Navbar/NavButton';
-import { DropdownContainer } from './DropdownContainer';
 
+export const Dropdown = ({name, icon = "", profile, children}) => {
 
-export const Dropdown = ({name, icon = "", children}) => {
     const [isOpen, setIsOpen] = useState(false);
-    const ref = useRef(null);
+    const dropdown = useRef(null);
 
     useEffect(() => {
-        const checkIfClickedOutside = e => {
-            if (isOpen && ref.current && !ref.current.contains(e.target)) {
+        const checkBlur = e => {
+            if (isOpen && dropdown.current && !dropdown.current.contains(e.target))
                 setIsOpen(false)
-            }
         }
-        document.addEventListener("mousedown", checkIfClickedOutside)
+        document.addEventListener("click", checkBlur);
 
-        return () => {
-            document.removeEventListener("mousedown", checkIfClickedOutside)
-        }
+        ( isOpen ) 
+        ? dropdown.current.classList.add('active')
+        : dropdown.current.classList.remove('active')
+
+        return () => document.removeEventListener("click", checkBlur);
     }, [isOpen])
-    
-    const toggle = () => {
-        setIsOpen((e) => !e);
+
+    const toggleDropDown = (e) => {
+        if (e.currentTarget.closest('[data-dropdown]') == null) return;
+        setIsOpen(v => !v);
+
+        document.querySelectorAll('[data-dropdown].active').forEach(dropdown => {
+            if ( dropdown === dropdown.current ) return;
+            dropdown.classList.remove('active');
+        })
     }
 
     return (
-        <div className="d-inline-block SO_MAIN" ref={ref}>
-            <div>
-                <NavButton icon={icon} onMouseDown={toggle}>{ name }</NavButton>
-            </div>
-            {
-                ( isOpen )
-                &&
-                <div className={`${ (!isOpen) ? 'd-none' : 'SO' }`}>
-                    <DropdownContainer>
-                        {children}
-                    </DropdownContainer>
-                </div> 
-            }
+        <div className="dropdown" data-dropdown ref={dropdown}>
+            <NavButton icon={icon} profile={profile} onClick={ toggleDropDown } data-dropdown-button>{ name }</NavButton>
+            <DropdownMenu>
+                {children}
+            </DropdownMenu>
         </div>
     )
 }

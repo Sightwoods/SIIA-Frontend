@@ -19,7 +19,7 @@ export const LoginScreen = () => {
     return (
         <section className="login | bg-uas | animate__animated animate__fadeIn">
             <Row className="g-0">
-                <div className="col-lg-8 d-none d-lg-block">
+                <div className="col-lg-8 | col-md-7 | d-none | d-lg-block| d-md-block">
                     <Carousel>
                         <Carousel.Item>
                             <img
@@ -60,16 +60,17 @@ export const LoginScreen = () => {
                         </Carousel.Item>
                     </Carousel>
                 </div>
-                <div className="col-lg-4 d-flex flex-column min-vh-100 | login__form">
-                    <div className="d-flex | justify-content-between | align-items-center | px-lg-5 | p-4 | pb-4 | w-100 | logo">
+                <div className="col-lg-4 | col-md-5 | d-flex flex-column | min-vh-100 | login__form">
+                    <div className="d-flex | justify-content-center | align-items-center | w-100 | logo">
                         <img src={ image('./UAS.png').default } className="img-fluid" alt="logo" />
+                        <span className="logo__title d-lg-none d-md-none">SIIA Alumnos</span>
                         <img src={ image('./VISION.png').default } className="img-fluid d-none d-lg-block" alt="logo" />
                     </div>
-                    <div className="align-self-center w-100 px-lg-5 py-lg-4 p-4">
-                        <h1 className="fw-bold | mb-2 | title">Inicio de sesión</h1>
-                        <form className="mb-5" onSubmit={handleSubmit}>
-                            <div className="mb-4 | numCuenta">
-                                <label htmlFor="numCuenta" className="form-label fw-bold">Número de Cuenta</label>
+                    <div className="align-self-center w-100 px-lg-5 py-lg-4 p-4 form_container">
+                        <h1 className="title">Inicio de sesión</h1>
+                        <form onSubmit={handleSubmit}>
+                            <div className="numCuenta">
+                                <label htmlFor="numCuenta" className="form-label fw-bold numCuenta__label">Número de cuenta</label>
                                 <div className="numCuenta__input">
                                     <input 
                                         inputMode="numeric"
@@ -81,8 +82,8 @@ export const LoginScreen = () => {
                                     <i className="numCuenta__icon fas fa-user-graduate fa-lg"></i>
                                 </div>
                             </div>
-                            <div className="mb-4 | nip">
-                                <label htmlFor="nip" className="form-label fw-bold">NIP</label>
+                            <div className="nip">
+                                <label htmlFor="nip" className="form-label fw-bold nip__label">NIP</label>
                                 <div className="nip__input">
                                     <input 
                                         className="form-control border-0" 
@@ -95,7 +96,13 @@ export const LoginScreen = () => {
                                     <i className="nip__icon fas fa-lock fa-lg"></i>
                                 </div>
                             </div>
-                            <button type="submit" className="btn btn-primary w-100 mt-4">Iniciar</button>
+                            <div className="form-check">
+                                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" defaultChecked={false} />
+                                <label className="form-check-label text-white" htmlFor="flexCheckChecked">
+                                    Mostrar contraseña
+                                </label>
+                            </div>
+                            <button type="submit" className="btn btn-primary w-100">Iniciar</button>
                         </form>
                    </div>
                 </div>

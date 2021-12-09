@@ -1,14 +1,10 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
-
 import { Layout } from '../components/layout/Layout';
+import { TestComponent } from '../components/UI/TestComponent';
 
 export const TestScreen = () => {
     return (
         <Layout>
-            <Container style={{height: "90vh"}}>
-                {/* <Profile /> */}
-            </Container>
+            <TestComponent />
         </Layout>
     );
 }

@@ -1,6 +1,6 @@
 @media (max-width: 991.98px) {
     .canvasMenu {
-        background-color: $gold_light-1;
+        background-color: #c59d22;
 
         position: fixed;
         top: 0px;
@@ -25,23 +25,30 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            width: 100%;
 
+            -webkit-tap-highlight-color: rgba($color: $white, $alpha: 0.2);
+            background-color: transparent;
+            border: none;
+
+            color: $white;
+            font-size: 1.4em;
+
+            margin: 10px 0px;
             padding: 7px 7px 7px 0px;
 
             .canvasMenu__title {
-                color: $white_0;
+                color: $white;
                 font-family: $base-font;
-                font-size: 1.4em;
-                font-weight: bold;
+                font-size: 1em;
+                font-weight: 800;
             }
 
-            .canvasMenu__back {
-                background-color: transparent;
-                border: none;
-                color: $white_0;
-                font-size: 1.4em;
-                padding: 5px;
-            }
+        }
+        
+        .uas-divider {
+            margin-top: 0px;
+            margin-bottom: 20px;
         }
 
         .canvasMenu__section {
@@ -53,11 +60,11 @@
                 align-items: flex-start;
                 justify-content: center;
                 
-                padding: 0;
+                padding: 0px;
 
                 li {
                     width: 100%;
-                    border-bottom: 1px solid $blue_light-1;
+                    -webkit-tap-highlight-color: rgba($color: $white, $alpha: 0.2);
                 }
 
                 .canvasMenu__end {
@@ -65,7 +72,7 @@
                 }
                 
                 .canvasMenu__subtitle {
-                    color: $white_0;
+                    color: $white;
                     font-family: $base-font;
                     font-size: 1.2em;
                     font-weight: bold;
@@ -74,37 +81,42 @@
                         margin-top: 0;
                     }
                 }
-
-                
-                .menuCanvas__link {
+            
+                .canvasMenu__link {
                     text-decoration: none;
                     width: 100%;
+                    -webkit-tap-highlight-color: rgba($color: $white, $alpha: 0.2);
+
                     i {
                         display: none;
                     }
+                    
                     .btn-nav-uas {
                         width: 100%;
                         span {
-                            color: $white_0;
+                            color: $white;
                             font-family: $base-font;
                             font-size: 1em;
                             font-weight: 400;
                             text-overflow: ellipsis;
                             text-align: start;
+                            width: 90%;
                         }
                     }
                 }
 
-                .menuCanvas__profile {
-                    background-color: $white_0;
+                .canvasMenu__profile {
+                    background-color: $white;
                     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-                    border-radius: 1px;
+                    border-radius: 5px;
 
                     display: flex;
                     flex-direction: column;
                     
                     width: 100%;
                     
+                    padding: 10px;
+
                     .logout {
                         align-self: end;
                         justify-self: end;
@@ -117,8 +129,6 @@
                         font-size: 1.1em;
                         font-weight: 300;
                         text-decoration: underline;
-
-                        padding: 15px 10px 10px 0px;
                     }
 
                     .profile__picture {
@@ -129,7 +139,7 @@
                         
                         .pic__container {
                             border-radius: 50%;
-                            outline: 3px ridge $yellow_base;
+                            outline: 3px ridge $gold-400;
 
                             img {
                                 height: 100px;
@@ -153,7 +163,7 @@
                             }
                 
                             span:nth-child(1){
-                                color: $black_0;
+                                color: $black;
                                 font-size: 1.3em;
                                 font-weight: 500;
                                 margin-bottom: 10px;
@@ -166,9 +176,9 @@
                                 text-decoration: underline;
                             }
                             span:nth-child(3){
-                                background-color: $blue_light-1;
+                                background-color: $blue-400;
                                 border-radius: 10px;
-                                color: $white_0;
+                                color: $white;
                                 font-size: 1em;
                                 font-weight: 500;
                                 margin-bottom: 10px;
