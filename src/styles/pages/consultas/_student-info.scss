@@ -1,25 +1,66 @@
-.principal{
-    display: flex;
-    align-items: center;
-    align-content: center;
-    gap: 50px 50px;
-    .fotoPerfil{
-        height: 50px;
-        width: 60px;
-    }
-    .tablas{
-        display: inline-block;
-        h5{
-            text-align: center;
-            border: 1px solid black;
-        }
-        
-        th{
-            border: 1px solid black;
-        }
-    }
-}
-.titulo{
-    text-align: center;
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
+table {
+	width: 100%;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(0,172,252,0.1);
+	color: black;
+}
+
+th {
+	text-align: center;
+}
+
+thead {
+	th {
+		background-color: $uas-blue;
+        color: white;
+		
+	}
+}
+
+tbody {
+    text-align: center;
+	tr {
+		&:hover {
+			background-color: rgba($color: #6DDAF7, $alpha: 0.2);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba($color: #6DDAF7, $alpha: 0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+
+
+.table{
+    th{
+        background-color:$uas-blue ;
+        color: white;
+    }
+}
