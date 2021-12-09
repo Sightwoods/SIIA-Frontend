@@ -15,7 +15,7 @@
             }
     
             .calendar-container {
-                background-color: rgba($color: $uas-gold, $alpha: 0.15);
+                background-color: rgba($color: $gold-500, $alpha: 0.15);
                 border: none;
                 border-radius: 5px;
                 cursor: zoom-in;
@@ -53,7 +53,7 @@
                     .spinner-border{
                         height: 3.5rem;
                         width: 3.5rem;
-                        border: 0.35em solid $blue_dark-1;
+                        border: 0.35em solid $blue-700;
                         border-right: 0.35em solid transparent;
                     }
                 }
@@ -65,7 +65,7 @@
             padding: 1.5rem 1rem 0rem 1rem;
 
             .user-section {
-                background-color: rgba($color: $uas-gold, $alpha: 0.15);
+                background-color: rgba($color: $gold-500, $alpha: 0.15);
                 border-radius: 5px;
                 height: 100%;
 
@@ -148,7 +148,7 @@
                         .text {
                             background-color: #FFFFFF;
                             background-color: #FFFFFF;
-                            border: 2px solid $blue_base;
+                            border: 2px solid $blue-500;
                             border-bottom-left-radius: 10px;
                             border-top-left-radius: 10px;
                             padding: 0px 10px;
@@ -156,7 +156,7 @@
                                 display: block;
                                 
                                 &:first-child {
-                                    color: $blue_dark-1;
+                                    color: $blue-700;
                                     font-size: 16px;
                                     font-weight: bold;
                                 }
@@ -165,8 +165,8 @@
                         }
                         
                         .grade {
-                            background-color: $blue_light-1;
-                            border: 2px solid $blue_base;
+                            background-color: $blue-400;
+                            border: 2px solid $blue-500;
                             border-bottom-right-radius: 10px;
                             border-top-right-radius: 10px;
                             
@@ -175,7 +175,7 @@
                             justify-content: center;
 
                             span {
-                                color: $blue_dark-1;
+                                color: $blue-700;
                                 font-size: 16px;
                                 font-weight: bold;
                             }
@@ -212,10 +212,10 @@
                         font-size: 16px;
                         font-weight: bold;
 
-                        background-color: $yellow_btn;
+                        background-color: $gold-500;
 
                         &:last-child {
-                            background-color: $blue_base;
+                            background-color: $blue-500;
                         }
 
                         i {

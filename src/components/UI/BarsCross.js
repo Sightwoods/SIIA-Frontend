@@ -1,8 +1,4 @@
-import { useContext } from 'react';
-import { AuthContext } from '../../auth/AuthContext';
-
-export const BarsCross = () => {
-    const {isNavOpen} = useContext(AuthContext);
+export const BarsCross = ({isNavOpen}) => {
 
     return (
         <div className="selector show">

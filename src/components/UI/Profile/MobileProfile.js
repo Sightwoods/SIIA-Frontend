@@ -6,8 +6,8 @@ import { image } from '../../../helpers/image';
 
 export const MobileProfile = ({name="Mi perfil", icon="fa fas fa-user", ...props}) => {
     return (
-        <MenuCanvas name={name} icon={icon} user="Ruben Gomez Ulloa">
-            <div className="menuCanvas__profile">
+        <MenuCanvas name={name} icon={icon} user="Osiris Meza">
+            <div className="canvasMenu__profile">
                 <button className="logout" onClick={props.handleLogout}>Cerrar sesión</button>
                 <div className="profile__picture">
                     <div className="pic__container">

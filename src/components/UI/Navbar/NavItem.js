@@ -16,7 +16,6 @@ export const NavItem = ({route, icon}) => {
 
     return (
         <li className="nav-item">
-            
             {
                 ( isDesktopOrLaptop )
                 &&

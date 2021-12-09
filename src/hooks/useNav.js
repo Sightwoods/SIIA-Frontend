@@ -19,8 +19,14 @@ export const useNav = ( initialState = {}) => {
         }
     }, [isNavOpen])
 
+    useEffect(() => {
+        setIsNavOpen( false );
+    }, [])
+
     const toggle = () => {
-        setIsNavOpen(v => !v);
+        (isNavOpen)
+        ? setIsNavOpen(false)
+        : setIsNavOpen( true )
     }
 
     return [ isNavOpen, toggle ];

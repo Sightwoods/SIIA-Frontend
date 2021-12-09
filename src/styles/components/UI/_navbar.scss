@@ -1,29 +1,26 @@
 .navbar-uas {
-    background-color: $blue_base;
+    z-index: 1;
+    background-color: $blue-600;
     
     .title {
-        color: $white_0;
+        color: $white;
         font-family: $base-font;
         font-weight: bold;
         padding-left: 5px;
     }
 
     .btn-toggle {
-        color: $white_0;
+        color: $white;
         &:focus {
             box-shadow: none;
         }
     }
 }
 
-.canva-uas {
-  background-color: $blue_light-1;
-}
-
 .btn-nav-uas {
-    background-color: $blue_base;  
+    background-color: $blue-600;  
     border: none;
-    color: $white_0;
+    color: $white;
     padding-top: 15px;
     padding-bottom: 15px;
     width: auto;
@@ -33,7 +30,7 @@
     }
 
     span {
-        font-size: 1rem;
+        font-size: 1.1rem;
         font-family: $base-font;
     }
 
@@ -44,12 +41,12 @@
     &:hover,
     &:active,
     &:focus {
-        color: $yellow_base;
+        color: $gold-400;
     }
 }
 
 .uas-divider {
-    color: $white_0;
+    color: $white;
     opacity: 1;
     margin: 10px 0;
 }
@@ -60,14 +57,15 @@
         background-color: transparent;  
         align-items: center;
         display: flex;
-        
+
         position: relative;
-        width: 90%;
+        width: 100%;
         
+        -webkit-tap-highlight-color: rgba($color: $white, $alpha: 0.2);
         &:hover,
         &:active,
         &:focus {
-            color: $blue_light-1;
+            color: $white;
         }
 
         &::after {
@@ -77,6 +75,8 @@
 
         span {
             font-weight: bold;
+            text-align: left;
+            width: 80%;
         }  
     }
 
@@ -85,7 +85,7 @@
     }
 
     .canva-uas {
-        background-color: $gold_base;
+        background-color: $gold-500;
         left: 0%;
         right: 100%;
         width: 80%;
@@ -98,11 +98,14 @@
     
     #backdrop {
         position: absolute;
+        top: 100%;
+        left: 0px;
         width: 100vw;
         height: 100vh;
-        background-color: $black_0;
+        background-color: $black;
         opacity: .4;
         transition: 400ms opacity ease-in-out;
+        z-index: -1;
     }
     
     .non-backdrop {
@@ -113,7 +116,7 @@
 /* Desktop */
 @media only screen and (min-width : 992px) {
     .canva-uas {
-        background-color: $blue_base;  
+        background-color: $blue-600;  
 
         ul {
             .profile-item {

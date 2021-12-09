@@ -1,108 +1,265 @@
 .login {
-    .logo {
-        img {
-            &:first-child {
-                height: 7rem;
-                width: 6rem;
+    font-family: $base-font;
+
+    &__form {
+        background-color: $blue-500;
+        align-items: center;
+
+        .logo {
+            margin: 2em 0em;
+            img {
+                margin: 0em 100px;
+                &:first-child {
+                    height: 100px;
+                    width: 80px;
+                }
+                
+                &:last-child {
+                    height: 90px;
+                    width: 120px;
+                }
+            }
+        }
+
+        .form_container {
+            margin-top: 0em;
+
+            .title {
+                color: $white;
+                font-size: 2.5rem;
+                font-weight: 600;
+                margin-bottom: 1em;
             }
             
-            &:last-child {
-                height: 6rem;
-                width: 7.5rem;
+            .numCuenta, .nip {
+                margin-bottom: 2em;
+        
+                &__input {
+                    background-color: $white;
+                    border-radius: 5px;
+                    padding: 5px 10px;
+        
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+        
+                &__label {
+                    color: $white;
+                }
+        
+                .form-control {
+                    padding: 0;
+        
+                    font-family: $base-font;
+                    font-size: 1.1rem;
+                }
+                .form-control:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+
+            .nip {
+                margin-bottom: 0.8em;
+            }
+
+            .form-check {
+                margin-bottom: 2em;
+
+                .form-check-input {
+                    box-shadow: none;
+                    border-color: $gold-300;
+                    &:checked {
+                        background-color: $gold-500;
+                    }
+                }
+
+                .form-check-label {
+                    color: $white;
+                }
+            }
+            
+            .btn {
+                background-color: $gold-500;
+                
+                font-size: 1.05em;
+                font-weight: 700;
+                letter-spacing: 1px;
+                
+                border-color: $gold-500;
+                border-radius: 5px;
+                margin-top: 1.5em;
+            
+                &:hover {
+                    background-color: $gold-600;
+                    border-color: $gold-600;
+                }
             }
         }
     }
-    .title {
-        font-size: 2.5rem;
-    }
 
-    .numCuenta, .nip {
-        border-bottom: 1px solid $primary;
-        margin-top: 50px;
-
-        &__input {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .form-control {
-            font-size: 1.1rem;
-            min-height: 1rem;
-            line-height: initial;
-        }
-        .form-control:focus {
-            outline: none;
-            box-shadow: none;
-        }
-    }
-    
-    .btn {
-        min-height: 3rem;
-        font-weight: 600;
-        background-color: $gold_base;
-        border-color: $uas-gold;
-        border-radius: 10px;
-    
-        &:hover {
-            background-color: $yellow_light-4;
-        }
-    }
 }
 
-@media only screen  and (max-width : 990px) {
+// Mobile
+@media only screen and (max-width : 767px) {
     .login {
         background: url('../../assets/images/img-1.png');
         background-size: cover;
         background-position: center;
-        color: $uas-white;
-
-        .title {
-            font-size: 2.1rem;
-        }
+        color: $white;
 
         .logo {
-            justify-content: center !important;
+            img {
+                margin: 0px;
+                &:first-child {
+                    height: 100px;
+                    width: 80px;
+                }
+                
+                &:last-child {
+                    height: 90px;
+                    width: 120px;
+                }
+            }
+
+            margin: 3em 0em 1em 0em;
+            justify-content: space-around !important;
+            
+            &__title {
+                color: $white;
+                font-family: $base-font;
+                font-size: 2em;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px $black;
+            }
+
+            img:first-child {
+                width: 60px;
+                height: 80px;
+            }
         }
 
         &__form {
-            background-color: rgba($color: $uas-blue, $alpha: 0.5);
-        }
+            background-color: rgba($color: $blue-700, $alpha: 0.7);
+            .form_container {
 
-        .numCuenta, .nip {
-            border-bottom: 1px solid $uas-white;
-            margin-top: 35px;
-    
-            &__input {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-    
-            .form-control {
-                background-color: transparent;
-                color: $uas-white;
-                padding-left: 0px;
-                padding-right: 0px;
+                .title {
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                }
 
-                &::placeholder{
-                    color: darken($color: $uas-white, $amount: 10);
+                .numCuenta, .nip {
+                    margin-bottom: 2em;
+                    border-bottom: 1px solid $white;            
+                    &__input {
+                        background-color: transparent;
+        
+                        align-items: center;
+                        display: flex;
+                        justify-content: center;
+                    }
+                    
+                    &__label {
+                        font-size: 1.2em;
+                    }
+        
+                    .form-control {
+                        background-color: transparent;
+                        color: $white;
+                        font-size: 1.1em;
+        
+                        padding-left: 0px;
+                        padding-right: 0px;
+        
+                        &::placeholder{
+                            color: darken($color: $white, $amount: 10);
+                        }
+                    }
+                    .form-control:focus {
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+
+                .form-check {
+                    margin-bottom: 2em;
+    
+                    .form-check-input {
+                        box-shadow: none;
+                        border-color: $gold-300;
+                        &:checked {
+                            background-color: $gold-500;
+                        }
+                    }
+    
+                    .form-check-label {
+                        color: $white;
+                    }
+                }
+
+                .btn {
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    &:hover{
+                        outline: none;
+                        box-shadow: none;
+                        background-color: darken($gold-500, 10);
+                    }
                 }
             }
-            .form-control:focus {
-                outline: none;
-                box-shadow: none;
+        }
+
+    }
+}
+
+@media only screen and (max-height : 650px) {
+    .login {
+        .logo {
+            margin: 2em 0em 0.5em 0em;
+        }
+
+        &__form {
+            .form_container {
+                .numCuenta, .nip {            
+                    &__label,
+                    .form-control {
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Tablet 
+@media only screen and (min-width : 768px) and (max-width : 1400px) {
+    .login {    
+        .logo {
+            img:last-child {
+                display: none !important;
+            }
+        }
+        &__form {
+            .form_container {
+                width: 100%;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width : 420px) and (max-width : 767px) {
+    .login {    
+        .logo {
+            img:first-child {
+                height: 120px;
+                width: 90px;
             }
 
-        }
-        .btn {
-            min-height: 2.8rem;
-            font-size: 1rem;
-
-            &:hover{
-                outline: none;
-                box-shadow: none;
-                background-color: darken($uas-gold, 10);
+            &__title {
+                display: none !important;
             }
         }
     }

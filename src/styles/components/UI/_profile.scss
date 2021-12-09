@@ -10,7 +10,7 @@
         
         .pic__container {
             border-radius: 50%;
-            outline: 3px ridge $yellow_base;
+            outline: 3px ridge $gold-400;
 
             img {
                 height: 120px;
@@ -35,7 +35,7 @@
         
         .logout {
             padding: 2px 5px;  
-            color: $black_4;
+            color: $light;
             text-decoration: none;
         }
 
@@ -60,7 +60,7 @@
                 text-decoration: underline;
             }
             span:nth-child(3){
-                color: $black_4;
+                color: $light;
                 font-size: 1em;
                 font-weight: 400;
             }

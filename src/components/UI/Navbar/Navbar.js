@@ -1,7 +1,4 @@
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-
-import { AuthContext } from '../../../auth/AuthContext';
 
 import { image } from '../../../helpers/image';
 import { BarsCross } from '../BarsCross';
@@ -15,15 +12,17 @@ import { consultas,
          idiomas,
          encuestas
 } from '../../../routers/routes.json';
+import { Backdrop } from '../Backdrop';
+import { useNav } from '../../../hooks/useNav';
 
-export const NavigationBar = () => {
-    const { isNavOpen, toggle } = useContext(AuthContext);
+export const NavigationBar = () => {    
+    const [ isNavOpen, toggle ] = useNav(false);
     const handleClick = () => toggle();
 
     return (
-        <nav className="navbar | navbar-expand-lg | fixed-top | navbar-uas" aria-label="Main navigation">
+        <nav className="navbar | navbar-expand-lg | fixed-top | navbar-uas" aria-label="Main navigation">     
             <div className="container-fluid">
-                <Link className="navbar-brand | p-1" to="/">
+                <Link className="navbar-brand | p-1" to="/" onClick={toggle}>
                     <img
                         src={image('./UAS.png').default}
                         alt="UAS logo"
@@ -40,7 +39,7 @@ export const NavigationBar = () => {
                     caria-label="Toggle navigation"
                     onClick={handleClick} 
                 >
-                    <BarsCross />
+                    <BarsCross isNavOpen={isNavOpen}/>
                 </button>
                 <div
                     className={`navbar-collapse | offcanvas-collapse | justify-content-end | canva-uas | ${ (isNavOpen) ? 'open' : ''}`}
@@ -57,6 +56,7 @@ export const NavigationBar = () => {
                     </ul>
                 </div>
             </div>
+            <Backdrop isNavOpen={isNavOpen} onClick={toggle}/>
         </nav>
     )
 };
