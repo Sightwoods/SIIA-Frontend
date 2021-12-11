@@ -15,11 +15,11 @@ body{
 			font-size: 16px;
 		}
 		th{
-			background: $blue-100;
+			background: $blue-500;
 			color: white;
 		}
 		tbody tr:nth-child(even){
-			background: $normal;
+			background: $light;
 		}
 	}
 }

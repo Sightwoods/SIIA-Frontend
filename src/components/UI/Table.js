@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const Table = ({list,colums}) =>{
+export const Table = ({list,colums,title}) =>{
     return(
         <div className='contenido'>
-        <h5 className='text-center fw-bold'>DATOS GENERALES</h5>
+        <h5 className='text-center fw-bold'>{title}</h5>
         <table className='tabla'>
             <thead>
                    {

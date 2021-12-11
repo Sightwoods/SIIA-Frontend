@@ -5,6 +5,7 @@ import { HomeScreen } from '../pages/HomeScreen';
 import { TestScreen } from '../pages/TestScreen';
 
 import { ConsultationRouter } from './ConsultationRouter';
+import { FormalitiesRouter } from './FormalitiesRouter';
 
 export const DashboardRouter = () => {
     return (
@@ -13,6 +14,7 @@ export const DashboardRouter = () => {
             <Route path="/" element={<HomeScreen />} />
 
             <Route path="/consultas/*" element={ <ConsultationRouter /> } />
+            <Route path="/tramites/*" element={ <FormalitiesRouter /> } />
         </Routes>
     )
 }
