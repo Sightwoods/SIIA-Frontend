@@ -1,0 +1,156 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+
+    &__image {
+        height: 25em;
+    }
+    
+    .dashboard__cards {      
+        position: relative;
+
+        .dashboard__cards--position {
+            position: absolute;
+            top: -160px;
+            left: 0;
+            width: 100%;
+
+            display: flex;
+            align-items: stretch;
+            justify-content: space-evenly;
+            
+            .card {
+                height: 375px;
+                box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+                img { height: 135px; }
+
+                .card-body {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .dashboard__button {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        button {
+                            background-color: $blue-500;
+                            border-color: $blue-400;
+
+                            &:active,
+                            &:focus {
+                                box-shadow: 0 0 0 .20rem rgba($color: $blue-500, $alpha: .35);
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .dashboard__guides {
+                display: inherit;
+                align-items: inherit;
+                justify-content: space-around;
+                
+                .card {
+                    width: 18rem;
+                }
+            }
+            
+            .dashboard__news {
+                display: flex;
+                justify-content: stretch;
+                
+                .card {
+                    width: 100%;
+
+                    .card-body {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width : 991px) {
+    .dashboard {
+        &__image {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .dashboard__cards {      
+            .dashboard__cards--position {
+                position: absolute;
+                top: -240px;
+    
+                display: flex;
+                align-items: stretch;
+                justify-content: space-evenly;
+                flex-direction: column;
+                
+                .card {
+                    height: 375px;
+                    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+                    img { height: 135px; }
+    
+                    .card-body {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+    
+                        .dashboard__button {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+    
+                            button {
+                                background-color: $blue-500;
+                                border-color: $blue-400;
+    
+                                &:active,
+                                &:focus {
+                                    box-shadow: 0 0 0 .20rem rgba($color: $blue-500, $alpha: .35);
+                                }
+                            }
+                        }
+                    }
+    
+                }
+    
+                .dashboard__guides {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                    
+                    .card {
+                        width: 18rem;
+                    }
+                }
+                
+                .dashboard__news {
+                    margin-top: 20px;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    .card {
+                        width: 18rem;
+    
+                        .card-body {
+                            iframe {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

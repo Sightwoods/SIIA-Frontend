@@ -1,5 +1,4 @@
-
-.container {
+.table-student {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -27,7 +26,7 @@ th {
 
 thead {
 	th {
-		background-color: $uas-blue;
+		background-color: $blue-500;
         color: white;
 		
 	}
@@ -37,7 +36,7 @@ tbody {
     text-align: center;
 	tr {
 		&:hover {
-			background-color: rgba($color: #6DDAF7, $alpha: 0.2);
+			background-color: rgba($color: $blue-100, $alpha: 0.2);
 		}
 	}
 	td {
@@ -50,7 +49,7 @@ tbody {
 				right: 0;
 				top: -9999px;
 				bottom: -9999px;
-				background-color: rgba($color: #6DDAF7, $alpha: 0.2);
+				background-color: rgba($color: $blue-200, $alpha: 0.2);
 				z-index: -1;
 			}
 		}
@@ -60,7 +59,7 @@ tbody {
 
 .table{
     th{
-        background-color:$uas-blue ;
+        background-color:$blue-500 ;
         color: white;
     }
 }

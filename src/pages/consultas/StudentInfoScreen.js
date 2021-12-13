@@ -4,7 +4,7 @@ import { Layout } from '../../components/layout/Layout';
 export const StudentInfoScreen = () => {
     return (
         <Layout>
-          <div className="container">
+          <div className="container table-student">
             <table>
                 <thead>
                     <tr>
