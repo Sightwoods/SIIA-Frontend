@@ -3,21 +3,21 @@ import React from 'react';
 export const Table = ({list,colums,title}) =>{
     return(
         <div className='contenido'>
-        <h5 className='text-center fw-bold'>{title}</h5>
-        <table className='tabla'>
-            <thead>
+        <h5 className='text-center fw-bold titulo'>{title}</h5>
+        <table className='tab'>
+            <thead className='cabecera'>
                    {
                        colums.map((v,i)=>(
-                           <th key={i}>{v}</th>
+                           <th className='columna' key={i}>{v}</th>
                        ))
                    } 
             </thead>
-            <tbody>
+            <tbody className='cuerpo'>
                     {
                        list.map((v)=>(
-                           <tr>{
+                           <tr className='fila'>{
                                 Object.values(v).map((v,i)=>(
-                               <td key={i} data-label={colums[i]}>{v}</td>
+                               <td className='campo' key={i} data-label={colums[i]}>{v}</td>
                            ))}
                            </tr>
                        ))
