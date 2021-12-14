@@ -22,7 +22,7 @@ export const NavigationBar = () => {
     return (
         <nav className="navbar | navbar-expand-lg | fixed-top | navbar-uas" aria-label="Main navigation">     
             <div className="container-fluid">
-                <Link className="navbar-brand | p-1" to="/" onClick={toggle}>
+                <Link className="navbar-brand | p-1" to="/">
                     <img
                         src={image('./UAS.png').default}
                         alt="UAS logo"

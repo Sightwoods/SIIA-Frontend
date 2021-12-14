@@ -15,9 +15,12 @@ export const Dropdown = ({name, icon = "", profile, children}) => {
         }
         document.addEventListener("click", checkBlur);
 
-        ( isOpen ) 
-        ? dropdown.current.classList.add('active')
-        : dropdown.current.classList.remove('active')
+        if ( isOpen ) {
+            dropdown.current.classList.add('active');
+        }
+        else {
+            dropdown.current.classList.remove('active');
+        }
 
         return () => document.removeEventListener("click", checkBlur);
     }, [isOpen])
@@ -34,7 +37,7 @@ export const Dropdown = ({name, icon = "", profile, children}) => {
 
     return (
         <div className="dropdown" data-dropdown ref={dropdown}>
-            <NavButton icon={icon} profile={profile} onClick={ toggleDropDown } data-dropdown-button>{ name }</NavButton>
+            <NavButton icon={icon} profile={profile} state={isOpen} onClick={ toggleDropDown } data-dropdown-button>{ name }</NavButton>
             <DropdownMenu>
                 {children}
             </DropdownMenu>
