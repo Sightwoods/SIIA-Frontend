@@ -9,7 +9,7 @@ export const StudentInfoScreen = () => {
                       <div className='row'>
                         <div className='col-sm-4 rounded-start' id='perfil'>
                           <div className='card-block text-center text-white'>
-                            <i class="fas fa-users fa-7x mt-5"></i>
+                            <i className="fas fa-users fa-7x mt-5"></i>
                             <h2 className='font-weight-bold mt-4'>Ruben</h2>
                             <p>Facultad de Informatica Culiacan</p>
                           </div>
