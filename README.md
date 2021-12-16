@@ -1,18 +1,18 @@
-# Getting Started with Create React App
+# Sistema Información Integral modulo Alumnos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Resideño de la página SIIA UAS.
 
-## Available Scripts
+## Scripts Disponibles
 
-In the project directory, you can run:
+En la raíz del proyecto puedes ejectuar los siguientes comandos:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Inicia la apo en el modo desarrollo.\
+Abre [http://localhost:3000](http://localhost:3000) para visualizarlo en el navegador.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+La página se refrescará cuando guardes nuevos cambios.\
+Tambien veras un lint de errores en la consola.
 
 ### `npm test`
 
