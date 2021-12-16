@@ -22,22 +22,22 @@ export const CourseLoadScreen = () =>{
                 </div>
                 <div>
                     <table className="tabla">
-                        <thead>
-                            <tr>
-                                <th>Clave</th>
-                                <th>Materia</th>
-                                <th>Plan de Estudio</th>
-                                <th>Periodo</th>
-                                <th>Grupo</th>
+                        <thead className='cabecera'>
+                            <tr className='fila'>
+                                <th className='columna'>Clave</th>
+                                <th className='columna'>Materia</th>
+                                <th className='columna'>Plan de Estudio</th>
+                                <th className='columna'>Periodo</th>
+                                <th className='columna'>Grupo</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
+                            <tr className='fila'>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
                             </tr>
                         </tbody>
                     </table>

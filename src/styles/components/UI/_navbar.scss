@@ -52,7 +52,7 @@
 }
 
 /* Mobile */
-@media only screen and (max-width : 991px) {
+@media only screen and (max-width : 991.92px) {
     .btn-nav-uas {
         background-color: transparent;  
         align-items: center;
@@ -88,7 +88,7 @@
         background-color: $gold-500;
         left: 0%;
         right: 100%;
-        width: 80%;
+        width: 60%;
         transform: translateX(-100%);
     }
     
@@ -137,4 +137,44 @@
             content: "";
         }
     }
+}
+
+/* Navbar size */
+// On laptop Small
+@media only screen and (min-width : 992px) and (max-width : 1306px) {
+    .navbar-uas {
+        .navbar-brand {
+            .title:nth-child(2) { display: none !important; }
+            .title:nth-child(3) { display: inline-block !important; }
+        }
+    }
+
+    .btn-nav-uas {
+        padding-top: 0;
+        padding-bottom: 0;
+    
+        i {
+            // display: none;
+        }
+    
+        span {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 1150px){
+    .btn-nav-uas {
+        i { display: none; }
+    }
+}
+
+/* Canvas Size */
+// On tablet
+@media only screen and (max-width: 991.92px) {
+    .canva-uas { width: 300px; }
+}
+// On Mobile
+@media only screen and (max-width: 425px) {
+    .canva-uas { width: 80%; }
 }

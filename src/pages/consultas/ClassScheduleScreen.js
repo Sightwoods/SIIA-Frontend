@@ -11,62 +11,62 @@ export const ClassScheduleScreen = () =>{
                 </div>
                 <div>
                     <table className="tabla">
-                        <thead>
-                            <tr>
-                                <th>Clave</th>
-                                <th>Materia</th>
-                                <th>Lunes</th>
-                                <th>Martes</th>
-                                <th>Miercoles</th>
-                                <th>Jueves</th>
-                                <th>Viernes</th>
+                        <thead className='cabecera'>
+                            <tr className='fila'>
+                                <th className='columna'>Clave</th>
+                                <th className='columna'>Materia</th>
+                                <th className='columna'>Lunes</th>
+                                <th className='columna'>Martes</th>
+                                <th className='columna'>Miercoles</th>
+                                <th className='columna'>Jueves</th>
+                                <th className='columna'>Viernes</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th>1</th>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
+                            <tr className='fila'>
+                                <th className='columna'>1</th>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
                             </tr>
-                            <tr>
-                                <th>2</th>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
+                            <tr className='fila'>
+                                <th className='columna'>2</th>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
                             </tr>
-                            <tr>
-                                <th>3</th>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
+                            <tr className='fila'> 
+                                <th className='columna'>3</th>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
                             </tr>
-                            <tr>
-                                <th>4</th>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
+                            <tr className='fila'>
+                                <th className='columna'>4</th>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
                             </tr>
-                            <tr>
-                                <th>5</th>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
+                            <tr className='fila'>
+                                <th className='columna'>5</th>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
                             </tr>
                         </tbody>
                     </table>

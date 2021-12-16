@@ -120,11 +120,6 @@
                 "id": 3000,
                 "paths": [
                     {
-                        "id": 30000,
-                        "name": "Guías",
-                        "path": "/guias"
-                    },
-                    {
                         "id": 30001,
                         "name": "Imprimir formatos",
                         "path": "/formatos"

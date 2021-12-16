@@ -1,8 +1,4 @@
-import React from 'react';
 import { Layout } from '../../components/layout/Layout';
-//import {Table} from '../../components/UI/Table';
-
-
 
 export const StudentInfoScreen = () => {
     return (
@@ -98,6 +94,6 @@ export const StudentInfoScreen = () => {
                   </div>
               </div>
           </div>
-        </Layout>
-    )
+      </Layout>
+  )
 }
