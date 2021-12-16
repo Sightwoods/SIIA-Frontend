@@ -11,24 +11,24 @@ export const GradeCorrectionScreen = () => {
                 </div>
                 <div>
                     <table>
-                        <thead>
-                            <tr>
-                                <th>Materia</th>
-                                <th>Escuela</th>
-                                <th>Carrera</th>
-                                <th>Ciclo de Ingreso</th>
-                                <th>Periodo</th>
-                                <th>Grupo</th>
+                        <thead className='cabecera'> 
+                            <tr className='fila'>
+                                <th className='columna'>Materia</th>
+                                <th className='columna'>Escuela</th>
+                                <th className='columna'>Carrera</th>
+                                <th className='columna'>Ciclo de Ingreso</th>
+                                <th className='columna'>Periodo</th>
+                                <th className='columna'>Grupo</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
-                                <td><input type="text"></input></td>
+                            <tr className='fila'>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
+                                <td className='campo'><input type="text"></input></td>
                             </tr>
                         </tbody>
                     </table>
