@@ -4,7 +4,7 @@ export const Table = ({list,colums,title}) =>{
     return(
         <div className='contenido'>
         <h5 className='text-center fw-bold titulo'>{title}</h5>
-        <br/>
+
         <table className='tab'>
             <thead className='cabecera'>
                    {
