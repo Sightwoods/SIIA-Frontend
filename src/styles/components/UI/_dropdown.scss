@@ -59,3 +59,21 @@
     transform: translateY(0);
     pointer-events: auto;
 }
+
+@media only screen and (max-width : 1350px) {
+    .nav-item:nth-child(4) {
+        .dropdown {
+            &__menu {
+                left: -20px;
+            }
+        }
+    }
+
+    .nav-item:nth-child(6) {
+        .dropdown {
+            &__menu {
+                left: calc(-100% - 100px);
+            }
+        }
+    }
+}

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 export const useNav = ( initialState = {}) => {
 
     const [isNavOpen, setIsNavOpen] = useState( initialState );
+    const isMobile = useMediaQuery({ query: '(max-width: 991.92px)' });
     
-    
+
     useEffect(() => {
         if ( isNavOpen ) 
         {
@@ -20,7 +22,11 @@ export const useNav = ( initialState = {}) => {
     }, [isNavOpen])
 
     useEffect(() => {
-        setIsNavOpen( false );
+        setIsNavOpen(false);
+    }, [isMobile])
+
+    useEffect(() => {
+        setIsNavOpen(false);
     }, [])
 
     const toggle = () => {

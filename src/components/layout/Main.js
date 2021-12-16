@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Main = (props) => {
     return (
-        <main>
+        <main className="animate__animated | animate__fadeIn | animate__faster">
             { props.children }
         </main>
     )
