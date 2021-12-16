@@ -1,4 +1,4 @@
-# Sistema Información Integral modulo Alumnos
+# Sistema Información Integral módulo Alumnos
 
 Resideño de la página SIIA UAS.
 
