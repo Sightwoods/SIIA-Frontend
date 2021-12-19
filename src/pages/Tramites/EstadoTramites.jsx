@@ -1,7 +1,6 @@
-import React from 'react';
 import { Layout } from '../../components/layout/Layout';
 
-export const Payments = () =>{
+export const EstadoTramites = () =>{
     return(
         <Layout>
             <div>

@@ -1,7 +1,6 @@
-import React from 'react'
-import { Layout } from '../../components/layout/Layout'
+import { Layout } from '../../components/layout/Layout';
 
-export const ClassScheduleScreen = () =>{
+export const HorarioClases = () =>{
     return (
         <Layout>
             <div>

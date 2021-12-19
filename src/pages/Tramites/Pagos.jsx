@@ -1,9 +1,6 @@
-import React from 'react';
 import { Layout } from '../../components/layout/Layout';
 
-
-
-export const StatusProcedures = () =>{
+export const Pagos = () =>{
     return(
         <Layout>
             <div>

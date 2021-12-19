@@ -1,23 +1,21 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { GeneratePaymentFormat } from '../pages/Tramites/GeneratePaymentFormat ';
-import {StatusProcedures} from '../pages/Tramites/StatusProcedures'
-import {Payments} from '../pages/Tramites/Payments'
-import {Certificate} from '../pages/Tramites/Certificate'
-import {Title} from '../pages/Tramites/Title'
-import {UnitChange} from '../pages/Tramites/Unit-Change'
-
+import { CambioUnidad } from '../pages/Tramites/CambioUnidad';
+import { Certificado } from '../pages/Tramites/Certificado';
+import { EstadoTramites } from '../pages/Tramites/EstadoTramites';
+import { FormatoPago } from '../pages/Tramites/FormatoPago';
+import { Pagos } from '../pages/Tramites/Pagos';
+import { Titulo } from '../pages/Tramites/Titulo';
 
 export const TramitesRoutes = () =>{
     return (
         <Routes>
-            <Route path="/movimientos/generar-pago" element={<GeneratePaymentFormat />} />
-            <Route path="/movimientos/estado-tramites" element={<StatusProcedures />} />
-            <Route path="/movimientos/pagar" element={<Payments />} />
-            <Route path="/solicitud/certificado" element={<Certificate />} />
-            <Route path="/solicitud/titulo" element={<Title/>} />
-            <Route path="/solicitud/cambio-unidad" element={<UnitChange/>} />
+            <Route path="/solicitud/cambio-unidad" element={<CambioUnidad />} />
+            <Route path="/solicitud/certificado" element={<Certificado />} />
+            <Route path="/movimientos/estado-tramites" element={<EstadoTramites />} />
+            <Route path="/movimientos/generar-pago" element={<FormatoPago />} />
+            <Route path="/movimientos/pagar" element={<Pagos />} />
+            <Route path="/solicitud/titulo" element={<Titulo />} />
         </Routes>
     )
 }

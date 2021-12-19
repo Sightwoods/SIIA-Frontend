@@ -16,7 +16,7 @@ const list=[
 const colums=["escuela","carrera","plan","periodo","grupo","vigencia","accion"];
 const title="Seleccione Unidad Acdemica de Proceso para el cambio"
 
-export const UnitChange = () =>{
+export const CambioUnidad = () =>{
     return(
         <Layout>
             <div>

@@ -1,7 +1,6 @@
-import React from 'react';
 import { Layout } from '../../components/layout/Layout';
 
-export const Certificate = () =>{
+export const Certificado = () =>{
     return(
         <Layout>
             <h1>Certificado</h1>

@@ -1,7 +1,6 @@
-import React from 'react';
 import { Layout } from '../../components/layout/Layout';
 
-export const Title = () =>{
+export const Titulo = () =>{
     return(
         <Layout>
             <h1>Titulo universitario</h1>

@@ -1,26 +1,25 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import { StudentInfoScreen } from '../pages/consultas/StudentInfoScreen';
-import { CredentialScreen } from '../pages/consultas/CredentialScreen';
-import { CourseLoadScreen } from '../pages/consultas/CourseLoadScreen';
-import { ClassScheduleScreen } from '../pages/consultas/ClassScheduleScreen';
-import { AcademicRecordScreen } from '../pages/consultas/AcademicRecordScreen';
-import { TestRequestScreen } from '../pages/consultas/TestRequestScreen';
-import { GradeCorrectionScreen } from '../pages/consultas/GradeCorrectionScreen'
-import { KardexScreen } from '../pages/consultas/KardexScreen'
+import { CargaAcademica } from '../pages/consultas/CargaAcademica';
+import { Credencial } from '../pages/consultas/Credencial';
+import { DatosGenerales } from '../pages/consultas/DatosGenerales';
+import { HistorialAcademico } from '../pages/consultas/HistorialAcademico';
+import { HorarioClases } from '../pages/consultas/HorarioClases';
+import { Kardex } from '../pages/consultas/Kardex';
+import { SolicitudCorreccion } from '../pages/consultas/SolicitudCorreccion';
+import { SolicitudExamen } from '../pages/consultas/SolicitudExamen';
 
 export const ConsultasRoutes = () => {
     return (
         <Routes>
-            <Route path="/estudiante/datos-generales" element={<StudentInfoScreen />} />
-            <Route path="/estudiante/credencial" element={<CredentialScreen />} />
-            <Route path="/estudiante/carga-academica" element={<CourseLoadScreen />} />
-            <Route path="/estudiante/horario-clases" element={<ClassScheduleScreen />} />
-            <Route path="/estudiante/historial-academico" element={<AcademicRecordScreen />} />
-            <Route path="/movimientos/impresion-solicitud-examen" element={<TestRequestScreen />} />
-            <Route path="/movimientos/correccion-calificacion" element={<GradeCorrectionScreen />} />
-            <Route path="/movimientos/kardex" element={<KardexScreen />} />
+            <Route path="/estudiante/carga-academica" element={<CargaAcademica />} />
+            <Route path="/estudiante/credencial" element={<Credencial />} />
+            <Route path="/movimientos/correccion-calificacion" element={<SolicitudCorreccion />} />
+            <Route path="/estudiante/datos-generales" element={<DatosGenerales />} />
+            <Route path="/estudiante/historial-academico" element={<HistorialAcademico />} />
+            <Route path="/estudiante/horario-clases" element={<HorarioClases />} />
+            <Route path="/movimientos/impresion-solicitud-examen" element={<SolicitudExamen />} />
+            <Route path="/movimientos/kardex" element={<Kardex />} />
         </Routes>
     )
 }

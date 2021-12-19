@@ -1,4 +1,3 @@
-import React from 'react';
 import { Layout } from '../../components/layout/Layout';
 import {Table} from '../../components/UI/Table';
 
@@ -11,7 +10,7 @@ const list=[{
 const colums =["codigo","concaptoPago","pago"];
 const title="Conceptos disponibles";
 
-export const GeneratePaymentFormat = ()=>{
+export const FormatoPago = ()=>{
     return(
         <Layout>
             <fieldset className='escuela'>

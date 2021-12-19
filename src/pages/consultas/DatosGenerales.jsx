@@ -1,6 +1,6 @@
 import { Layout } from '../../components/layout/Layout';
 
-export const StudentInfoScreen = () => {
+export const DatosGenerales = () => {
     return (
         <Layout>
           <div className="container"> 
