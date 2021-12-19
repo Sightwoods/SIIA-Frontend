@@ -1,20 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useMediaQuery } from 'react-responsive';
-
-import { AuthContext } from '../../../auth/AuthContext';
-import { types } from '../../../types/types';
+import { useUser } from '../../../hooks/useUser';
 
 import { DesktopProfile } from './DesktopProfile';
 import { MobileProfile } from './MobileProfile';
 
 export const Profile = () => {
-    const { dispatch } = useContext(AuthContext);
-    
-    const handleLogout = () => {
-        dispatch({
-            type: types.logout
-        });
-    }
+
+    const { logout } = useUser();
 
     const changeNIP = () => alert('Cambiar NIP presionado');
     const accesibility = () => alert('Accesibilidad presionado');
@@ -27,12 +20,12 @@ export const Profile = () => {
             {
                 ( isDesktopOrLaptop )
                 &&
-                    <DesktopProfile handleLogout={handleLogout} changeNIP={changeNIP} accesibility={accesibility}/>
+                    <DesktopProfile handleLogout={logout} changeNIP={changeNIP} accesibility={accesibility}/>
             }
             {
                 ( isMobile )
                 &&
-                    <MobileProfile handleLogout={handleLogout} changeNIP={changeNIP} accesibility={accesibility}/>
+                    <MobileProfile handleLogout={logout} changeNIP={changeNIP} accesibility={accesibility}/>
             }
         </>
     )

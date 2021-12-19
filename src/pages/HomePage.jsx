@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import { Layout } from '../components/layout/Layout';
 import { image } from '../helpers/image';
 
-export const DashboardScreen = () => {
+export const HomePage = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 991.92px)' })
 
     return (

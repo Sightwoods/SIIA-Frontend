@@ -1,7 +1,7 @@
 import { Layout } from '../components/layout/Layout';
 import { TestComponent } from '../components/UI/TestComponent';
 
-export const TestScreen = () => {
+export const TestPage = () => {
     return (
         <Layout>
             <TestComponent />

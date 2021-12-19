@@ -9,7 +9,7 @@ import {Title} from '../pages/Tramites/Title'
 import {UnitChange} from '../pages/Tramites/Unit-Change'
 
 
-export const FormalitiesRouter = () =>{
+export const TramitesRoutes = () =>{
     return (
         <Routes>
             <Route path="/movimientos/generar-pago" element={<GeneratePaymentFormat />} />

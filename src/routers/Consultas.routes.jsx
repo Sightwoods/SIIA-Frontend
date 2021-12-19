@@ -10,7 +10,7 @@ import { TestRequestScreen } from '../pages/consultas/TestRequestScreen';
 import { GradeCorrectionScreen } from '../pages/consultas/GradeCorrectionScreen'
 import { KardexScreen } from '../pages/consultas/KardexScreen'
 
-export const ConsultationRouter = () => {
+export const ConsultasRoutes = () => {
     return (
         <Routes>
             <Route path="/estudiante/datos-generales" element={<StudentInfoScreen />} />

@@ -1,16 +1,16 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useContext } from 'react';
 
-import { PrivateRoute } from './PrivateRoute';
-import { PublicRoute } from './PublicRoute';
+import { AppContext } from '../context/AppContext';
 
-import { DashboardRouter } from './DashboardRouter';
-import { LoginScreen } from '../pages/LoginScreen';
+import { PrivateRoute } from './Private.routes';
+import { PublicRoute } from './Public.routes';
 
-import { AuthContext } from '../auth/AuthContext';
+import { HomeRoutes } from './Home.routes';
+import { LoginPage } from '../pages/LoginPage';
 
 export const AppRouter = () => {
-    const { user } = useContext(AuthContext);
+    const { auth } = useContext(AppContext);
 
     return (
         <BrowserRouter>
@@ -18,16 +18,16 @@ export const AppRouter = () => {
                 <Route
                     path="/*"
                     element={
-                        <PrivateRoute isAuthenticated={user.logged}>
-                            <DashboardRouter />
+                        <PrivateRoute isAuthenticated={auth.status}>
+                            <HomeRoutes />
                         </PrivateRoute>
                     }
                 />
                 <Route 
                     path="/login"
                     element={
-                        <PublicRoute isAuthenticated={user.logged}>
-                            <LoginScreen />
+                        <PublicRoute isAuthenticated={auth.status}>
+                            <LoginPage />
                         </PublicRoute>
                     }
                 />

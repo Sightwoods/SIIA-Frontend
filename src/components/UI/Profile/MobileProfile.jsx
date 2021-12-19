@@ -3,10 +3,13 @@ import { Image } from 'react-bootstrap';
 
 import { MenuCanvas } from '../Navbar/Offcanva-Mobile/MenuCanvas';
 import { image } from '../../../helpers/image';
+import { useUser } from '../../../hooks/useUser';
 
 export const MobileProfile = ({name="Mi perfil", icon="fa fas fa-user", ...props}) => {
+    const { user } = useUser();
+
     return (
-        <MenuCanvas name={name} icon={icon} user="Osiris Meza">
+        <MenuCanvas name={name} icon={icon} user={ user.name }>
             <div className="canvasMenu__profile">
                 <button className="logout" onClick={props.handleLogout}>Cerrar sesión</button>
                 <div className="profile__picture">
@@ -16,9 +19,9 @@ export const MobileProfile = ({name="Mi perfil", icon="fa fas fa-user", ...props
                 </div>
                 <div className="profile__info">
                     <div className="data">
-                        <span>Ruben Gomez Ulloa</span>
-                        <span>r.gomez18@info.uas.edu.mx</span>
-                        <span>1542924-5</span>
+                        <span>{ user.name }</span>
+                        <span>{ user.email }</span>
+                        <span>{ user.cuenta }</span>
                     </div>
                     <div className="options">
                         <button onClick={props.changeNIP}>Cambiar NIP</button>

@@ -1,19 +1,21 @@
-import React, { useContext } from 'react';
 import { Carousel, Row } from 'react-bootstrap';
-import { AuthContext } from '../auth/AuthContext';
 
 import { image } from "../helpers/image";
-import { types } from '../types/types';
+import { useUser } from '../hooks/useUser';
+import { useForm } from '../hooks/useForm'
 
-export const LoginScreen = () => {
-    const { dispatch } = useContext(AuthContext);
+export const LoginPage = () => {
+    const { login } = useUser();
+    const [ formValues, handleChange ] = useForm({
+        numCuenta: 'eve.holt@reqres.in',
+        nip: 'cityslicka'
+    });
+
+    const { numCuenta, nip } = formValues;
 
     const handleSubmit = ( e ) => {
         e.preventDefault();
-        
-        dispatch({
-            type: types.login
-        })
+        login( numCuenta, nip );
     }
 
     return (
@@ -77,7 +79,10 @@ export const LoginScreen = () => {
                                         className="form-control border-0"
                                         id="numCuenta"
                                         placeholder="Ingresa tu número de cuenta"
-                                        aria-describedby="emailHelp"
+                                        aria-describedby="Número de cuenta"
+                                        name='numCuenta'
+                                        value={numCuenta}
+                                        onChange={handleChange}
                                     />
                                     <i className="numCuenta__icon fas fa-user-graduate fa-lg"></i>
                                 </div>
@@ -90,8 +95,11 @@ export const LoginScreen = () => {
                                         placeholder="Ingresa tu NIP"
                                         id="nip"
                                         type="password"
-                                        pattern="[0-9]*"
+                                        // pattern="[0-9]*"
                                         inputMode="numeric"
+                                        name='nip'
+                                        value={nip}
+                                        onChange={handleChange}
                                     />
                                     <i className="nip__icon fas fa-lock fa-lg"></i>
                                 </div>
@@ -99,7 +107,7 @@ export const LoginScreen = () => {
                             <div className="form-check">
                                 <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" defaultChecked={false} />
                                 <label className="form-check-label text-white" htmlFor="flexCheckChecked">
-                                    Mostrar contraseña
+                                    Mostrar NIP
                                 </label>
                             </div>
                             <button type="submit" className="btn btn-primary w-100">Iniciar</button>

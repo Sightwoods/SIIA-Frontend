@@ -3,7 +3,11 @@ import { image } from '../../../helpers/image';
 import { Dropdown } from '../Dropdown/Dropdown';
 import { LinkGroup } from '../Dropdown/LinkGroup';
 
+import { useUser } from '../../../hooks/useUser';
+
 export const DesktopProfile = ({handleLogout}) => {
+
+    const { user } = useUser();
 
     return (
         <Dropdown icon="fa fas fa-user" name="Mi perfil" profile="true">
@@ -17,9 +21,9 @@ export const DesktopProfile = ({handleLogout}) => {
                     <div className="nav-profile__info">
                         <button className="logout" onClick={handleLogout}>Cerrar sesión</button>
                         <div className="data">
-                            <span>Ruben Gomez Ulloa</span>
-                            <span>r.gomez18@info.uas.edu.mx</span>
-                            <span>1542924-5</span>
+                            <span>{ user.name }</span>
+                            <span>{ user.email }</span>
+                            <span>{ user.cuenta }</span>
                         </div>
                         <div className="options">
                             <button>Cambiar NIP</button>
