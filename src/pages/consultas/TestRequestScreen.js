@@ -3,39 +3,24 @@ import { Layout } from '../../components/layout/Layout'
 
 export const TestRequestScreen = () => {
     return (
-        <Layout>
-                <div className='container'>
-                        <h5 id='titulo'>Imprimir Solicitud de Examen</h5>
-                        <hr/>
-                    <div className='table-responsive'>
-                        <table className='table' id='tabla'>
-                            <thead id='tcabecera'>
-                                <tr>
-                                    <th scope='col'>Clave</th>
-                                    <th scope='col'>Escuela</th>
-                                    <th scope='col'>Carrera</th>
-                                    <th scope='col'>Plan de Estudio</th>
-                                    <th scope='col'>Periodo</th>
-                                    <th scope='col'>Grupo</th>
-                                    <th scope='col'>Vigencia</th>
-                                    <th scope='col'>Numero de Escuela</th>
-                                </tr>
-                            </thead>
-                            <tbody id='tcuerpo'>
-                                <tr>
-                                   <th scope='row'>2700</th> 
-                                   <td>Facultad de Informatica Culiacan</td>
-                                   <td>Licenciatura en Informatica</td>
-                                   <td>4</td>
-                                   <td>7</td>
-                                   <td>2</td>
-                                   <td>Activo</td>
-                                   <td>0001</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <Layout>   
+        <div className='container'>
+            <h5 id='titulo'>Solicitud de Examen</h5>
+            <hr/>
+            <h5 id='titulo'>Seleccione una Materia</h5>
+            <a href='#/' id='carta'>
+            <div className="card" >
+                <div className="card-body">
+                    <h5 className="card-title">INFRAESTRUCTURA INFORMÁTICA</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">Faculta de Informatica Culiacan</h6>
+                    <p>Licenciatura en Informatica</p>
+                    <p>Plan de Estudios: 4</p>
+                    <p>Periodo: 7</p>
+                    <p>Grupo: 2</p>
                 </div>
+            </div>
+            </a>
+        </div>
         </Layout>
     );
 }

@@ -10,7 +10,7 @@ export const CourseLoadScreen = () =>{
                 <h5 id='titulo'>Carga Académica</h5>
                 <hr/>
                 <h5 id='titulo'>Facultad de Informatica Culiacan</h5>
-                <table className="table table-hover table-borderless border border-dark rounded" id='tabla'>
+                <table className="table table-hover table-borderless" id='tabla'>
                     <thead id='tcabecera'>
                         <tr>
                             <th scope="col">Clave</th>

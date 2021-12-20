@@ -5,7 +5,7 @@ export const GradeCorrectionScreen = () => {
     return (
         <Layout>
             <div className='container'>
-                <h5 id='titulo'>Coorecion de Calificacion</h5>
+                <h5 id='titulo'>Correcion de Calificacion</h5>
                 <hr/>
                 <div className='table-responsive'>
                     <table className='table' id='tabla'>
