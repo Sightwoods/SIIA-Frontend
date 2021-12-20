@@ -7,7 +7,8 @@ export const CourseLoadScreen = () =>{
         <Layout>
             <div className='container'>
                 <div className='table-responsive'>
-                <h5 id='titulo'>Ruben Gomez Ulloa</h5>
+                <h5 id='titulo'>Carga Académica</h5>
+                <hr/>
                 <h5 id='titulo'>Facultad de Informatica Culiacan</h5>
                 <table className="table table-hover table-borderless border border-dark rounded" id='tabla'>
                     <thead id='tcabecera'>
