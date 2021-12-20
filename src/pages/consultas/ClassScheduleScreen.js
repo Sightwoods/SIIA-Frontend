@@ -10,27 +10,30 @@ export const ClassScheduleScreen = () =>{
                     <hr/>
                 </div>
                 <div>
-                    <table className="tabla">
-                        <thead className='cabecera'>
-                            <tr className='fila'>
-                                <th className='columna'>Clave</th>
-                                <th className='columna'>Materia</th>
-                                <th className='columna'>Lunes</th>
-                                <th className='columna'>Martes</th>
-                                <th className='columna'>Miercoles</th>
-                                <th className='columna'>Jueves</th>
-                                <th className='columna'>Viernes</th>
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th className='col'>Clave</th>
+                                <th className='col'>Materia/Maestro</th>
+                                <th className='col'>Lunes</th>
+                                <th className='col'>Martes</th>
+                                <th className='col'>Miercoles</th>
+                                <th className='col'>Jueves</th>
+                                <th className='col'>Viernes</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr className='fila'>
-                                <th className='columna'>1</th>
-                                <td className='campo'><input type="text"></input></td>
-                                <td className='campo'><input type="text"></input></td>
-                                <td className='campo'><input type="text"></input></td>
-                                <td className='campo'><input type="text"></input></td>
-                                <td className='campo'><input type="text"></input></td>
-                                <td className='campo'><input type="text"></input></td>
+                            <tr>
+                                <th className='row'>1</th>
+                                <td>
+                                    LENGUAJES AUTÓMATAS Y COMPLEJIDAD
+                                    GASTELUM CHAVIRA DIEGO ALONSO
+                                </td>
+                                <td>18-19</td>
+                                <td>18-19</td>
+                                <td>18-19</td>
+                                <td>18-19</td>
+                                <td>18-19</td>
                             </tr>
                             <tr className='fila'>
                                 <th className='columna'>2</th>
