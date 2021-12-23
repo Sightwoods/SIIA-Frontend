@@ -5,6 +5,7 @@ export const Certificate = () =>{
     return(
         <Layout>
             <h1>Certificado</h1>
+      
         </Layout>
     )
 }

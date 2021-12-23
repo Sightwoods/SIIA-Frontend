@@ -1,13 +1,10 @@
 .datatable{
     .cabezera{
         th{
-        color: #FFF;
-        background-color: #9DACBF;
-        font-size: 14px;
-        padding: 4px;
-        text-align: center;
-        height: 20px;
-        border: 1px solid #2580a2;
+            background-color: $blue-500;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
         }
     }
 }
