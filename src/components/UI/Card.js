@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Card = (list,ruta) =>{
+export const Card = ({list,ruta}) =>{
     let l=Object.values(list)
     return(
         <div className='container'>
