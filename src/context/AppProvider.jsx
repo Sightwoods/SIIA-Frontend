@@ -92,21 +92,21 @@ export const AppProvider = ({children}) => {
             else {
                 authDispatch({ type: types.authCheckingFinish });
                 if ( body.msg === 'Token no válido'){
-                    // Swal.fire({
-                    //     icon: 'error',
-                    //     title: '¡La sesión ha expirado!',
-                    //     text: 'Vuelva a iniciar sesión',
-                    // })
                     Toast.fire({
                         icon: 'error',
                         title: '¡La sesión ha expirado!'
                     })
                 }
+                
             }
         }
         catch(e) {
             authDispatch({ type: types.authCheckingFinish });
             console.log(e);
+            Toast.fire({
+                icon: 'error',
+                title: 'Ha ocurrido un problema, intente más tarde'
+            })
         }
     }, []);
 

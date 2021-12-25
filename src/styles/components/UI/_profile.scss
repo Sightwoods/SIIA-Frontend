@@ -10,7 +10,6 @@
         
         .pic__container {
             border-radius: 50%;
-            outline: 3px ridge $gold-400;
 
             img {
                 height: 100px;
@@ -56,10 +55,11 @@
             }
 
             span:nth-child(1){
-                font-size: 1em;
+                font-size: 1.1em;
                 font-weight: 600;
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                // text-align: center;
+                // text-overflow: ellipsis;
+                // white-space: nowrap;
             }
             span:nth-child(2){
                 color: #0000DD;
@@ -69,7 +69,7 @@
                 text-decoration: underline; 
             }
             span:nth-child(3){
-                color: $light;
+                color: lighten($color: $black, $amount: 15);
                 font-size: 0.9em;
                 font-weight: 400;
             }
@@ -79,7 +79,7 @@
             padding: 5px 10px;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-between;
 
             button {
                 padding: 0px;

@@ -9,8 +9,6 @@ export const DesktopProfile = ({handleLogout}) => {
 
     const { user } = useUser();
 
-    // const name = user.name.split(" ").splice(1,1).join(" ")
-
     return (
         <Dropdown icon="fa fas fa-user" name="Mi perfil" profile="true">
             <LinkGroup>
@@ -25,7 +23,7 @@ export const DesktopProfile = ({handleLogout}) => {
                         <div className="data">
                             <span>{ user.nombre }</span>
                             <span>{ user.email }</span>
-                            <span>{ user.cuenta }</span>
+                            <span>Cuenta: { user.cuenta }</span>
                         </div>
                         <div className="options">
                             <button>Cambiar NIP</button>
