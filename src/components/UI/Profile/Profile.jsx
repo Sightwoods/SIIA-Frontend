@@ -7,7 +7,7 @@ import { MobileProfile } from './MobileProfile';
 
 export const Profile = () => {
 
-    const { logout } = useUser();
+    const { authLogout } = useUser();
 
     const changeNIP = () => alert('Cambiar NIP presionado');
     const accesibility = () => alert('Accesibilidad presionado');
@@ -20,12 +20,12 @@ export const Profile = () => {
             {
                 ( isDesktopOrLaptop )
                 &&
-                    <DesktopProfile handleLogout={logout} changeNIP={changeNIP} accesibility={accesibility}/>
+                    <DesktopProfile handleLogout={authLogout} changeNIP={changeNIP} accesibility={accesibility}/>
             }
             {
                 ( isMobile )
                 &&
-                    <MobileProfile handleLogout={logout} changeNIP={changeNIP} accesibility={accesibility}/>
+                    <MobileProfile handleLogout={authLogout} changeNIP={changeNIP} accesibility={accesibility}/>
             }
         </>
     )

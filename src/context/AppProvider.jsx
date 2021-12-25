@@ -1,59 +1,118 @@
-import { useReducer } from 'react';
+import { useCallback, useReducer } from 'react';
+import Swal from 'sweetalert2';
 
 import { AppContext } from './AppContext';
 import { authReducer } from './reducers/authReducer';
-// import { uiReducer } from './reducers/uiReducer';
-import { fetchSinToken } from '../helpers/fetch';
+import { fetchConToken, fetchSinToken } from '../helpers/fetch';
 import { types } from './types/types';
 
 const auth = {
-    user: null,
-    token: localStorage.getItem('token') || false,
-    status: null,
+    user: {
+        id: null,
+    },
+    checking: true,
 }
 
-// const ui = { checking: false }
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+})
 
 export const AppProvider = ({children}) => {
 
     const [authState, authDispatch] = useReducer(authReducer, auth);
-    // const [uiState, uiDispatch] = useReducer(uiReducer, ui);
 
     // ? Acciones para la autenticación
-    const login = async (email, password) => {
+    const authLogin = async (email, password) => {
         try {
-            const resp = await fetchSinToken( 'login', {email, password}, 'POST')
+            const resp = await fetchSinToken( 'login', {email, password}, 'GET')
             const body = await resp.json();
-            if ( body.token ) {
+
+            if ( body.ok ) {
                 localStorage.setItem( 'token', body.token );
                 localStorage.setItem( 'token-init-date', new Date().getTime() );
                 authDispatch({
-                    type: types.login,
+                    type: types.authLogin,
                     payload: {
-                        token: body.token,
                         user: {
-                            cuenta: '155456-3',
-                            name: 'David Adrian Chavira Cebreros',
-                            email: 'da.chavira18@info.uas.edu.mx',
+                            id: body.id,
+                            cuenta: body.cuenta,
+                            nombre: body.nombre,
+                            email: body.email
                         }
                     }
                 })
             }
             else {
-                alert('Error en la petición'); // DEV
+                Toast.fire({
+                    icon: 'error',
+                    title: '¡Número de cuenta o NIP incorrectos!'
+                })
             }
         }
         catch(e) {
+            Toast.fire({
+                icon: 'error',
+                title: 'Ha ocurrido un problema, intente más tarde'
+            })
             console.log(e);
         }
     }
-    const logout = () => { authDispatch({ type: types.logout }) }
-    const authCheck = () => {}
+    const authLogout = () => {
+        localStorage.clear();
+        authDispatch({ type: types.authLogout })
+    }
+    const authCheck = useCallback(async () => {
+        try {
+            const resp = await fetchConToken( 'renew' );
+            const body = await resp.json();
+            
+            if ( body.ok ) {
+                localStorage.setItem( 'token', body.token );
+                localStorage.setItem( 'token-init-date', new Date().getTime() );
+                authDispatch({
+                    type: types.authLogin,
+                    payload: {
+                        user: {
+                            id: body.id,
+                            cuenta: body.cuenta,
+                            nombre: body.nombre,
+                            email: body.email
+                        }
+                    }   
+                });
+            }
+            else {
+                authDispatch({ type: types.authCheckingFinish });
+                if ( body.msg === 'Token no válido'){
+                    // Swal.fire({
+                    //     icon: 'error',
+                    //     title: '¡La sesión ha expirado!',
+                    //     text: 'Vuelva a iniciar sesión',
+                    // })
+                    Toast.fire({
+                        icon: 'error',
+                        title: '¡La sesión ha expirado!'
+                    })
+                }
+            }
+        }
+        catch(e) {
+            authDispatch({ type: types.authCheckingFinish });
+            console.log(e);
+        }
+    }, []);
 
     return (
         <AppContext.Provider value={{
-            auth: { ...authState, login, logout, authCheck },
-            // ui:   { ...uiState }
+            auth: { ...authState, authLogin, authLogout, authCheck }
         }}>
             {children}
         </AppContext.Provider>

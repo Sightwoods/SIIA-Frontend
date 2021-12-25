@@ -9,6 +9,8 @@ export const DesktopProfile = ({handleLogout}) => {
 
     const { user } = useUser();
 
+    // const name = user.name.split(" ").splice(1,1).join(" ")
+
     return (
         <Dropdown icon="fa fas fa-user" name="Mi perfil" profile="true">
             <LinkGroup>
@@ -21,7 +23,7 @@ export const DesktopProfile = ({handleLogout}) => {
                     <div className="nav-profile__info">
                         <button className="logout" onClick={handleLogout}>Cerrar sesión</button>
                         <div className="data">
-                            <span>{ user.name }</span>
+                            <span>{ user.nombre }</span>
                             <span>{ user.email }</span>
                             <span>{ user.cuenta }</span>
                         </div>

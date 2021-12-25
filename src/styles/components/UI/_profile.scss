@@ -1,20 +1,20 @@
 .nav-profile {
     display: inline-flex;
-    padding: 10px 0px;
+    padding: 5px 0px;
     
     &__picture {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
+        padding: 10px 10px;
         
         .pic__container {
             border-radius: 50%;
             outline: 3px ridge $gold-400;
 
             img {
-                height: 120px;
-                width: 120px;
+                height: 100px;
+                width: 100px;
             }
         }
     }
@@ -30,38 +30,47 @@
             background: transparent;
             border: none;
             color: #0000DD;          
-            text-decoration: underline;
+            text-decoration: none;
         }
         
         .logout {
-            padding: 2px 5px;  
-            color: $light;
+            padding: 5px 5px;  
+            color: $normal;
             text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 400;
+
+            &:hover {
+                background-color: $lighter;
+            }
         }
 
         .data {
             display: flex;
             flex-direction: column;
-            padding: 10px;
+            padding: 10px 8px;
 
             span {
                 font-family: $base-font;
+                padding: 1.5px 0px;
             }
 
             span:nth-child(1){
-                font-size: 1.3em;
-                font-weight: 500;
+                font-size: 1em;
+                font-weight: 600;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
             span:nth-child(2){
                 color: #0000DD;
-                font-size: 1em;
-                font-weight: 300;
+                font-size: 0.9em;
+                font-weight: 400;
                 margin-bottom: 5px;
-                text-decoration: underline;
+                text-decoration: underline; 
             }
             span:nth-child(3){
                 color: $light;
-                font-size: 1em;
+                font-size: 0.9em;
                 font-weight: 400;
             }
         }
@@ -70,10 +79,15 @@
             padding: 5px 10px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-around;
 
             button {
                 padding: 0px;
+                font-size: 0.9em;
+                font-weight: 500;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }

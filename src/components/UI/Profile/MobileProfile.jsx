@@ -9,7 +9,7 @@ export const MobileProfile = ({name="Mi perfil", icon="fa fas fa-user", ...props
     const { user } = useUser();
 
     return (
-        <MenuCanvas name={name} icon={icon} user={ user.name }>
+        <MenuCanvas name={name} icon={icon} user={ user.nombre }>
             <div className="canvasMenu__profile">
                 <button className="logout" onClick={props.handleLogout}>Cerrar sesión</button>
                 <div className="profile__picture">
@@ -19,7 +19,7 @@ export const MobileProfile = ({name="Mi perfil", icon="fa fas fa-user", ...props
                 </div>
                 <div className="profile__info">
                     <div className="data">
-                        <span>{ user.name }</span>
+                        <span>{ user.nombre }</span>
                         <span>{ user.email }</span>
                         <span>{ user.cuenta }</span>
                     </div>
