@@ -27,6 +27,8 @@ Vayan actualizando la información en este README para un mejor seguimiento.
 
 Ejecuta el siguiente comando en una terminal 
 
-- json-server --watch db.json --port 3001
+```console
+~$ json-server --watch db.json --port 3001
+```
 
 Puedes crear las peticiones de acuerdo a tus necesidades en el archivo db.json
