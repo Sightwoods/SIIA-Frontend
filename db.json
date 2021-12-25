@@ -1,0 +1,19 @@
+{
+    "login": {
+        "id": "1",
+        "ok": "d",
+        "cuenta": "154254-5",
+        "nombre": "Alden Kevin Garcia Quintero",
+        "email": "ak.garcia18@info.uas.edu.mx",
+        "token": "dbdsUABDDAad65d4fd6"
+    },
+    "renew": {
+        "id": "1",
+        "ok": "true",
+        "cuenta": "154254-5",
+        "nombre": "Alden Kevin Garcia Quintero",
+        "email": "ak.garcia18@info.uas.edu.mx",
+        "token": "xfd.er4fgrfsdf-efed",
+        "msg": "Token no válido"
+    }
+}

@@ -1,27 +1,34 @@
-import { Carousel, Row } from 'react-bootstrap';
+import { Carousel, Col, Row } from 'react-bootstrap';
 
 import { image } from "../helpers/image";
 import { useUser } from '../hooks/useUser';
 import { useForm } from '../hooks/useForm'
 
 export const LoginPage = () => {
-    const { login } = useUser();
-    const [ formValues, handleChange ] = useForm({
-        numCuenta: 'eve.holt@reqres.in',
-        nip: 'cityslicka'
-    });
+    const { authLogin } = useUser();
+    const [ formValues, handleChange ] = useForm({numCuenta: '', nip: ''});
 
     const { numCuenta, nip } = formValues;
 
     const handleSubmit = ( e ) => {
         e.preventDefault();
-        login( numCuenta, nip );
+        authLogin( numCuenta, nip );
+    }
+
+    const showNIP = (e) => {
+        const nipInput = document.getElementById('nip');
+        if ( e.target.checked ) {
+            nipInput.type = 'text';
+        }
+        else {
+            nipInput.type = 'password';
+        }
     }
 
     return (
-        <section className="login | bg-uas | animate__animated animate__fadeIn">
+        <section className="login | animate__animated animate__fadeIn">
             <Row className="g-0">
-                <div className="col-lg-8 | col-md-7 | d-none | d-lg-block| d-md-block">
+                <Col md={7} lg={8} className="d-none | d-lg-block| d-md-block">
                     <Carousel>
                         <Carousel.Item>
                             <img
@@ -61,8 +68,8 @@ export const LoginPage = () => {
                             </Carousel.Caption>
                         </Carousel.Item>
                     </Carousel>
-                </div>
-                <div className="col-lg-4 | col-md-5 | d-flex flex-column | min-vh-100 | login__form">
+                </Col>
+                <Col md={5} lg={4} className="d-flex flex-column | min-vh-100 | login__form">
                     <div className="d-flex | justify-content-center | align-items-center | w-100 | logo">
                         <img src={ image('./UAS.png').default } className="img-fluid" alt="logo" />
                         <span className="logo__title d-lg-none d-md-none">SIIA Alumnos</span>
@@ -95,25 +102,25 @@ export const LoginPage = () => {
                                         placeholder="Ingresa tu NIP"
                                         id="nip"
                                         type="password"
-                                        // pattern="[0-9]*"
                                         inputMode="numeric"
                                         name='nip'
                                         value={nip}
                                         onChange={handleChange}
+                                        autoComplete='new-password'
                                     />
                                     <i className="nip__icon fas fa-lock fa-lg"></i>
                                 </div>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" defaultChecked={false} />
+                                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" defaultChecked={false} onChange={showNIP} />
                                 <label className="form-check-label text-white" htmlFor="flexCheckChecked">
                                     Mostrar NIP
                                 </label>
                             </div>
-                            <button type="submit" className="btn btn-primary w-100">Iniciar</button>
+                            <button type="submit" className="btn btn-primary w-100">Log in</button>
                         </form>
                    </div>
-                </div>
+                </Col>
             </Row>
         </section>
     );

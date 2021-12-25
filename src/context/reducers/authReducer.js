@@ -1,24 +1,33 @@
 import { types } from "../types/types";
 
+// const user = {
+//     cuenta: '155456-3',
+//     name: 'David Adrian Chavira Cebreros',
+//     email: 'da.chavira18@info.uas.edu.mx',
+// }
+
 export const authReducer = ( state = {}, action ) => {
     console.log(action)
-
+    
     switch ( action.type ) {
-        case types.login:
+        case types.authLogin:
             return {
                 ...state,
-                user: action.payload.user,
-                token: action.payload.token,
-                status: 'authenticated'
+                ...action.payload,
+                checking: false
             }
-            
-        case types.logout:
+        case types.authCheckingFinish:
             return {
-                user: null,
-                token: null,
-                status: 'unauthenticated',
+                ...state,
+                checking: false
             }
-
+        case  types.authLogout:
+            return {
+                user: {
+                    id: null
+                },
+                checking: false
+            }
         default:
             return state;
     }

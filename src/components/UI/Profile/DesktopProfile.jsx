@@ -21,9 +21,9 @@ export const DesktopProfile = ({handleLogout}) => {
                     <div className="nav-profile__info">
                         <button className="logout" onClick={handleLogout}>Cerrar sesión</button>
                         <div className="data">
-                            <span>{ user.name }</span>
+                            <span>{ user.nombre }</span>
                             <span>{ user.email }</span>
-                            <span>{ user.cuenta }</span>
+                            <span>Cuenta: { user.cuenta }</span>
                         </div>
                         <div className="options">
                             <button>Cambiar NIP</button>
