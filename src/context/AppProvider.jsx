@@ -51,7 +51,7 @@ export const AppProvider = ({children}) => {
                             cuenta: body.cuenta,
                             nombre: body.nombre,
                             email: body.email,
-                            foto: body.foto
+                            foto: (!!body.foto) ? body.foto : "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640642525/uas/user_z552ui.png"  
                         }
                     }
                 })
@@ -91,7 +91,7 @@ export const AppProvider = ({children}) => {
                             cuenta: body.cuenta,
                             nombre: body.nombre,
                             email: body.email,
-                            foto: body.foto
+                            foto: (!!body.foto) ? body.foto : "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640642525/uas/user_z552ui.png"
                         }
                     }   
                 });
