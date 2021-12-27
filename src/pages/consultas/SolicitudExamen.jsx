@@ -2,43 +2,24 @@ import { Layout } from '../../components/layout/Layout';
 
 export const SolicitudExamen = () => {
     return (
-        <Layout>
-            <div>
-                <div>
-                    <div>
-                        <h5>Imprimir Solicitud de Examen</h5>
-                        <hr/>
-                    </div>
-                    <div>
-                        <table>
-                            <thead className='cabecera'>
-                                <tr className='fila'>
-                                    <th className='columna'>Clave</th>
-                                    <th className='columna'>Escuela</th>
-                                    <th className='columna'>Carrera</th>
-                                    <th className='columna'>Plan de Estudio</th>
-                                    <th className='columna'>Periodo</th>
-                                    <th className='columna'>Grupo</th>
-                                    <th className='columna'>Vigencia</th>
-                                    <th className='columna'>Numero de Escuela</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr className='fila'>
-                                    <td className='campo'><input type="text"></input></td>
-                                    <td className='campo'><input type="text"></input></td>
-                                    <td className='campo'><input type="text"></input></td>
-                                    <td className='campo'><input type="text"></input></td>
-                                    <td className='campo'><input type="text"></input></td>
-                                    <td className='campo'><input type="text"></input></td>
-                                    <td className='campo'><input type="text"></input></td>
-                                    <td className='campo'><input type="text"></input></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <Layout>   
+        <div className='container'>
+            <h5 id='titulo'>Solicitud de Examen</h5>
+            <hr/>
+            <h5 id='titulo'>Seleccione una Materia</h5>
+            <a href='#/' id='carta'>
+            <div className="card" >
+                <div className="card-body">
+                    <h5 className="card-title">INFRAESTRUCTURA INFORMÁTICA</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">Faculta de Informatica Culiacan</h6>
+                    <p>Licenciatura en Informatica</p>
+                    <p>Plan de Estudios: 4</p>
+                    <p>Periodo: 7</p>
+                    <p>Grupo: 2</p>
                 </div>
             </div>
+            </a>
+        </div>
         </Layout>
     );
 }

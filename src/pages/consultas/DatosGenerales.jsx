@@ -1,4 +1,5 @@
 import { Layout } from '../../components/layout/Layout';
+import { image } from "../../helpers/image";
 
 export const DatosGenerales = () => {
     return (
@@ -9,8 +10,12 @@ export const DatosGenerales = () => {
                       <div className='row'>
                         <div className='col-sm-4 rounded-start' id='perfil'>
                           <div className='card-block text-center text-white'>
-                            <i className="fas fa-users fa-7x mt-5"></i>
-                            <h2 className='font-weight-bold mt-4'>Ruben</h2>
+                            <img
+                            className='fa-7x mt-5 rounded-circle'
+                            src={ image('./ruben.jpg').default }
+                            alt='foto de perfil'
+                            />
+                            <h2 className='font-weight-bold mt-4'>Ruben Gomez Ulloa</h2>
                             <p>Facultad de Informatica Culiacan</p>
                           </div>
                         </div>

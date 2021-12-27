@@ -5,11 +5,11 @@ export const Table = ({list,colums,title}) =>{
         <div className='contenido'>
         <h5 className='text-center fw-bold titulo'>{title}</h5>
 
-        <table className='tab'>
-            <thead className='cabecera'>
+        <table className='tab table table-hover table-borderless'>
+            <thead className='tcabecera'>
                    {
                        colums.map((v,i)=>(
-                           <th className='columna' key={i}>{v}</th>
+                           <th className='columna text-capitalize' key={i}>{v}</th>
                        ))
                    } 
             </thead>

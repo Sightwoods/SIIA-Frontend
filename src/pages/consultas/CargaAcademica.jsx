@@ -3,43 +3,60 @@ import { Layout } from '../../components/layout/Layout';
 export const CargaAcademica = () =>{
     return (
         <Layout>
-            <div className="">
-                <div>
-                    <h2>Carga Ademica</h2>
-                    <hr/>
-                </div>
-                <div>
-                    <table className="tabla">
+            <div className='container'>
+                <div className='table-responsive'>
+                <h5 className='titulo'>Carga Académica</h5>
+                <hr/>
+                <h5 className='titulo'>Facultad de Informatica Culiacan</h5>
+                <table className="table table-hover table-borderless tabla">
+                    <thead className='tcabecera'>
                         <tr>
-                            <th><input type="text" placeholder="Nombre del alumno"></input></th>
+                            <th scope="col">Clave</th>
+                            <th scope="col">Materia</th>
+                            <th scope="col">Plan de Estudios</th>
+                            <th scope="col">Periodo</th>
+                            <th scope="col">Grupo</th>
+                        </tr>
+                    </thead>
+                    <tbody className='tcuerpo'>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>LENGUAJES AUTÓMATAS Y COMPLEJIDAD</td>
+                            <td>4</td>
+                            <td>7</td>
+                            <td>2</td>
                         </tr>
                         <tr>
-                            <th><input type="text" placeholder="Escula"></input></th>
+                            <th>2</th>
+                            <td>ADMINISTRACIÓN DE PROYECTOS DE SOFTWARE</td>
+                            <td>4</td>
+                            <td>7</td>
+                            <td>2</td>
                         </tr>
-                    </table>
-                </div>
-                <div>
-                    <table className="tabla">
-                        <thead className='cabecera'>
-                            <tr className='fila'>
-                                <th className='columna'>Clave</th>
-                                <th className='columna'>Materia</th>
-                                <th className='columna'>Plan de Estudio</th>
-                                <th className='columna'>Periodo</th>
-                                <th className='columna'>Grupo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className='fila'>
-                                <td className='campo'><input type="text"></input></td>
-                                <td className='campo'><input type="text"></input></td>
-                                <td className='campo'><input type="text"></input></td>
-                                <td className='campo'><input type="text"></input></td>
-                                <td className='campo'><input type="text"></input></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>INNOVACIÓN TECNOLÓGICA</td>
+                            <td>4</td>
+                            <td>7</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>PROGRAMACIÓN DE INTERFACES WEB</td>
+                            <td>4</td>
+                            <td>7</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>INFRAESTRUCTURA INFORMÁTICA</td>
+                            <td>4</td>
+                            <td>7</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             </div>
         </Layout>
     );

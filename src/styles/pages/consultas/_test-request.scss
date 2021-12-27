@@ -1,0 +1,19 @@
+#carta{
+    
+    text-decoration: none;
+    outline: none;
+    .card{
+        width: 18rem;
+        border-radius: 15px;
+        background: #fff;
+        box-shadow: 0 12px 20px rgba(0,0,0,.08), 0 0 12px rgba(0,0,0,.05);
+        h5{
+            text-align: center;
+            color: black;
+            font-weight: bold;
+            padding: 5px;
+        }
+        
+        
+    }
+}
