@@ -27,18 +27,23 @@
             .title {
                 color: $white;
                 font-size: 2.5rem;
-                font-weight: 600;
-                margin-bottom: 1em;
+                font-weight: 700;
+                letter-spacing: 1px;
+                margin-bottom: 1.2em;
+                text-transform: uppercase;
             }
             
             .numCuenta, .nip {
                 margin-bottom: 2em;
         
                 &__input {
-                    background-color: $white;
-                    border-radius: 5px;
-                    padding: 5px 10px;
-        
+                    background-color: transparent;
+                    border: 2px solid $white;
+                    border-radius: 4px;
+                    color: $white;
+                    
+                    padding: 6px 12px;
+                    
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -49,14 +54,25 @@
                 }
         
                 .form-control {
-                    padding: 0;
-        
+                    background-color: transparent;        
+                    color: $white;
                     font-family: $base-font;
-                    font-size: 1.1rem;
+                    font-size: 16px;
+                    font-weight: 600;
+                    letter-spacing: 3px;
+                    padding: 0;
                 }
+
                 .form-control:focus {
                     outline: none;
                     box-shadow: none;
+                }
+
+                .form-control::placeholder {
+                    color: $lighter;
+                    font-size: 15px;
+                    font-weight: 400;
+                    letter-spacing: 0.5px;
                 }
             }
 
@@ -70,6 +86,7 @@
                 .form-check-input {
                     box-shadow: none;
                     border-color: $gold-300;
+                    cursor: pointer;
                     &:checked {
                         background-color: $gold-500;
                     }
@@ -77,6 +94,10 @@
 
                 .form-check-label {
                     color: $white;
+                    font-weight: 500;
+                    font-size: 15px;
+                    letter-spacing: 0.5px;
+                    margin-left: 8px;
                 }
             }
             
@@ -85,7 +106,8 @@
                 
                 font-size: 1.05em;
                 font-weight: 700;
-                letter-spacing: 1px;
+                letter-spacing: .5px;
+                text-transform: uppercase;
                 
                 border-color: $gold-500;
                 border-radius: 5px;
@@ -98,11 +120,30 @@
             }
         }
     }
+}
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    background-color: transparent !important;        
+    color: $white !important;
+    font-family: $base-font !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    -webkit-box-shadow: 0 0 0 30px $blue-700 inset !important;
+    -webkit-text-fill-color: $white !important;
 }
 
 // Mobile
-@media only screen and (max-width : 767px) {
+@media only screen and (max-width : 767px) {    
+
     .login {
         background: url('../../assets/images/img-1.png');
         background-size: cover;
@@ -132,6 +173,7 @@
                 font-size: 2em;
                 font-weight: bold;
                 text-shadow: 1px 1px 2px $black;
+                letter-spacing: 1px;
             }
 
             img:first-child {
@@ -154,7 +196,7 @@
                     border-bottom: 1px solid $white;            
                     &__input {
                         background-color: transparent;
-        
+                        border: none;
                         align-items: center;
                         display: flex;
                         justify-content: center;
@@ -171,7 +213,7 @@
         
                         padding-left: 0px;
                         padding-right: 0px;
-        
+                        
                         &::placeholder{
                             color: darken($color: $white, $amount: 10);
                         }
@@ -199,8 +241,10 @@
                 }
 
                 .btn {
-                    font-size: 1.2rem;
+                    font-size: 1.05rem;
                     font-weight: 600;
+                    letter-spacing: 1px;
+                    text-transform: initial;
                     &:hover{
                         outline: none;
                         box-shadow: none;

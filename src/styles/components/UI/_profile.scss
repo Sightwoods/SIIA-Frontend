@@ -1,20 +1,19 @@
 .nav-profile {
     display: inline-flex;
-    padding: 10px 0px;
+    padding: 5px 0px;
     
     &__picture {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 1rem;
+        padding: 10px 10px;
         
         .pic__container {
             border-radius: 50%;
-            outline: 3px ridge $gold-400;
 
             img {
-                height: 120px;
-                width: 120px;
+                height: 100px;
+                width: 100px;
             }
         }
     }
@@ -22,6 +21,7 @@
     &__info {
         display: flex;
         flex-direction: column;
+        min-width: 200px;
 
         .logout,
         .options button:nth-child(1),
@@ -30,38 +30,48 @@
             background: transparent;
             border: none;
             color: #0000DD;          
-            text-decoration: underline;
+            text-decoration: none;
         }
         
         .logout {
-            padding: 2px 5px;  
-            color: $light;
+            padding: 5px 5px;  
+            color: $normal;
             text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 400;
+
+            &:hover {
+                background-color: $lighter;
+            }
         }
 
         .data {
             display: flex;
             flex-direction: column;
-            padding: 10px;
+            padding: 10px 8px;
 
             span {
                 font-family: $base-font;
+                padding: 1.5px 0px;
             }
 
             span:nth-child(1){
-                font-size: 1.3em;
-                font-weight: 500;
+                font-size: 1.1em;
+                font-weight: 600;
+                // text-align: center;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
             span:nth-child(2){
                 color: #0000DD;
-                font-size: 1em;
-                font-weight: 300;
+                font-size: 0.9em;
+                font-weight: 400;
                 margin-bottom: 5px;
-                text-decoration: underline;
+                text-decoration: underline; 
             }
             span:nth-child(3){
-                color: $light;
-                font-size: 1em;
+                color: lighten($color: $black, $amount: 15);
+                font-size: 0.9em;
                 font-weight: 400;
             }
         }
@@ -74,6 +84,11 @@
 
             button {
                 padding: 0px;
+                font-size: 0.9em;
+                font-weight: 500;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -108,10 +123,54 @@
     }
 }
 
-// @media only screen and (max-width : 1115px) {
-//     .btn-nav-uas {
-//         i:last-child {
-//             display: none !important;
-//         }
-//     }
-// }
+@media only screen and (max-width : 991.83px) {
+    .profile-item {
+        .dropdown {
+
+            .btn-nav-uas {
+                display: flex;
+                padding: 0;
+
+                .nav-profile--picture {
+                    order: 2;
+                }
+
+                span {
+                    order: 1;
+                }
+
+            }
+            &__menu {
+                position: fixed;
+                transform: scale(0.95) !important;
+                top: 60px; // UBICACIÓN DE LA TARJETA - PROFILE
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .nav-profile {
+        width: 100%;
+        &__info {
+            flex-grow: 1;
+            .data {
+                span:nth-child(1) {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+
+    .profile-item {
+        .dropdown {
+            .dropdown__menu {
+                transform: scale(0.90) !important;
+                left: 0px !important;
+            }
+        }
+    }
+}
