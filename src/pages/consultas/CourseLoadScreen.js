@@ -7,11 +7,11 @@ export const CourseLoadScreen = () =>{
         <Layout>
             <div className='container'>
                 <div className='table-responsive'>
-                <h5 id='titulo'>Carga Académica</h5>
+                <h5 className='titulo'>Carga Académica</h5>
                 <hr/>
-                <h5 id='titulo'>Facultad de Informatica Culiacan</h5>
-                <table className="table table-hover table-borderless" id='tabla'>
-                    <thead id='tcabecera'>
+                <h5 className='titulo'>Facultad de Informatica Culiacan</h5>
+                <table className="table table-hover table-borderless tabla">
+                    <thead className='tcabecera'>
                         <tr>
                             <th scope="col">Clave</th>
                             <th scope="col">Materia</th>
@@ -20,7 +20,7 @@ export const CourseLoadScreen = () =>{
                             <th scope="col">Grupo</th>
                         </tr>
                     </thead>
-                    <tbody id='tcuerpo'>
+                    <tbody className='tcuerpo'>
                         <tr>
                             <th scope="row">1</th>
                             <td>LENGUAJES AUTÓMATAS Y COMPLEJIDAD</td>
