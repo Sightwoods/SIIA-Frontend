@@ -5,7 +5,7 @@
         "cuenta": "154254-5",
         "nombre": "Alden Kevin Garcia Quintero",
         "email": "ak.garcia18@info.uas.edu.mx",
-        "foto": "",
+        "foto": "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640644849/uas/ruben_xke3az.jpg",
         "token": "dbdsUABDDAad65d4fd6"
     },
     "renew": {
@@ -14,7 +14,7 @@
         "cuenta": "154254-5",
         "nombre": "Alden Kevin Garcia Quintero",
         "email": "ak.garcia18@info.uas.edu.mx",
-        "foto": "",
+        "foto": "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640645022/uas/GFA_mh06zj.jpg",
         "token": "xfd.er4fgrfsdf-efed",
         "msg": "Token no válido"
     }
