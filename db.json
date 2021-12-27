@@ -17,5 +17,9 @@
         "foto": "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640645022/uas/GFA_mh06zj.jpg",
         "token": "xfd.er4fgrfsdf-efed",
         "msg": "Token no válido"
-    }
+    },
+    "materias": [
+        { "id": "1", "nombre": "programacion" },
+        { "id": "2", "nombre": "ingles"}
+    ]
 }

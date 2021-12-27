@@ -8,12 +8,12 @@ import { types } from './types/types';
 
 const auth = {
     user: {
-        id: null,
-        // id: "1",
-        // cuenta: "154254-5",
-        // nombre: "Felipe Ruíz Madero",
-        // email: "f.ruiz92@info.uas.edu.mx",
-        // foto: "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640632042/uas/felipe_iatdop.jpg"
+        // id: null,
+        id: "1",
+        cuenta: "154254-5",
+        nombre: "Felipe Ruíz Madero",
+        email: "f.ruiz92@info.uas.edu.mx",
+        foto: "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640632042/uas/felipe_iatdop.jpg"
     },
     checking: true,
 }

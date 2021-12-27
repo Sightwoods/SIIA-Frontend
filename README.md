@@ -25,8 +25,16 @@ Vayan actualizando la información en este README para un mejor seguimiento.
 
 ## Para encender el JSON Server ##
 
+Pudes encontrar la documentación aquí: [https://www.npmjs.com/package/json-server]
+
 Ejecuta el siguiente comando en una terminal 
 
+### Instalar dependencia
+```console
+~$ npm i -g json-server
+```
+
+### Iniciar servidor
 ```console
 ~$ json-server --watch db.json --port 3001
 ```
