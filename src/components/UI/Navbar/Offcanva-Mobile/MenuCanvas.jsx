@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { NavButton } from '../NavButton'
 
-export const MenuCanvas = ({name, icon, user, children }) => {
+export const MenuCanvas = ({name, icon, children }) => {
     const ref = useRef(null);
 
     const openMenu = () => {
@@ -18,7 +18,7 @@ export const MenuCanvas = ({name, icon, user, children }) => {
                 icon={ icon }
                 onClick={openMenu}
             >
-                { (user) ? user : name }
+                { name }
             </NavButton>
             <div className="canvasMenu | canva-uas" id="section" ref={ref}>
                 <button className="canvasMenu__main" onClick={closeMenu}>

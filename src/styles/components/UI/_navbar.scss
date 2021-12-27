@@ -46,6 +46,16 @@
     }
 }
 
+.nav-item {
+    cursor: pointer;
+}
+
+.profile-item .btn-nav-uas {
+    &::after {
+        content: '';
+    }
+}
+
 .uas-divider {
     color: $white;
     opacity: 1;
@@ -54,6 +64,16 @@
 
 /* Mobile */
 @media only screen and (max-width : 991.92px) {
+    .navbar-uas {
+        .container-fluid {
+            justify-content: stretch;
+        }
+
+        .navbar-brand {
+            flex-grow: 1;
+        }
+    }
+
     .btn-nav-uas {
         background-color: transparent;  
         align-items: center;
@@ -79,10 +99,6 @@
             text-align: left;
             width: 80%;
         }  
-    }
-
-    .profile-item {
-        padding-top: 10px;
     }
 
     .canva-uas {
@@ -120,10 +136,6 @@
         background-color: $blue-600;  
 
         ul {
-            .profile-item {
-                order: 7;
-            }
-
             li {
                 padding-left: 15px;
             }
@@ -177,5 +189,5 @@
 }
 // On Mobile
 @media only screen and (max-width: 425px) {
-    .canva-uas { width: 80%; }
+    .canva-uas { width: 75%; }
 }

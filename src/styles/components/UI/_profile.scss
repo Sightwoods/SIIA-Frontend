@@ -21,6 +21,7 @@
     &__info {
         display: flex;
         flex-direction: column;
+        min-width: 200px;
 
         .logout,
         .options button:nth-child(1),
@@ -58,8 +59,8 @@
                 font-size: 1.1em;
                 font-weight: 600;
                 // text-align: center;
-                // text-overflow: ellipsis;
-                // white-space: nowrap;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
             span:nth-child(2){
                 color: #0000DD;
@@ -122,10 +123,54 @@
     }
 }
 
-// @media only screen and (max-width : 1115px) {
-//     .btn-nav-uas {
-//         i:last-child {
-//             display: none !important;
-//         }
-//     }
-// }
+@media only screen and (max-width : 991.83px) {
+    .profile-item {
+        .dropdown {
+
+            .btn-nav-uas {
+                display: flex;
+                padding: 0;
+
+                .nav-profile--picture {
+                    order: 2;
+                }
+
+                span {
+                    order: 1;
+                }
+
+            }
+            &__menu {
+                position: fixed;
+                transform: scale(0.95) !important;
+                top: 60px; // UBICACIÓN DE LA TARJETA - PROFILE
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .nav-profile {
+        width: 100%;
+        &__info {
+            flex-grow: 1;
+            .data {
+                span:nth-child(1) {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    max-width: 90%;
+                }
+            }
+        }
+    }
+
+    .profile-item {
+        .dropdown {
+            .dropdown__menu {
+                transform: scale(0.90) !important;
+                left: 0px !important;
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 .dropdown {
     position: relative;
-
+    cursor: initial;
     &__menu {
         position: absolute;
         top: 50px;
@@ -26,12 +26,20 @@
         opacity: 1;
     }
 }
+.navbar-collapse + .nav-item { // PROFILE
+    .dropdown {
+        &__menu {
+            left: initial !important;
+            right: 0px;
+        }
+    }
+}
 
-.nav-item:nth-child(2),
-.nav-item:nth-child(3),
-.nav-item:nth-child(4),
-.nav-item:nth-child(5),
-.nav-item:nth-child(7) {
+.nav-item:nth-child(1),  // CONSULTAS
+.nav-item:nth-child(2),  // REINSCRIPCIONES
+.nav-item:nth-child(3),  // TRAMITES
+.nav-item:nth-child(4),  // EXAMENES
+.nav-item:nth-child(6) { // ENCUESTAS
     .dropdown {
         &__menu {
             left: 0px;
@@ -39,14 +47,7 @@
     }
 }
 
-.nav-item:nth-child(1) {
-    .dropdown {
-        &__menu {
-            right: 0px;
-        }
-    }
-}
-.nav-item:nth-child(6) {
+.nav-item:nth-child(5) { // IDIOMAS
     .dropdown {
         &__menu {
             left: -8em;
@@ -61,7 +62,7 @@
 }
 
 @media only screen and (max-width : 1350px) {
-    .nav-item:nth-child(4) {
+    .nav-item:nth-child(3) { // TRAMITES
         .dropdown {
             &__menu {
                 left: -20px;
@@ -69,7 +70,7 @@
         }
     }
 
-    .nav-item:nth-child(6) {
+    .nav-item:nth-child(5) { // IDIOMAS
         .dropdown {
             &__menu {
                 left: calc(-100% - 100px);
