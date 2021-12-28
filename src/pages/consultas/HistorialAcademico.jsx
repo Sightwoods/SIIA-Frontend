@@ -10,9 +10,9 @@ export const HistorialAcademico = () => {
                     <h5 id='titulo'>Semestre 1</h5>
                 </div>
                 <div className='table-responsive'>
-                    <table className='table' id='tabla'>
-                        <thead id='tcabecera'>
-                            <tr> 
+                    <table className='table table-hover table-borderless tabla-historial'>
+                        <thead>
+                            <tr > 
                                 <th scope='col'>Materia</th>
                                 <th scope='col'>Calificacion</th>
                                 <th scope='col'>Tipo de Examen</th>
@@ -24,49 +24,49 @@ export const HistorialAcademico = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope='row'>ARQUITECTURA DE COMPUTADORAS</th>
-                                <td>10</td>
-                                <td>ORD</td>
-                                <td>20/12/2018</td>
-                                <td>-</td>
-                                <td>O</td>
-                                <td>2700</td>
+                                <td data-label="Materia">ARQUITECTURA DE COMPUTADORAS</td>
+                                <td data-label="Calificacion">10</td>
+                                <td data-label="Tipo de Examen">ORD</td>
+                                <td data-label="Fecha de Examen">20/12/2018</td>
+                                <td data-label="Folio de calificacion">-</td>
+                                <td data-label="Ordinario">O</td>
+                                <td data-label="Numero de escuela">2700</td>
                             </tr>
                             <tr>
-                                <th scope='row'>DESARROLLO ORGANIZACIONAL</th>
-                                <td>8</td>
-                                <td>ORD</td>
-                                <td>20/12/2018</td>
-                                <td>-</td>
-                                <td>O</td>
-                                <td>2700</td>
+                                <td data-label="Materia">DESARROLLO ORGANIZACIONAL</td>
+                                <td data-label="Calificacion">8</td>
+                                <td data-label="Tipo de Examen">ORD</td>
+                                <td data-label="Fecha de Examen">20/12/2018</td>
+                                <td data-label="Folio de calificacion">-</td>
+                                <td data-label="Ordinario">O</td>
+                                <td data-label="Numero de escuela">2700</td>
                             </tr>
                             <tr>
-                                <th scope='row'>DESARROLLO DE HABILIDADES COGNITIVAS</th>
-                                <td>9</td>
-                                <td>ORD</td>
-                                <td>20/12/2018</td>
-                                <td>-</td>
-                                <td>O</td>
-                                <td>2700</td>
+                                <td data-label="Materia">DESARROLLO DE HABILIDADES COGNITIVAS</td>
+                                <td data-label="Calificacion">9</td>
+                                <td data-label="Tipo de Examen">ORD</td>
+                                <td data-label="Fecha de Examen">20/12/2018</td>
+                                <td data-label="Folio de calificacion">-</td>
+                                <td data-label="Ordinario">O</td>
+                                <td data-label="Numero de escuela">2700</td>
                             </tr>
                             <tr>
-                                <th scope='row'>MATEMÁTICAS DISCRETAS</th>
-                                <td>9</td>
-                                <td>ORD</td>
-                                <td>20/12/2018</td>
-                                <td>-</td>
-                                <td>O</td>
-                                <td>2700</td>
+                                <td data-label="Materia">MATEMÁTICAS DISCRETAS</td>
+                                <td data-label="Calificacion">9</td>
+                                <td data-label="Tipo de Examen">ORD</td>
+                                <td data-label="Fecha de Examen">20/12/2018</td>
+                                <td data-label="Folio de calificacion">-</td>
+                                <td data-label="Ordinario">O</td>
+                                <td data-label="Numero de escuela">2700</td>
                             </tr>
                             <tr>
-                                <th scope='row'>ALGORITMIA</th>
-                                <td>8</td>
-                                <td>ORD</td>
-                                <td>20/12/2018</td>
-                                <td>-</td>
-                                <td>O</td>
-                                <td>2700</td>
+                                <td data-label="Materia">ALGORITMIA</td>
+                                <td data-label="Calificacion">8</td>
+                                <td data-label="Tipo de Examen">ORD</td>
+                                <td data-label="Fecha de Examen">20/12/2018</td>
+                                <td data-label="Folio de calificacion">-</td>
+                                <td data-label="Ordinario">O</td>
+                                <td data-label="Numero de escuela">2700</td>
                             </tr>
                         </tbody>
                     </table>
