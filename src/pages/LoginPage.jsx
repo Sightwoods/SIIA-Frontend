@@ -6,7 +6,7 @@ import { useForm } from '../hooks/useForm'
 
 export const LoginPage = () => {
     const { authLogin } = useUser();
-    const [ formValues, handleChange ] = useForm({numCuenta: '', nip: ''});
+    const [ formValues, handleChange ] = useForm({numCuenta: '15429245', nip: '202020'});
 
     const { numCuenta, nip } = formValues;
 

@@ -8,12 +8,12 @@ import { types } from './types/types';
 
 const auth = {
     user: {
-        // id: null,
-        id: "1",
-        cuenta: "154254-5",
-        nombre: "Felipe Ruíz Madero",
-        email: "f.ruiz92@info.uas.edu.mx",
-        foto: "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640632042/uas/felipe_iatdop.jpg"
+        id: null,
+        // id: "1",
+        // cuenta: "154254-5",
+        // nombre: "Felipe Ruíz Madero",
+        // email: "f.ruiz92@info.uas.edu.mx",
+        // foto: "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640632042/uas/felipe_iatdop.jpg"
     },
     checking: true,
 }
@@ -35,23 +35,23 @@ export const AppProvider = ({children}) => {
     const [authState, authDispatch] = useReducer(authReducer, auth);
 
     // ? Acciones para la autenticación
-    const authLogin = async (email, password) => {
+    const authLogin = async (account_number, nip) => {
         try {
-            const resp = await fetchSinToken( 'login', {email, password}, 'GET')
+            const resp = await fetchSinToken( 'users/login', {account_number, nip}, 'POST')
             const body = await resp.json();
-
-            if ( body.ok ) {
+            if ( body.success ) {
                 localStorage.setItem( 'token', body.token );
                 localStorage.setItem( 'token-init-date', new Date().getTime() );
+                const { _id, account_number, email, first_name, last_name, picture } = body.user;
                 authDispatch({
                     type: types.authLogin,
                     payload: {
                         user: {
-                            id: body.id,
-                            cuenta: body.cuenta,
-                            nombre: body.nombre,
-                            email: body.email,
-                            foto: (!!body.foto) ? body.foto : "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640642525/uas/user_z552ui.png"  
+                            id: _id,
+                            cuenta: account_number,
+                            nombre: `${first_name} ${last_name}`,
+                            email: email,
+                            foto: (!!picture) ? picture : "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640642525/uas/user_z552ui.png"  
                         }
                     }
                 })
@@ -71,50 +71,59 @@ export const AppProvider = ({children}) => {
             console.log(e);
         }
     }
-    const authLogout = () => {
-        localStorage.clear();
-        authDispatch({ type: types.authLogout })
+    const authLogout = async() => {
+        try {
+            await fetchConToken('users/logout', {}, 'POST');
+            localStorage.clear();
+            authDispatch({ type: types.authLogout })
+        }
+        catch(e){
+            console.log(e);
+        }
     }
     const authCheck = useCallback(async () => {
-        try {
-            const resp = await fetchConToken( 'renew' );
-            const body = await resp.json();
-            
-            if ( body.ok ) {
-                localStorage.setItem( 'token', body.token );
-                localStorage.setItem( 'token-init-date', new Date().getTime() );
-                authDispatch({
-                    type: types.authLogin,
-                    payload: {
-                        user: {
-                            id: body.id,
-                            cuenta: body.cuenta,
-                            nombre: body.nombre,
-                            email: body.email,
-                            foto: (!!body.foto) ? body.foto : "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640642525/uas/user_z552ui.png"
+        if (!!localStorage.getItem('token')) {
+            try {
+                const resp = await fetchConToken( 'users/auth_check' );
+                const body = await resp.json();
+                if ( body.success ) {
+                    const { _id, account_number, email, first_name, last_name, picture } = body.user;
+                    authDispatch({
+                        type: types.authLogin,
+                        payload: {
+                            user: {
+                                id: _id,
+                                cuenta: account_number,
+                                nombre: `${first_name} ${last_name}`,
+                                email: email,
+                                foto: (!!picture) ? picture : "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640642525/uas/user_z552ui.png"  
+                            }
                         }
-                    }   
-                });
-            }
-            else {
-                authDispatch({ type: types.authCheckingFinish });
-                if ( body.msg === 'Token no válido'){
-                    Toast.fire({
-                        icon: 'error',
-                        title: '¡La sesión ha expirado!'
                     })
                 }
-                
+                else {
+                    authDispatch({ type: types.authCheckingFinish });
+                    if ( body.msg === 'Token is invalid' ){
+                        Toast.fire({
+                            icon: 'error',
+                            title: '¡La sesión ha expirado!'
+                        })
+                    }   
+                }
+            }
+            catch(e) {
+                authDispatch({ type: types.authCheckingFinish });
+                console.log(e);
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Ha ocurrido un problema, intente más tarde'
+                })
             }
         }
-        catch(e) {
+        else {
             authDispatch({ type: types.authCheckingFinish });
-            console.log(e);
-            Toast.fire({
-                icon: 'error',
-                title: 'Ha ocurrido un problema, intente más tarde'
-            })
         }
+        
     }, []);
 
     return (
