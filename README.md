@@ -22,7 +22,7 @@ Para correr las pruebas unitarias.
 
 Para crear la versión de producción.
 
-## En caso de contar con el Backend en local ##
+## En caso de contar con el `Backend` en local ##
 
 Dirigete a https://github.com/Sightwoods/SIIA-UAS-Alumnos y sigue las instrucciones para iniciar el servidor de pruebas.\
 Dependiendo la configuración, modifica las variables de entorno.
@@ -31,7 +31,7 @@ Dependiendo la configuración, modifica las variables de entorno.
 - **.env.development** Para la versión de desarrollo
   
 ### Variables de entorno ###
-- REACT_APP_API_URL=[URL]/api
+- **REACT_APP_API_URL**=[URL]/api
   
 ## Para encender el JSON Server ##
 
