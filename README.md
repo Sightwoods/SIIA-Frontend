@@ -37,7 +37,7 @@ Dependiendo la configuración, modifica las variables de entorno.
 
 Pudes encontrar la documentación aquí: [https://www.npmjs.com/package/json-server]
 
-Ejecuta el siguiente comando en una terminal 
+Ejecuta el siguiente comando en una terminal:
 
 ### Instalar dependencia
 ```console
