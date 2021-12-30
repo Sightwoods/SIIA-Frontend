@@ -5,7 +5,7 @@ export const NavbarBrand = () => {
     return (
         <Link className="navbar-brand | p-1" to="/">
             <img
-                src={image('./UAS.png').default}
+                src={image('./UAS.png')}
                 alt="UAS logo"
                 width="25"
                 height="30"

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import validator from 'validator';
 
 export const useForm = ( initialState = {}) => {
 
@@ -9,10 +10,12 @@ export const useForm = ( initialState = {}) => {
     };
 
     const handleInputChange = ({ target }) => {
-        setValues({
-            ...values,
-            [ target.name ]: target.value
-        })
+        if ( validator.isNumeric(target.value) || validator.isEmpty(target.value) ){
+            setValues({
+                ...values,
+                [ target.name ]: target.value
+            })
+        }
     };
     
     return [ values, handleInputChange, reset ];
