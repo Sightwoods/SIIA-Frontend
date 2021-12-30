@@ -12,7 +12,7 @@ export const DatosGenerales = () => {
                           <div className='card-block text-center text-white'>
                             <img
                             className='fa-7x mt-5 rounded-circle'
-                            src={ image('./ruben.jpg').default }
+                            src={ image('./ruben.jpg') }
                             alt='foto de perfil'
                             />
                             <h2 className='font-weight-bold mt-4'>Ruben Gomez Ulloa</h2>
