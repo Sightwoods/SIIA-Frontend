@@ -3,8 +3,7 @@
 Resideño de la página SIIA UAS.
 
 ## IMPORTANTE ##
-Proximamente actualizare los scripts de React y removeré la dependencia node-sass debido
-a que actualmente se encuentra obsoleta, será sustituida por otra dependencia sugerida por
+Proximamente actualizare `react-scripts` y removeré la dependencia `node-sass` debido a que actualmente se encuentra obsoleta, será sustituida por otra dependencia sugerida por
 npm.
 
 ## Scripts Disponibles
