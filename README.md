@@ -14,15 +14,25 @@ Abre [http://localhost:3000](http://localhost:3000) para visualizarlo en el nave
 La página se refrescará cuando guardes nuevos cambios.\
 Tambien veras un lint de errores en la consola.
 
-### `npm test`
+### `npm run test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para correr las pruebas unitarias.
 
-## Notas ##
+### `npm run build`
 
-Vayan actualizando la información en este README para un mejor seguimiento.
+Para crear la versión de producción.
 
+## En caso de contar con el Backend en local ##
+
+Dirigete a https://github.com/Sightwoods/SIIA-UAS-Alumnos y sigue las instrucciones para iniciar el servidor de pruebas.\
+Dependiendo la configuración, modifica las variables de entorno.
+
+- **.env** Para la versión de producción
+- **.env.development** Para la versión de desarrollo
+  
+### Variables de entorno ###
+- REACT_APP_API_URL=[URL]/api
+  
 ## Para encender el JSON Server ##
 
 Pudes encontrar la documentación aquí: [https://www.npmjs.com/package/json-server]
