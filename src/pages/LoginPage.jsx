@@ -12,7 +12,7 @@ export const LoginPage = () => {
 
     const handleSubmit = ( e ) => {
         e.preventDefault();
-        // authLogin( numCuenta, nip );
+        authLogin( numCuenta, nip );
     }
 
     const showNIP = (e) => {
