@@ -20,39 +20,39 @@ export const CargaAcademica = () =>{
                     </thead>
                     <tbody className='tcuerpo'>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>LENGUAJES AUTÓMATAS Y COMPLEJIDAD</td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>2</td>
+                            <td data-label="Clave" >1</td>
+                            <td data-label="Materia">LENGUAJES AUTÓMATAS Y COMPLEJIDAD</td>
+                            <td data-label="Plan de Estudios">4</td>
+                            <td data-label="Periodo">7</td>
+                            <td data-label="Grupo">2</td>
                         </tr>
                         <tr>
-                            <th>2</th>
-                            <td>ADMINISTRACIÓN DE PROYECTOS DE SOFTWARE</td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>2</td>
+                            <td data-label="Clave" >2</td>
+                            <td data-label="Materia">ADMINISTRACIÓN DE PROYECTOS DE SOFTWARE</td>
+                            <td data-label="Plan de Estudios">4</td>
+                            <td data-label="Periodo">7</td>
+                            <td data-label="Grupo">2</td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
-                            <td>INNOVACIÓN TECNOLÓGICA</td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>2</td>
+                            <td data-label="Clave" >3</td>
+                            <td data-label="Materia">INNOVACIÓN TECNOLÓGICA</td>
+                            <td data-label="Plan de Estudios">4</td>
+                            <td data-label="Periodo">7</td>
+                            <td data-label="Grupo">2</td>
                         </tr>
                         <tr>
-                            <th scope="row">4</th>
-                            <td>PROGRAMACIÓN DE INTERFACES WEB</td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>2</td>
+                            <td data-label="Clave">4</td>
+                            <td data-label="Materia">PROGRAMACIÓN DE INTERFACES WEB</td>
+                            <td data-label="Plan de Estudios">4</td>
+                            <td data-label="Periodo">7</td>
+                            <td data-label="Grupo">2</td>
                         </tr>
                         <tr>
-                            <th scope="row">5</th>
-                            <td>INFRAESTRUCTURA INFORMÁTICA</td>
-                            <td>4</td>
-                            <td>7</td>
-                            <td>2</td>
+                            <td data-label="Clave">5</td>
+                            <td data-label="Materia">INFRAESTRUCTURA INFORMÁTICA</td>
+                            <td data-label="Plan de Estudios">4</td>
+                            <td data-label="Periodo">7</td>
+                            <td data-label="Grupo">2</td>
                         </tr>
                     </tbody>
                 </table>

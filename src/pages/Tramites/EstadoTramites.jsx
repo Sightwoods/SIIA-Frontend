@@ -4,10 +4,10 @@ export const EstadoTramites = () =>{
     return(
         <Layout>
             <div>
-                <div>
-                <h5>Lista de tramites realizados</h5>
-                    <table className='datatable'> 
-                        <thead className='cabezera'>
+                <div className='container'>
+                <h5 className='titulo'>Lista de tramites realizados</h5>
+                    <table className='table table-hover table-borderless tabla'> 
+                        <thead className='tcabecera'>
                             <tr>
                                 <th rowSpan="2">Folio</th>
                                 <th colSpan="2">Fecha</th>
@@ -24,17 +24,17 @@ export const EstadoTramites = () =>{
                                 <th>Estado</th>
                             </tr>
                         </thead>
-                        <tbody className='cuerpo'>
+                        <tbody className='tcuerpo'>
                             <tr>
-                                <td>1</td>
-                                <td>23/07/2021</td>
-                                <td>08/12/2021</td>
-                                <td>NO</td>
-                                <td>N/D</td>
-                                <td>N/D</td>
-                                <td>Si</td>
-                                <td>722.00</td>
-                                <td>
+                                <td data-label="Folio">1</td>
+                                <td data-label="Fecha Captura">23/07/2021</td>
+                                <td data-label="Vencimiento">08/12/2021</td>
+                                <td data-label="Solicitud">NO</td>
+                                <td data-label="RFC">N/D</td>
+                                <td data-label="Estado">N/D</td>
+                                <td data-label="Pago Acreditado">Si</td>
+                                <td data-label="Importe">722.00</td>
+                                <td data-label="">
                                     <i class="fas fa-search-plus"></i>
                                 </td>
                             </tr>
