@@ -1,13 +1,15 @@
 // import { NavProfile } from '../Profile/NavProfile';
 import { NavItem } from './NavItem';
 
-import { consultas,
+import * as routes from '../../../routers/routes.json';
+
+const { consultas,
     tramites,
     reinscripcion,
     examenes,
     idiomas,
     encuestas
-} from '../../../routers/routes.json';
+} = routes;
 
 export const NavbarContent = ({isNavOpen}) => {
     return (

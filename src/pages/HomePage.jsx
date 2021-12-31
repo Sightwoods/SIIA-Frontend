@@ -12,10 +12,10 @@ export const HomePage = () => {
     return (
         <Layout>
             <div className="dashboard">
-                <div className="dashboard__image"><Image src={ image('./img-1.png').default } fluid /></div>
+                <div className="dashboard__image"><Image src={ image('./img-1.png') } fluid /></div>
                 <div className="dashboard__cards">
                     <Card>
-                        <Card.Img variant="top" src={image('./pagos.png').default} />
+                        <Card.Img variant="top" src={image('./pagos.png')} />
                         <Card.Body>
                             <Card.Title>Guías de pago</Card.Title>
                             <Card.Text>
@@ -28,7 +28,7 @@ export const HomePage = () => {
                         </Card.Body>
                     </Card>
                     <Card>
-                        <Card.Img variant="top" src={image('./guia.png').default} />
+                        <Card.Img variant="top" src={image('./guia.png')} />
                         <Card.Body>
                             <Card.Title>Guías estudiantiles</Card.Title>
                             <Card.Text>

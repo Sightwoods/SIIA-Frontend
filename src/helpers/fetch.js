@@ -10,7 +10,8 @@ const fetchSinToken = (endpoint, data, method = 'GET') => {
         return fetch(url, {
             method,
             headers: {
-                'Content-type': 'application/json',
+                'accept': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify( data )
         });
@@ -19,7 +20,7 @@ const fetchSinToken = (endpoint, data, method = 'GET') => {
 
 const fetchConToken = (endpoint, data, method = 'GET') => {
     const url = `${ baseURL }/${ endpoint }`;
-    const token = localStorage.getItem('token') || '';
+    const token = localStorage.getItem('token') || null;
 
     if ( method === 'GET' ){
         return fetch(url, {
@@ -33,8 +34,9 @@ const fetchConToken = (endpoint, data, method = 'GET') => {
         return fetch(url, {
             method,
             headers: {
-                'Content-type': 'application/json',
-                'authorization': token
+                'authorization': token,
+                'accept': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify( data )
         });

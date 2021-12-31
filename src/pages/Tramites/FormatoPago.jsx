@@ -15,9 +15,9 @@ export const FormatoPago = ()=>{
         <Layout>
               <div className="formato-pago">
                 <form action="#" name="myForm">
-                    <fieldset class="blue">
+                    <fieldset className="blue">
                         <legend>Historial Académico</legend>
-                        <div class="formBox">
+                        <div className="formBox">
                         <select>
                             <option value="">Seleccione una escuela</option>
                             <option value="2700">Facultad de Informatica</option>
@@ -25,9 +25,9 @@ export const FormatoPago = ()=>{
                         </select>
                         </div>
                     </fieldset>
-                    <fieldset class="green">
+                    <fieldset className="green">
                         <legend>Programa</legend>
-                        <div class="formBox">
+                        <div className="formBox">
                         <select>
                                 <option value="">Seleccione un programa</option>
                                 <option value="1">LICENCIATURA EN INFORMATICA</option>
@@ -41,9 +41,9 @@ export const FormatoPago = ()=>{
                             </select>
                         </div>
                     </fieldset>
-                    <fieldset class="gold">
+                    <fieldset className="gold">
                         <legend>Tramite</legend>
-                        <div class="formBox">
+                        <div className="formBox">
                         <select>
                             <option value="">Seleccione un tipo de tramite</option>
                             <option value="1">EXAMENES</option>
@@ -61,7 +61,7 @@ export const FormatoPago = ()=>{
                 </form>
                 <div className='contenedorTramites'>
                     <div className='table-scroll'>
-                        <Table list={list} colums={colums} title={title}/>
+                        <Table list={list} colums={colums} title={title} />
                     </div>
                 </div>
               </div>

@@ -6,7 +6,7 @@ import { useForm } from '../hooks/useForm'
 
 export const LoginPage = () => {
     const { authLogin } = useUser();
-    const [ formValues, handleChange ] = useForm({numCuenta: '', nip: ''});
+    const [ formValues, handleChange ] = useForm({numCuenta: '15429245', nip: '202020'});
 
     const { numCuenta, nip } = formValues;
 
@@ -33,7 +33,7 @@ export const LoginPage = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100 vh-100"
-                                src={ image('./img-1.png').default }
+                                src={ image('./img-1.png') }
                                 alt="First slide"
                             />
                             <Carousel.Caption>
@@ -48,7 +48,7 @@ export const LoginPage = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100 vh-100"
-                                src={ image('./img-2.jpg').default }
+                                src={ image('./img-2.jpg') }
                                 alt="Torre Academica"
                             />
                             <Carousel.Caption>
@@ -59,7 +59,7 @@ export const LoginPage = () => {
                         <Carousel.Item>
                             <img
                                 className="d-block w-100 vh-100"
-                                src={ image('./img-3.jpg').default }
+                                src={ image('./img-3.jpg') }
                                 alt="Third slide"
                             />
                             <Carousel.Caption>
@@ -71,9 +71,9 @@ export const LoginPage = () => {
                 </Col>
                 <Col md={5} lg={4} className="d-flex flex-column | min-vh-100 | login__form">
                     <div className="d-flex | justify-content-center | align-items-center | w-100 | logo">
-                        <img src={ image('./UAS.png').default } className="img-fluid" alt="logo" />
+                        <img src={ image('./UAS.png') } className="img-fluid" alt="logo" />
                         <span className="logo__title d-lg-none d-md-none">SIIA Alumnos</span>
-                        <img src={ image('./VISION.png').default } className="img-fluid d-none d-lg-block" alt="logo" />
+                        <img src={ image('./VISION.png') } className="img-fluid d-none d-lg-block" alt="logo" />
                     </div>
                     <div className="align-self-center w-100 px-lg-5 py-lg-4 p-4 form_container">
                         <h1 className="title">Inicio de sesión</h1>
@@ -82,12 +82,14 @@ export const LoginPage = () => {
                                 <label htmlFor="numCuenta" className="form-label fw-bold numCuenta__label">Número de cuenta</label>
                                 <div className="numCuenta__input">
                                     <input 
+                                        type="text"
                                         inputMode="numeric"
                                         className="form-control border-0"
                                         id="numCuenta"
                                         placeholder="Ingresa tu número de cuenta"
                                         aria-describedby="Número de cuenta"
                                         name='numCuenta'
+                                        maxLength={8}
                                         value={numCuenta}
                                         onChange={handleChange}
                                     />
@@ -104,6 +106,7 @@ export const LoginPage = () => {
                                         type="password"
                                         inputMode="numeric"
                                         name='nip'
+                                        maxLength={6}
                                         value={nip}
                                         onChange={handleChange}
                                         autoComplete='new-password'
