@@ -1,4 +1,14 @@
 @media (max-width: 991.92px) {
+    .canvasMenu_main_title {
+        margin-top: 1rem;
+        span {
+            color: $white;
+            font-family: $base-font;
+            font-size: 1.4em;
+            font-weight: 800;
+        }
+    }
+
     .canvasMenu {
         background-color: #c59d22;
 
@@ -212,5 +222,12 @@
     .canvasMenu.open {
         visibility: visible;
         transform: translateX(0%);
+    }
+
+    .navlink--active {
+        span {
+            font-weight: bold !important;
+            text-decoration: underline !important;
+        }
     }
 }

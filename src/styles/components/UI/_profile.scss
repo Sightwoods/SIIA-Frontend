@@ -36,9 +36,14 @@
         .logout {
             padding: 5px 5px;  
             color: $normal;
+            
             text-decoration: none;
             font-size: 0.9em;
             font-weight: 400;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             &:hover {
                 background-color: $lighter;
@@ -61,6 +66,8 @@
                 // text-align: center;
                 text-overflow: ellipsis;
                 white-space: nowrap;
+                width: 200px;
+                overflow-x: hidden;
             }
             span:nth-child(2){
                 color: #0000DD;

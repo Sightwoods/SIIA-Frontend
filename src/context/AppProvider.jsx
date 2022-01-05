@@ -70,15 +70,21 @@ export const AppProvider = ({children}) => {
             })
             console.log(e);
         }
+        finally{
+            return false;
+        }
     }
     const authLogout = async() => {
         try {
+            authDispatch({ type: types.authLogout })
             await fetchConToken('users/logout', {}, 'POST');
             localStorage.clear();
-            authDispatch({ type: types.authLogout })
         }
         catch(e){
             console.log(e);
+        }
+        finally {
+            return false;
         }
     }
     const authCheck = useCallback(async () => {

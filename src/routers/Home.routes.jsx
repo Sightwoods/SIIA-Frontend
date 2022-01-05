@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { TestPage } from '../pages/TestPage';
 
@@ -15,6 +15,7 @@ export const HomeRoutes = () => {
 
             <Route path="/consultas/*" element={ <ConsultasRoutes /> } />
             <Route path="/tramites/*" element={ <TramitesRoutes /> } />
+            <Route path="*" element={ <Navigate to="/" /> } /> 
         </Routes>
     )
 }

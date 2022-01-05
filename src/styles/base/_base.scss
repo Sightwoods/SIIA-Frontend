@@ -88,3 +88,18 @@ span {
         background-color: red;
     }
 }
+
+.request_spinner {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    border: 0.2em solid currentColor !important;
+    border-right-color: transparent !important;
+}
+
+.request_spinner-login {
+    margin-left: 5px;
+    width: 1.1rem !important;
+    height: 1.1rem !important;
+    border: 0.2em solid currentColor !important;
+    border-right-color: transparent !important;
+}

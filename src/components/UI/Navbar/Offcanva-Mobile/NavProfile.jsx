@@ -4,12 +4,15 @@ import { LinkGroup } from '../../Dropdown/LinkGroup';
 
 import { useUser } from '../../../../hooks/useUser';
 
-export const NavProfile = ({ handleClick }) => {
-
+export const NavProfile = () => {
     const { user, authLogout } = useUser();
     
     const changeNIP = () => alert('Cambiar NIP presionado');
     const accesibility = () => alert('Accesibilidad presionado');
+
+    const handleLogout = () => {
+        authLogout();
+    }
 
     return (
         <li className="nav-item | profile-item">
@@ -22,10 +25,12 @@ export const NavProfile = ({ handleClick }) => {
                             </div>
                         </div>
                         <div className="nav-profile__info">
-                            <button className="logout" onClick={authLogout}>Cerrar sesión</button>
+                            <button className="logout" onClick={handleLogout}>
+                                Cerrar sesión
+                            </button>
                             <div className="data">
-                                <span>{ user.nombre }</span>
-                                <span>{ user.email }</span>
+                                <span title={user.nombre}>{ user.nombre }</span>
+                                <span>{ (user.email !== ' ') ? user.email : 'Correo no registrado' }</span>
                                 <span>Cuenta: { user.cuenta }</span>
                             </div>
                             <div className="options">

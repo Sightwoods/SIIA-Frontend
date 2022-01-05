@@ -132,6 +132,10 @@
 
 /* Desktop */
 @media only screen and (min-width : 992px) {
+    .canvasMenu_main_title {
+        display: none;
+    }
+
     .canva-uas {
         background-color: $blue-600;  
 
@@ -165,11 +169,7 @@
     .btn-nav-uas {
         padding-top: 0;
         padding-bottom: 0;
-    
-        i {
-            // display: none;
-        }
-    
+
         span {
             font-size: 1.1rem;
         }
@@ -187,6 +187,7 @@
 @media only screen and (max-width: 991.92px) {
     .canva-uas { width: 300px; }
 }
+
 // On Mobile
 @media only screen and (max-width: 425px) {
     .canva-uas { width: 75%; }

@@ -1,18 +1,22 @@
-import { Carousel, Col, Row } from 'react-bootstrap';
+import { useState } from 'react';
+import { Carousel, Col, Row, Spinner } from 'react-bootstrap';
 
 import { image } from "../helpers/image";
 import { useUser } from '../hooks/useUser';
 import { useForm } from '../hooks/useForm'
 
 export const LoginPage = () => {
+    const [ isLoading, setIsLoading ] = useState(false);
     const { authLogin } = useUser();
     const [ formValues, handleChange ] = useForm({numCuenta: '15429245', nip: '202020'});
 
     const { numCuenta, nip } = formValues;
 
-    const handleSubmit = ( e ) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        authLogin( numCuenta, nip );
+        setIsLoading(true);
+        const state = await authLogin( numCuenta, nip );
+        setIsLoading( state );
     }
 
     const showNIP = (e) => {
@@ -120,7 +124,15 @@ export const LoginPage = () => {
                                     Mostrar NIP
                                 </label>
                             </div>
-                            <button type="submit" className="btn btn-primary w-100">Log in</button>
+                            <button type="submit" className="btn btn-primary w-100 d-flex justify-content-center align-items-center">
+                                {
+                                    (!isLoading)
+                                    ?
+                                    'Iniciar sesión' 
+                                    :
+                                    <Spinner className="request_spinner" animation="border" />
+                                }   
+                            </button>
                         </form>
                    </div>
                 </Col>
