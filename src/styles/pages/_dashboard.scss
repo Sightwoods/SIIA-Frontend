@@ -40,7 +40,8 @@
                         border-color: $blue-400;
 
                         &:active,
-                        &:focus {
+                        &:focus,
+                        &:hover {
                             box-shadow: 0 0 0 .20rem rgba($color: $blue-500, $alpha: .35);
                         }
                     }

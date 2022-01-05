@@ -1,11 +1,12 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import { TestPage } from '../pages/TestPage';
 
 import { HomePage } from '../pages/HomePage';
 import { ConsultasRoutes } from './Consultas.routes';
 import { TramitesRoutes } from './Tramites.routes';
+import { MaintenancePage } from '../pages/MaintenancePage';
 
 export const HomeRoutes = () => {
     return (
@@ -15,7 +16,7 @@ export const HomeRoutes = () => {
 
             <Route path="/consultas/*" element={ <ConsultasRoutes /> } />
             <Route path="/tramites/*" element={ <TramitesRoutes /> } />
-            <Route path="*" element={ <Navigate to="/" /> } /> 
+            <Route path="*" element={ <MaintenancePage /> } /> 
         </Routes>
     )
 }
