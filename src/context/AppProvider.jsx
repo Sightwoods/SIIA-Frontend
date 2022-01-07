@@ -9,24 +9,18 @@ import { types } from './types/types';
 const auth = {
     user: {
         id: null,
-        // id: "1",
-        // cuenta: "154254-5",
-        // nombre: "Felipe Ruíz Madero",
-        // email: "f.ruiz92@info.uas.edu.mx",
-        // foto: "https://res.cloudinary.com/dprnkj8u8/image/upload/v1640632042/uas/felipe_iatdop.jpg"
     },
     checking: true,
 }
 
 const Toast = Swal.mixin({
     toast: true,
-    position: 'top-end',
+    position: 'top',
     showConfirmButton: false,
     timer: 3000,
     timerProgressBar: true,
     didOpen: (toast) => {
-      toast.addEventListener('mouseenter', Swal.stopTimer)
-      toast.addEventListener('mouseleave', Swal.resumeTimer)
+      toast.addEventListener('mouseenter', Swal.close)
     }
 })
 
@@ -55,23 +49,23 @@ export const AppProvider = ({children}) => {
                         }
                     }
                 })
+                return {
+                    ok: true,
+                }
             }
             else {
-                Toast.fire({
-                    icon: 'error',
-                    title: '¡Número de cuenta o NIP incorrectos!'
-                })
+                return {
+                    ok: false,
+                    msg: '¡Número de cuenta o NIP incorrectos!'
+                }
             }
         }
         catch(e) {
-            Toast.fire({
-                icon: 'error',
-                title: 'Ha ocurrido un problema, intente más tarde'
-            })
             console.log(e);
-        }
-        finally{
-            return false;
+            return {
+                ok: false,
+                msg: 'Ha ocurrido un problema, intente más tarde'
+            }
         }
     }
     const authLogout = async() => {
@@ -109,7 +103,7 @@ export const AppProvider = ({children}) => {
                 }
                 else {
                     authDispatch({ type: types.authCheckingFinish });
-                    if ( body.msg === 'Token is invalid' ){
+                    if ( body.msg === 'Token is invalid' || body.msg === 'Token revoked.' ){
                         Toast.fire({
                             icon: 'error',
                             title: '¡La sesión ha expirado!'
@@ -129,7 +123,6 @@ export const AppProvider = ({children}) => {
         else {
             authDispatch({ type: types.authCheckingFinish });
         }
-        
     }, []);
 
     return (

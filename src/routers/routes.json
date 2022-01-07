@@ -72,7 +72,7 @@
                 "paths": [
                     {
                         "id": 20000,
-                        "name": "Generar pago",
+                        "name": "Generar formato de pago",
                         "path": "/generar-pago"
                     },
                     {

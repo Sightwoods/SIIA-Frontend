@@ -6,9 +6,7 @@ import { types } from "../types/types";
 //     email: 'da.chavira18@info.uas.edu.mx',
 // }
 
-export const authReducer = ( state = {}, action ) => {
-    console.log(action)
-    
+export const authReducer = ( state = {}, action ) => {    
     switch ( action.type ) {
         case types.authLogin:
             return {

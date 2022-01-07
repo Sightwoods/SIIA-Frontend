@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import { CambioUnidad } from '../pages/Tramites/CambioUnidad';
 import { Certificado } from '../pages/Tramites/Certificado';
@@ -16,6 +16,7 @@ export const TramitesRoutes = () =>{
             <Route path="/movimientos/generar-pago" element={<FormatoPago />} />
             <Route path="/movimientos/pagar" element={<Pagos />} />
             <Route path="/solicitud/titulo" element={<Titulo />} />
+            <Route path="/*" element={ <Navigate to="/" /> } />
         </Routes>
     )
 }

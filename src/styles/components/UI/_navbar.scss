@@ -1,7 +1,13 @@
 .navbar-uas {
+    box-sizing: border-box;
     z-index: 1;
     background-color: $blue-600;
+    height: $nav-size;
     
+    .container-fluid {
+        align-items: center;
+    }
+
     .title {
         color: $white;
         font-family: $base-font;
@@ -14,6 +20,30 @@
         &:focus {
             box-shadow: none;
         }
+    }
+
+}
+
+.nav_login {
+    background-color: $blue-600;  
+    border: none;
+    color: $white;
+    font-size: 1rem;
+    font-family: $base-font;
+    font-weight: 600;
+    width: auto;
+    
+    a {
+        color: $white;
+        font-size: 1rem;
+        font-family: $base-font;
+        font-weight: 600;
+        letter-spacing: initial;
+        text-decoration: none;
+    }
+
+    &:hover > a {
+        text-decoration: underline;
     }
 }
 
@@ -64,12 +94,21 @@
 
 /* Mobile */
 @media only screen and (max-width : 991.92px) {
+    .nav_login {
+        a {
+            text-decoration: underline;
+            letter-spacing: .5px;
+        }
+    }
+
     .navbar-uas {
         .container-fluid {
             justify-content: stretch;
         }
 
         .navbar-brand {
+            display: flex;
+            align-items: center;
             flex-grow: 1;
         }
     }

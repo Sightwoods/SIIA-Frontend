@@ -11,8 +11,9 @@
    
 		.tcabecera{
 			background-color: $blue-500;
-			color: white;
-			font-weight: bold;
+            color: $white;
+            font-family: $base-font;
+            font-weight: 600;
 		}
 		
 	}

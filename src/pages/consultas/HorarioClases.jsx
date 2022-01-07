@@ -1,12 +1,62 @@
+import { useCallback, useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { Layout } from '../../components/layout/Layout';
+import { useFetch } from '../../hooks/useFetch';
 
 export const HorarioClases = () =>{
+    const [ data, error, isLoading ] = useFetch('users/schedule');
+    const [ state, setState ] = useState([]);
+
+    const getDay = (day) => {
+        switch (day) {
+            case '1':
+                return 'Lunes';
+            case '2':
+                return 'Martes';
+            case '3':
+                return 'Miércoles';
+            case '4':
+                return 'Jueves';
+            case '5':
+                return 'Viernes';
+            default:
+                return '';
+        }
+    }
+
+    const filterData = useCallback(() => {
+        const reduce = data.reduce((p, c) => {
+            return {
+                ...p,
+                [c.subject]: {
+                    subject: c.subject,
+                    teacher: c.teacher
+                }
+            }
+        }, [])
+        data.forEach((e, i) => {
+            if (e.subject === reduce[e.subject].subject){
+                reduce[e.subject].days = {
+                    ...reduce[e.subject].days,
+                    [e.days.day]: e.days,
+                }
+            } 
+        });
+        return reduce;
+    }, [data]);
+
+    useEffect(() => {
+        if ( !isLoading && !error ) {
+            setState(Object.values(filterData()));
+        }
+    }, [filterData, isLoading, error])
+
     return (
         <Layout>
-            <div className='container '>
+            <div className='container mt-4'>
             <h5 id='titulo'>Horario de Clases</h5>
-                <div className=' table-responsive'>
-                    <table className="table table-hover table-borderless tabla">
+                <div className='table-responsive'>
+                    <table className="table table-hover table-borderless tabla mt-3">
                         <thead className='tcabecera'>
                             <tr>
                                 <th scope='col'>Clave</th>
@@ -14,62 +64,34 @@ export const HorarioClases = () =>{
                                 <th scope='col'>Maestro</th>
                                 <th scope='col'>Lunes</th>
                                 <th scope='col'>Martes</th>
-                                <th scope='col'>Miercoles</th>
+                                <th scope='col'>Miércoles</th>
                                 <th scope='col'>Jueves</th>
                                 <th scope='col'>Viernes</th>
                             </tr>
                         </thead>
                         <tbody className='tcuerpo'>
-                            <tr>
-                                <td data-label="Clave">1</td>
-                                <td data-label="Materia">LENGUAJES AUTÓMATAS Y COMPLEJIDAD</td>
-                                <td data-label="Mestro">GASTELUM CHAVIRA DIEGO ALONSO</td>
-                                <td data-label="Lunes">18:00-19:00</td>
-                                <td data-label="Martes">18:00-19:00</td>
-                                <td data-label="Miercoles">18:00-19:00</td>
-                                <td data-label="Jueves">18:00-19:00</td>
-                                <td data-label="Viernes">18:00-19:00</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Clave" >2</td>
-                                <td data-label="Materia">ADMINISTRACIÓN DE PROYECTOS DE SOFTWARE</td>
-                                <td data-label="Mestro">MORENO CANDIL ELVA CRISTINA </td>
-                                <td data-label="Lunes">18:00-19:00</td>
-                                <td data-label="Martes">18:00-19:00</td>
-                                <td data-label="Miercoles">18:00-19:00</td>
-                                <td data-label="Jueves">18:00-19:00</td>
-                                <td data-label="Viernes">18:00-19:00</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Clave" >3</td>
-                                <td data-label="Materia">INNOVACIÓN TECNOLÓGICA</td>
-                                <td data-label="Mestro">LOPEZ CERVANTES EDY</td>
-                                <td data-label="Lunes">18:00-19:00</td>
-                                <td data-label="Martes">18:00-19:00</td>
-                                <td data-label="Miercoles">18:00-19:00</td>
-                                <td data-label="Jueves">18:00-19:00</td>
-                                <td data-label="Viernes">18:00-19:00</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Clave">4</td>
-                                <td data-label="Materia">PROGRAMACIÓN DE INTERFACES WEB</td>
-                                <td data-label="Mestro">GARCIA CARLOS RODRIGO</td>
-                                <td data-label="Lunes">18:00-19:00</td>
-                                <td data-label="Martes">18:00-19:00</td>
-                                <td data-label="Miercoles">18:00-19:00</td>
-                                <td data-label="Jueves">18:00-19:00</td>
-                                <td data-label="Viernes">18:00-19:00</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Clave">5</td>
-                                <td data-label="Materia">INFRAESTRUCTURA INFORMÁTICA</td>
-                                <td data-label="Mestro">ESTRADA CASTANEDA ERIKA</td>
-                                <td data-label="Lunes">18:00-19:00</td>
-                                <td data-label="Martes">18:00-19:00</td>
-                                <td data-label="Miercoles">18:00-19:00</td>
-                                <td data-label="Jueves">18:00-19:00</td>
-                                <td data-label="Viernes">18:00-19:00</td>
-                            </tr>
+                            {
+                                (!isLoading)
+                                ?
+                                    (!error)
+                                    ?
+                                    state.map((e, i) => (
+                                        <tr key={i}>
+                                            <td data-label="Clave">---</td>
+                                            <td data-label="Materia">{e.subject}</td>
+                                            <td data-label="Profesor">{e.teacher}</td>
+                                            {
+                                                Object.values(e.days).map((day, i) => (
+                                                    <td data-label={getDay(day.day)} key={i}>{day.schedule}</td>
+                                                ))
+                                            }
+                                        </tr>   
+                                    ))
+                                    :
+                                    <tr><td>{error.message}</td></tr>
+                                :
+                                <tr><td><Spinner className="request_spinner" animation="border" /></td></tr>
+                            }
                         </tbody>
                     </table>
                 </div>
