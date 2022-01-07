@@ -1,47 +1,26 @@
-import { useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-import { PrivateRoute } from './Private.routes';
-import { PublicRoute } from './Public.routes';
+import { ConsultasRoutes } from './Consultas.routes';
+import { TramitesRoutes } from './Tramites.routes';
 
-import { Loading } from '../components/UI/Loading';
-import { HomeRoutes } from './Home.routes';
-import { LoginPage } from '../pages/LoginPage';
-import { useUser } from '../hooks/useUser';
+import { Navbar } from '../components/UI/Navbar/Navbar';
+import { HomePage } from '../pages/HomePage';
+import { MaintenancePage } from '../pages/MaintenancePage';
 
 export const AppRouter = () => {
-
-    const { user, checking, authCheck } = useUser();
-
-    useEffect(() => {
-        authCheck();
-    }, [authCheck]);
-
-    if ( checking ) {
-        return <Loading />
-    }
-    else {
-        return (
-            <BrowserRouter>
-                <Routes>
-                    <Route
-                        path="/*"
-                        element={
-                            <PrivateRoute isAuthenticated={!!user.id}>
-                                <HomeRoutes />
-                            </PrivateRoute>
-                        }
-                    />
-                    <Route 
-                        path="/login"
-                        element={
-                            <PublicRoute isAuthenticated={!!user.id}>
-                                <LoginPage />
-                            </PublicRoute>
-                        }
-                    />
-                </Routes>
-            </BrowserRouter>
-        )
-    }
+    return (
+        <BrowserRouter>
+            <Navbar isPrivate={true}/>
+            <Routes>
+                <Route path="/consultas/*" element={ <ConsultasRoutes /> } />
+                <Route path="/tramites/*" element={ <TramitesRoutes /> } />
+                <Route path="/reinscripcion/*"  element={ <MaintenancePage /> } />
+                <Route path="/examenes/*"  element={ <MaintenancePage /> } />
+                <Route path="/idiomas/*"  element={ <MaintenancePage /> } />
+                <Route path="/encuestas/*"  element={ <MaintenancePage /> } />
+                <Route path="/"  element={ <HomePage /> } />
+                <Route path="/*"  element={ <Navigate to="/" /> } />
+            </Routes>
+        </BrowserRouter>
+    )
 }

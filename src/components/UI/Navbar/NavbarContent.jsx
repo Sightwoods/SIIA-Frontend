@@ -14,7 +14,7 @@ const { consultas,
 export const NavbarContent = ({isNavOpen}) => {
     return (
         <div
-            className={`navbar-collapse | offcanvas-collapse | justify-content-end | canva-uas | ${ (isNavOpen) ? 'open' : ''}`}
+            className={`navbar-collapse | offcanvas-collapse | justify-content-end | canva-uas | animate__animated animate__fadeIn animate__faster | ${ (isNavOpen) ? 'open' : ''}`}
             id="navbar"
         >
             <div className='canvasMenu_main_title'>

@@ -1,142 +1,209 @@
-import { useState } from 'react';
-import { Carousel, Col, Row, Spinner } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Button, Container, Form, Image, Row, Spinner, ToggleButton } from 'react-bootstrap';
 
 import { image } from "../helpers/image";
 import { useUser } from '../hooks/useUser';
 import { useForm } from '../hooks/useForm'
 
 export const LoginPage = () => {
+    const [ checked, setChecked ] = useState(false);
     const [ isLoading, setIsLoading ] = useState(false);
+    const [ errorMsg, setErrorMsg ] = useState(null);
     const { authLogin } = useUser();
-    const [ formValues, handleChange ] = useForm({numCuenta: '15429245', nip: '202020'});
+    const [ formValues, handleChange, , error ] = useForm({numCuenta: '', nip: ''});
 
     const { numCuenta, nip } = formValues;
 
     const handleSubmit = async(e) => {
         e.preventDefault();
         setIsLoading(true);
-        const state = await authLogin( numCuenta, nip );
-        setIsLoading( state );
+        const resp = await authLogin(numCuenta, nip);
+        setErrorMsg(resp);
+        setIsLoading(false);
     }
 
-    const showNIP = (e) => {
+    const onFocus = (e) => {
+        const element = e.currentTarget;
+        const div = document.querySelector(`div[data-label="${element.name}"]`);
+        const label = document.querySelector(`label[data-label="${element.name}"]`);
+        if ( !div.classList.contains('focus') ) {
+            div.classList.add('focus');
+            label.classList.add('label-focus');
+        }
+    }
+
+    const onBlur = (e) => {
+        const element = e.currentTarget;
+        const div = document.querySelector(`div[data-label="${element.name}"]`);
+        const label = document.querySelector(`label[data-label="${element.name}"]`);
+        if ( e.target.value.length === 0 ) {
+            div.classList.remove('focus');
+            label.classList.remove('label-focus');
+        }
+    }
+
+    useEffect(() => {
+        const account = document.getElementsByName('numCuenta');
+        const nip = document.getElementsByName('nip');
+        if ( account[0].value.length > 0 ){
+            const div = document.querySelector(`div[data-label="${account[0].name}"]`);
+            const label = document.querySelector(`label[data-label="${account[0].name}"]`);
+            div.classList.add('focus');
+            label.classList.add('label-focus');
+        }
+        if ( nip[0].value.length > 0 ){
+            const div = document.querySelector(`div[data-label="${nip[0].name}"]`);
+            const label = document.querySelector(`label[data-label="${nip[0].name}"]`);
+            div.classList.add('focus');
+            label.classList.add('label-focus');
+        }
+
+        return(() => {
+            setChecked(false);
+            setErrorMsg(null);
+            setIsLoading(false);
+        });
+    }, []);
+
+    useEffect(() => {
         const nipInput = document.getElementById('nip');
-        if ( e.target.checked ) {
+        if ( checked ) {
             nipInput.type = 'text';
         }
         else {
             nipInput.type = 'password';
         }
-    }
+    }, [checked])
+
+    useEffect(() => {
+        const account = document.getElementsByName('numCuenta');
+        const nip = document.getElementsByName('nip');
+        const divAccount = document.querySelector(`div[data-label="${account[0].name}"]`);
+        const labelAccount = document.querySelector(`label[data-label="${account[0].name}"]`);
+        const divNip = document.querySelector(`div[data-label="${nip[0].name}"]`);
+        const labelNip = document.querySelector(`label[data-label="${nip[0].name}"]`);
+        if ( error.numCuenta?.error ){
+            divAccount.classList.add('error');
+            labelAccount.classList.add('label-error');
+        }
+        else {
+            divAccount.classList.remove('error');
+            labelAccount.classList.remove('label-error');
+        }
+
+        if ( error.nip?.error ){
+            divNip.classList.add('error');
+            labelNip.classList.add('label-error');
+        }
+        else {
+            divNip.classList.remove('error');
+            labelNip.classList.remove('label-error');
+        }
+    }, [error])
 
     return (
         <section className="login | animate__animated animate__fadeIn">
-            <Row className="g-0">
-                <Col md={7} lg={8} className="d-none | d-lg-block| d-md-block">
-                    <Carousel>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100 vh-100"
-                                src={ image('./img-1.png') }
-                                alt="First slide"
-                            />
-                            <Carousel.Caption>
-                                <h3 className="teds">Rectoria</h3>
-                                <p>
-                                    La Universidad Autónoma de Sinaloa, aunque con diversas denominaciones en sus 148 años
-                                    de existencia, ha sido un significativo soporte cultural y moral de 
-                                    Sinaloa y el noroeste de México.
-                                </p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100 vh-100"
-                                src={ image('./img-2.jpg') }
-                                alt="Torre Academica"
-                            />
-                            <Carousel.Caption>
-                                <h3>Torre Academica</h3>
-                                <p>La Torre academica que se encuentra en la capital del estado y sirve para los eventos oficiales de la universidad.</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <img
-                                className="d-block w-100 vh-100"
-                                src={ image('./img-3.jpg') }
-                                alt="Third slide"
-                            />
-                            <Carousel.Caption>
-                                <h3>Rotonda Univesitaria</h3>
-                                <p>Dentro de la torre academica contamos con estatuas de nuestros ilustres y mas reconocidos estudiantes,</p>
-                            </Carousel.Caption>
-                        </Carousel.Item>
-                    </Carousel>
-                </Col>
-                <Col md={5} lg={4} className="d-flex flex-column | min-vh-100 | login__form">
-                    <div className="d-flex | justify-content-center | align-items-center | w-100 | logo">
-                        <img src={ image('./UAS.png') } className="img-fluid" alt="logo" />
-                        <span className="logo__title d-lg-none d-md-none">SIIA Alumnos</span>
-                        <img src={ image('./VISION.png') } className="img-fluid d-none d-lg-block" alt="logo" />
-                    </div>
-                    <div className="align-self-center w-100 px-lg-5 py-lg-4 p-4 form_container">
-                        <h1 className="title">Inicio de sesión</h1>
-                        <form onSubmit={handleSubmit}>
-                            <div className="numCuenta">
-                                <label htmlFor="numCuenta" className="form-label fw-bold numCuenta__label">Número de cuenta</label>
-                                <div className="numCuenta__input">
-                                    <input 
+            <Container className="login__container">
+                <Row className="login__logo"><Image src={image('./UAS.png')} alt="UAS" /></Row>
+                <Container fluid>
+                    <Row className="login__title"><span>Inicio de sesión</span></Row>
+                    <Row className="login__subtitle">
+                        {   
+                            (errorMsg)
+                            ?
+                            <Form.Text className="text-muted error-msg">
+                                <i className="fas fa-exclamation-circle me-2"></i>
+                                { errorMsg.msg }
+                            </Form.Text>
+                            :
+                            <small>Rellena el formulario</small>
+                        }
+                    </Row>
+                </Container>
+                <Container fluid className="px-1">
+                    <Form className="login__form" onSubmit={handleSubmit}>
+                        <Form.Group className="mb-4" controlId="account">
+                            <Container fluid className="account">
+                                <Form.Label data-label="numCuenta">Número de cuenta</Form.Label>
+                                <div data-label="numCuenta">
+                                    <Form.Control
                                         type="text"
                                         inputMode="numeric"
-                                        className="form-control border-0"
-                                        id="numCuenta"
-                                        placeholder="Ingresa tu número de cuenta"
-                                        aria-describedby="Número de cuenta"
                                         name='numCuenta'
                                         maxLength={8}
                                         value={numCuenta}
                                         onChange={handleChange}
+                                        onFocus={onFocus}
+                                        onBlur={onBlur}
                                     />
-                                    <i className="numCuenta__icon fas fa-user-graduate fa-lg"></i>
                                 </div>
-                            </div>
-                            <div className="nip">
-                                <label htmlFor="nip" className="form-label fw-bold nip__label">NIP</label>
-                                <div className="nip__input">
-                                    <input 
-                                        className="form-control border-0" 
-                                        placeholder="Ingresa tu NIP"
-                                        id="nip"
+                                <Form.Text className="text-muted error-msg">
+                                    {
+                                        (error.numCuenta?.error)
+                                        &&
+                                        <>
+                                            <i className="fas fa-exclamation-circle ms-1 me-2"></i>
+                                            {error.numCuenta?.msg}
+                                        </>
+                                    }
+                                </Form.Text>
+                            </Container>
+                        </Form.Group>
+                        <Form.Group className="mb-4" controlId="nip">
+                            <Container fluid className="nip">
+                                <Form.Label data-label="nip">NIP</Form.Label>
+                                <div data-label="nip">
+                                    <Form.Control
                                         type="password"
                                         inputMode="numeric"
                                         name='nip'
                                         maxLength={6}
                                         value={nip}
                                         onChange={handleChange}
+                                        onFocus={onFocus}
+                                        onBlur={onBlur}
                                         autoComplete='new-password'
                                     />
-                                    <i className="nip__icon fas fa-lock fa-lg"></i>
+                                    <ToggleButton
+                                        id="mostrar-nip"
+                                        type="checkbox"
+                                        checked={checked}
+                                        value="true"
+                                        className="mostrar-nip"
+                                        onChange={(e) => setChecked(e.currentTarget.checked)}
+                                    >
+                                        { (checked) ? <i className="far fa-eye-slash"></i> : <i className="far fa-eye"></i> }
+                                    </ToggleButton>
                                 </div>
-                            </div>
-                            <div className="form-check">
-                                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" defaultChecked={false} onChange={showNIP} />
-                                <label className="form-check-label text-white" htmlFor="flexCheckChecked">
-                                    Mostrar NIP
-                                </label>
-                            </div>
-                            <button type="submit" className="btn btn-primary w-100 d-flex justify-content-center align-items-center">
+                                <Form.Text className="text-muted error-msg">
+                                    {
+                                        (error.nip?.error)
+                                        &&
+                                        <>
+                                            <i className="fas fa-exclamation-circle ms-1 me-2"></i>
+                                            {error.nip?.msg}
+                                        </>
+                                    }
+                                </Form.Text>
+                            </Container>
+                        </Form.Group>
+                        <Form.Text className="text-muted">
+                            Si tienes problemas para iniciar sesión comunicate con control escolar.
+                        </Form.Text>
+                        <div className="d-flex justify-content-end">
+                            <Button variant="primary" type="submit" className="login__submit">
                                 {
                                     (!isLoading)
                                     ?
-                                    'Iniciar sesión' 
+                                    'Acceder'
                                     :
                                     <Spinner className="request_spinner" animation="border" />
-                                }   
-                            </button>
-                        </form>
-                   </div>
-                </Col>
-            </Row>
+                                }
+                            </Button>
+                        </div>
+                    </Form>
+                </Container>
+            </Container>
         </section>
     );
 };

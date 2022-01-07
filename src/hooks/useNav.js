@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { useLocation } from 'react-router-dom';
 
 export const useNav = ( initialState = {}) => {
-
+    let {pathname} = useLocation();
     const [isNavOpen, setIsNavOpen] = useState( initialState );
     const isMobile = useMediaQuery({ query: '(max-width: 991.92px)' });
     
-
     useEffect(() => {
         if ( isNavOpen ) 
         {
@@ -24,6 +24,10 @@ export const useNav = ( initialState = {}) => {
     useEffect(() => {
         setIsNavOpen(false);
     }, [isMobile])
+    
+    useEffect(() => {
+        setIsNavOpen(false);
+    }, [pathname])
 
     useEffect(() => {
         setIsNavOpen(false);
