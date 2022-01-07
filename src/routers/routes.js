@@ -1,4 +1,4 @@
-{
+export const routes = {
     "consultas": {
         "id": 1,
         "name": "Consultas",
