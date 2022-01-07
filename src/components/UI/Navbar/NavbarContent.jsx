@@ -3,7 +3,8 @@ import { NavItem } from './NavItem';
 
 import * as routes from '../../../routers/routes.json';
 
-const { consultas,
+const { 
+    consultas,
     tramites,
     reinscripcion,
     examenes,
