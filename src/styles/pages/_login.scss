@@ -2,12 +2,14 @@
     --focus-color: #005AD8;
     --error-color: rgb(192, 29, 29);
 
+    background-color: $blue-500;
+    height: 100vh;
+
     &__container {
+        background-color: $white;
         padding-right: var(--bs-gutter-x, 0.95rem);
         padding-left: var(--bs-gutter-x, 0.95rem);
     }
-
-    height: 100vh;
 
     &__logo {
         display: flex;
@@ -151,11 +153,20 @@
     }
 }
 
-@media only screen and (min-width : 992px) {
+@media only screen and (min-width : 576px) {
     .login {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        &__logo {
+            margin-top: 40px;
+    
+            img {
+                width: 90px;
+                height: 80px;
+            }
+        }
 
         &__container {
             width: 450px;
@@ -169,6 +180,39 @@
             .login__submit {
                 margin-bottom: 40px;
             }
+        }
+    }
+}
+
+@media only screen and (max-width : 576px) {
+    .login {
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 576px) {
+    .login {
+        &__container {
+            padding-right: var(--bs-gutter-x, 1.5rem);
+            padding-left: var(--bs-gutter-x, 1.5rem);
+        }
+
+        &__form {
+            .login__submit {
+                padding: 10px;
+                width: 120px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-height: 640px) and (max-height: 1000px) and (orientation: portrait) {
+    .login {
+        &__logo {
+            margin-top: 50px;
         }
     }
 }
