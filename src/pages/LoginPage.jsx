@@ -187,7 +187,7 @@ export const LoginPage = () => {
                                 </Form.Text>
                             </Container>
                         </Form.Group>
-                        <Form.Text className="text-muted">
+                        <Form.Text className="text-muted login__info">
                             Si tienes problemas para iniciar sesión comunicate con control escolar.
                         </Form.Text>
                         <div className="d-flex justify-content-end">

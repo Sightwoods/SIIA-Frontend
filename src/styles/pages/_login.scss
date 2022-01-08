@@ -1,6 +1,8 @@
 .login {
     --focus-color: #005AD8;
     --error-color: rgb(192, 29, 29);
+    --border-c: 1px solid rgb(180, 180, 180);
+    --border-focus: 1px solid var(--focus-color);
 
     background-color: $blue-500;
     height: 100vh;
@@ -54,7 +56,7 @@
                 display: flex;
                 align-items: center;
                 box-sizing: border-box;
-                border: 1px solid rgb(180, 180, 180);
+                border: var(--border-c);
                 border-radius: 4px;
             }
 
@@ -81,7 +83,7 @@
             }
 
             .focus {
-                border: 1px solid var(--focus-color);
+                border: var(--border-focus);
             }
 
             .label-error {
@@ -185,11 +187,93 @@
 }
 
 @media only screen and (max-width : 576px) {
-    .login {
-        background-color: $white;
+    .login {     
+        --focus-color: #EECB2F;
+        --error-color: rgb(255, 49, 22);
+
+        background: url('../../assets/images/background.png');
+        background-size: cover;
+        background-position: center;
         display: flex;
         align-items: center;
-        height: auto;
+        height: 100vh;
+
+        &__logo {
+            img {
+                width: 80px;
+                height: 70px;
+            }
+        }
+
+        &__container {
+            background-color: rgba($color: $blue-700, $alpha: 0.7);
+            height: 100vh;
+        }
+
+        &__title, &__subtitle {
+            color: $white;
+        }
+
+        &__info {
+            color: $white !important;
+        }
+
+        &__form {
+            .nip,
+            .account {
+                position: relative;
+                width: 100%;
+                padding: 0;
+
+                div {
+                    border-radius: 0px;
+                    border: none;
+                    border-bottom: 2px solid $white;
+                }
+                
+                .form-label {
+                    color: $white;
+                    background: transparent;
+                }
+
+                .form-control {
+                    color: $white;
+                }
+
+                .label-focus {
+                    color: var(--focus-color);
+                }
+
+                .label-error {
+                    color: var(--error-color);
+                }
+
+                .error {
+                    border: none !important;
+                    border-bottom: 2px solid var(--error-color) !important;
+                }
+
+                .focus {
+                    border: none;
+                    border-bottom: 2px solid var(--focus-color);
+                }
+
+                .mostrar-nip {
+                    i {
+                        color: $white !important;
+                    }
+                }
+            }
+
+            .login__submit {
+                background-color: $gold-500;
+                border: 1px solid $gold-400;
+            }
+        }
+
+        .login__info {
+            font-size: 13px;
+        }
     }
 }
 
@@ -200,9 +284,16 @@
             padding-left: var(--bs-gutter-x, 1.5rem);
         }
 
+        &__logo {
+            img {
+                width: 90px;
+                height: 75px;
+            }
+        }
+
         &__form {
             .login__submit {
-                padding: 10px;
+                padding: 7px;
                 width: 120px;
             }
         }
@@ -213,6 +304,16 @@
     .login {
         &__logo {
             margin-top: 50px;
+        }
+
+        &__form {
+            .nip,
+            .account {
+                div {
+                    margin-top: 30px !important;
+                }
+            
+            }
         }
     }
 }

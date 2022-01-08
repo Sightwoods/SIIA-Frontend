@@ -10,7 +10,7 @@ export const HomePage = () => {
 
     return (
         <div className="dashboard animate__animated animate__fadeIn">
-            <div className="dashboard__image"><Image src={ image('./bg.jpg') } fluid /></div>
+            <div className="dashboard__image"><Image src={ image('./background.png') } fluid /></div>
             <div className="dashboard__cards">
                 <Card>
                     <Card.Img variant="top" src={image('./pagos.png')} />
